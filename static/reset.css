@@ -1,0 +1,113 @@
+body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+header, body, hr {
+  padding: 0;
+  margin: 0;
+}
+
+div,nav,blockquote {
+	box-sizing: border-box;
+}
+
+blockquote {
+  display: block;
+}
+
+button {
+  appearance: none;
+}
+
+div,article,ul,li,a,textarea,div,section,button,
+footer,header,input,figure,blockquote {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+section {
+  overflow: hidden;
+}
+
+h1,h2,h3,h4,h5,p,hr,img,a {
+  position: relative;
+  margin-top: 0;
+  line-height: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+ul {
+  appearance: none;
+  list-style-type: none;
+}
+
+ q {
+   display: block;
+  }
+
+div,ul {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+a:active,a:hover {
+  outline: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li p {
+  margin-bottom: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+iframe {
+  border: none;
+}
+
+li p,blockquote p {
+    color: inherit;
+    margin-bottom: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+select {
+  border-radius: none;
+  appearance: none;
+}
+
+input,textarea {
+  font-family: inherit;
+  appearance: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+summary {
+  cursor: pointer;
+}
+
+/* PARAGRAPH */
+
+p {
+  margin-bottom: 1em;
+}
