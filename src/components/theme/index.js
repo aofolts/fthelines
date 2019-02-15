@@ -15,7 +15,7 @@ const theme = {
   },
   font: {
     family: {
-      primary: "'Poppins',sans-serif"
+      primary: "europa"
     }
   },
   lighting: 'light',

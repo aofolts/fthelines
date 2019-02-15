@@ -5,19 +5,19 @@ import ArticleCard from 'components/card-article'
 const data = {
   articles: [
     {
-      title: 'Review: The Brooks Ghost is Cushy and Lighter Than Ever.',
+      title: 'More Content Coming Soon. Until Then, Fuck the Lines.',
       category: 'Product Reviews',
-      excerpt: `Sed cursus turpis vitae tortor. Praesent vestibulum dapibus nibh. Aenean ut eros et nisl sagittis vestibulum. Cras ultricies mi eu turpis hendrerit fringilla.`
+      excerpt: `Fuck the Lines is a no-holds-barred exploration of the invisible lines that define our throughts and actions. It's a growing collection of insights and strategies.`
     },
     {
-      title: 'Review: The Brooks Ghost is Cushy and Lighter Than Ever!',
+      title: 'More Content Coming Soon. Until Then, Fuck the Lines.',
       category: 'Product Reviews',
-      excerpt: `Sed cursus turpis vitae tortor. Praesent vestibulum dapibus nibh. Aenean ut eros et nisl sagittis vestibulum. Cras ultricies mi eu turpis hendrerit fringilla.`,
+      excerpt: `Fuck the Lines is a no-holds-barred exploration of the invisible lines that define our throughts and actions. It's a growing collection of insights and strategies.`
     },
     {
-      title: 'Review: The Brooks Ghost is Cushy and Lighter Than Ever',
+      title: 'More Content Coming Soon. Until Then, Fuck the Lines.',
       category: 'Product Reviews',
-      excerpt: `Sed cursus turpis vitae tortor. Praesent vestibulum dapibus nibh. Aenean ut eros et nisl sagittis vestibulum. Cras ultricies mi eu turpis hendrerit fringilla.`
+      excerpt: `Fuck the Lines is a no-holds-barred exploration of the invisible lines that define our throughts and actions. It's a growing collection of insights and strategies.`
     }
   ]
 }

@@ -27,8 +27,8 @@ Heading.styles = {
     3: '2.5rem'
   },
   fontWeight: {
-    2: 600,
-    3: 500
+    2: 700,
+    3: 700
   },
   margin: {
     bottom: {

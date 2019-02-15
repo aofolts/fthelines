@@ -13,8 +13,8 @@ const UnstyledArticleCard = ({
   return (
     <article className={className}>   
       <Content>
-        <Heading level='3' as='h3'>Review: The Brooks Ghost is Cushy and Lighter Than Ever</Heading>
-        <BodyText level='3'>Sed cursus turpis vitae tortor. Praesent vestibulum dapibus nibh. Aenean ut eros et nisl sagittis vestibulum. Cras ultricies mi eu turpis hendrerit fringilla.</BodyText>
+        <Heading level='3' as='h3'>Hang Tight, More Stories Coming Soon. Like Real Fucking Soon.</Heading>
+        <BodyText level='3'>Fuck the Lines is a no-holds-barred exploration of the invisible lines that define our throughts and actions. It's a growing collection of insights and strategies.</BodyText>
       </Content>
     </article>
   )

@@ -2,6 +2,7 @@ import React,{createContext,Component} from 'react'
 import styled,{ThemeProvider} from 'styled-components'
 import theme from './theme'
 import Masthead from 'components/masthead'
+import Helmet from 'react-helmet'
 
 const AppContext = createContext()
 
@@ -78,6 +79,9 @@ class UnstyledLayout extends Component {
       <AppContext.Provider value={context}>
           <ThemeProvider theme={theme} className={className}>
             <div id='layout' className={className}>
+              <Helmet>
+                <link rel="stylesheet" href="https://use.typekit.net/gfh8smi.css"/>
+              </Helmet>
               <Masthead/>
               {children}
             </div>
@@ -89,7 +93,7 @@ class UnstyledLayout extends Component {
 
 const Layout = styled(UnstyledLayout)`
   font-family: ${theme.font.family.primary};
-  background: #f2f2f2;
+  background: #F7F6F0;
   min-height: 100vh;
 `
 

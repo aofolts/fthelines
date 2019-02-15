@@ -14,8 +14,8 @@ const UnstyledIntoSection = ({
   return (
     <section id='intro' className={className}>
       <Content>
-        <Heading>Rochester’s friendly running and walking store since 1984</Heading>
-        <BodyText>Whether you're training for your fifth marathon, planning some outdoor adventures, or getting into running, we're here to help you find the perfect fit—and have fun doing it!</BodyText>
+        <Heading>Stop chasing the A life. Erase the lines that hold you back and aim for F.</Heading>
+        <BodyText>Fuck the Lines is a no-holds-barred exploration of the invisible lines that define our throughts and actions. It's a growing collection of insights and strategies to help you break free and live the creative life you want.</BodyText>
       </Content>
     </section>
   )
@@ -23,6 +23,7 @@ const UnstyledIntoSection = ({
 
 const Section = styled(UnstyledIntoSection)`
   padding: ${props => props.theme.padding.default};
+  background: white;
 `
 
 export default Section

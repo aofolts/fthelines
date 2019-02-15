@@ -1,15 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
-// import PropTypes from 'prop-types'
-// import Image from 'gatsby-image'
+import PropTypes from 'prop-types'
+import Image from 'gatsby-image'
 
 const UnstyledBackgroundImage = ({
   className,
   data
 }) => {
+  const props = {
+    className,
+    ...data,
+    style: {
+      position: 'absolute'
+    }
+  }
+
   return (
-    <img src={data.src} className={className} alt='todo'/>
+    <Image {...props}/>
   )
+}
+
+UnstyledBackgroundImage.propTypes = {
+  title: PropTypes.string,
+  alt: PropTypes.string.isRequired
 }
 
 const BackgroundImage = styled(UnstyledBackgroundImage)`
@@ -19,30 +32,8 @@ const BackgroundImage = styled(UnstyledBackgroundImage)`
   transform: translate(-50%,-50%);
   object-fit: cover
   width: 100%;
-  height: 100%;;
+  height: 100%;
+  filter: ${props => props.filter === 'dark' ? `brightness(.62)` : null};
 `
 
 export default BackgroundImage
-
-// const BackgroundImage = ({
-//   title,
-//   alt,
-//   className,
-//   fluid,
-//   fixed
-// }) => {
-//   return (
-//     <Image 
-//       {...{title,alt,fluid,fixed}}
-//       className={['mediaBackground',className].join(' ')}
-//       style={{position: 'absolute'}}
-//     />
-//   )
-// }
-
-// BackgroundImage.propTypes = {
-//   title: PropTypes.string,
-//   alt: PropTypes.string.isRequired
-// }
-
-// export default BackgroundImage

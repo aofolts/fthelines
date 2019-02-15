@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Title} from 'components/type'
+import {Title,ActionLink} from 'components/type'
 import Button from 'components/button'
 import imageSrc from './clothespins.jpeg'
 import BackgroundImage from 'components/image-background'
+import {StaticQuery} from 'gatsby'
 
 const Container = styled.div`
   background: ${props => props.theme.color.primary.lightest};
-  height: 65rem;
+  height: ${props => props.theme.columns(7)};
   background: #444;
   display: flex;
   align-items: center;
@@ -15,19 +16,18 @@ const Container = styled.div`
 
 const Content = styled.div`
   margin: 0 auto;
-  width: ${props => props.theme.columns(7)};
+  width: ${props => props.theme.columns(12)};
 `
 
-const Text = styled.div`
-  width: ${props => props.theme.container.height.tall}
+const Excerpt = styled.div`
+  width: ${props => props.theme.columns(7)}
   max-width: 100%;
   flex: 1;
   color: white;
-`
-
-const Copy = styled.p`
-  font-size: 2rem;
-  color: white;
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1.4em;
+  filter: brightness(.95);
 `
 
 const Media = styled.div`
@@ -42,28 +42,58 @@ const Media = styled.div`
   }
 `
 
-const UnstyledBackground = ({
-  className
-}) => {
-  return (
-    // <BackgroundImage data={{src: imageSrc}} className={className}/>
-    <div className={className}></div>
-  )
-}
-
-const Background = styled(UnstyledBackground)`
-  background: #666;
+const Background = styled.div`
+  background: #333;
 `
 
-const Hero = () => {
+const HeroTitle = styled(Title)`
+  width: ${props => props.theme.columns(8)};
+  max-width: 100%;
+`
+
+const Hero = ({
+  className,
+  data
+}) => {
+  const articleData = data.articles.edges[0].node
+
   return (
-    <Container>
-      <Background/>
-      <Content>
-        <Title>Hey</Title>
-      </Content>
-    </Container>
+    <section id='hero' className={className}>
+      <Container>
+        <BackgroundImage data={articleData.coverImage} filter='dark'/>
+        <Content>
+          <HeroTitle>{articleData.title}</HeroTitle>
+          <Excerpt>
+            {articleData.excerpt} <ActionLink>Read More</ActionLink>
+          </Excerpt>
+        </Content>
+      </Container>
+    </section>
   )
 } 
 
-export default Hero
+const query = graphql`
+  {
+    articles: allContentfulArticle(
+      limit: 1
+    ) {
+      edges {
+        node {
+          id
+          title
+          excerpt
+          coverImage {
+            ...heroImage
+          }
+        }
+      }
+    }
+  }
+`
+
+export default props => (
+  <StaticQuery
+    query={query}
+    render={data => <Hero data={data} {...props}/>}
+  />
+)

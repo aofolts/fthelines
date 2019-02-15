@@ -1,26 +1,32 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled,{css} from 'styled-components'
+import {Link} from 'gatsby'
 
-const BrandName = styled.div`
-  color: #222222;
-  font-weight: 500;
-  letter-spacing: .2em;
-
+const lineStyle = css`
   &:after {
-    width: 110%;
+    width: 100%;
     content: '';
     height: 2px;
     position: absolute;
     top: 50%;
     left: 50%;
-    background: black;
-    opacity: .2;
+    background: #333;
     transform: translate(-50%,-50%);
   }
 `
 
-const CodeTag = styled.div`
-  color: #ccc;
+const BrandName = styled(Link)`
+  color: #333;
+  font-weight: 700;
+  letter-spacing: .1em;
+  background: #EBDB11;
+  padding: .2em .4em;
+  line-height: 1em;
+  font-family: anonymous pro;
+
+  &:hover {
+    ${lineStyle}
+  }
 `
 
 const UnstyledBrand = ({
@@ -28,7 +34,7 @@ const UnstyledBrand = ({
 }) => {
   return (
     <div id='nav-main-brand' className={className}>
-      <BrandName>F THE LINES</BrandName>
+      <BrandName to='/'>FUCK THE LINES</BrandName>
     </div>
   )
 }
@@ -39,7 +45,8 @@ const Brand = styled(UnstyledBrand)`
   display: flex;
   align-items: center;
   font-size: 3.2rem;
-  font-family: 'Source Code Pro';
+  font-family: anonymous-pro, monospace;
+  font-weight: 700;
 `
 
 export default Brand
