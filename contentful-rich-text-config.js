@@ -1,4 +1,4 @@
-const {BLOCKS,INLINES,MARKS} = require('@contentful/rich-text-types')
+const {BLOCKS,INLINES} = require('@contentful/rich-text-types')
 const {getPageUrl} = require('./src/utilities/router')
 
 exports.gatsbyTransformerContentfulRichText = {

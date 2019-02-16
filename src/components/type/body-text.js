@@ -11,7 +11,7 @@ export const paragraphStyles = {
 const BodyText = styled.p`
   font-size: ${props => paragraphStyles.fontSize[props.level]};
   font-family: ${props => props.theme.font.family.primary};
-  font-weight: 400;
+  font-weight: 300;
   line-height: ${props => props.level === '3' ? '1.2em' : props.theme.lineHeight.normal};
   margin-bottom: 1em;
   color: ${props => props.theme.color.red.darker};

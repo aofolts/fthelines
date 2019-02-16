@@ -24,11 +24,11 @@ export const Heading = styled.h2`
 Heading.styles = {
   fontSize: {
     2: '3.6rem',
-    3: '2.5rem'
+    3: '2.8rem'
   },
   fontWeight: {
-    2: 700,
-    3: 700
+    2: 600,
+    3: 600
   },
   margin: {
     bottom: {

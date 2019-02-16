@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Title} from 'components/type'
 import BackgroundImage from 'components/image-background'
 
 const Container = styled.div`
@@ -10,25 +9,9 @@ const Container = styled.div`
   margin: 0 auto;
 `
 
-const Excerpt = styled.div`
-  width: ${props => props.theme.columns(7)}
-  max-width: 100%;
-  flex: 1;
-  color: white;
-  font-size: 2.2rem;
-  font-weight: 300;
-  line-height: 1.4em;
-  filter: brightness(.95);
-`
-
 const Media = styled.div`
   width: 100%;
   padding-bottom: 56.25%;
-`
-
-const HeroTitle = styled(Title)`
-  width: ${props => props.theme.columns(8)};
-  max-width: 100%;
 `
 
 const UnstyledHero = ({

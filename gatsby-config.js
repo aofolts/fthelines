@@ -23,8 +23,8 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Medved',
-    siteUrl: `https://www.medved.sherpadesign.co`
+    title: 'Fuck the Lines',
+    siteUrl: `https://www.fthelines.com`
   },
   plugins: [
     gatsbyTransformerContentfulRichText,
@@ -41,11 +41,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-106772115-3",
+        trackingId: "UA-49711355-3",
         head: false,
         anonymize: true,
         respectDNT: true
       },
     },
+    gatsbyTransformerContentfulRichText
   ]
 }

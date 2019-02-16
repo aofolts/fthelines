@@ -62,7 +62,7 @@ const UnstyledHeader = ({
       <section id='article-header' className={className}>
         <Content>
           <Title>{entry.title}</Title>
-          <Excerpt>Summary: {entry.excerpt}</Excerpt>
+          <Excerpt><b>Quick Rundown:</b> {entry.excerpt}</Excerpt>
           <Meta>
             <AuthorPhoto>
               <BackgroundImage data={entry.author.avatar}/>

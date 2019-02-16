@@ -13,7 +13,7 @@ const SingleArticle = ({
     <Layout>
       <ArticleHeader entry={data.page} colorMode='light'/>
       <Hero entry={data.page}/>
-      <ContentSection data={data}/>
+      <ContentSection data={{entry: data.page}}/>
     </Layout>
   )
 }
@@ -29,6 +29,11 @@ export const query = graphql`
       title
       excerpt
       fullPublishDate: publishDate(formatString: "MMMM d, YYYY")
+      content {
+        richText: childContentfulRichText {
+          html
+        }
+      }
       coverImage {
         ...heroImage
       }
