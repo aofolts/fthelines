@@ -15,14 +15,18 @@ const UnstyledBackgroundImage = ({
     }
   }
 
+  if (!props.alt) props.alt = props.title
+
   return (
     <Image {...props}/>
   )
 }
 
 UnstyledBackgroundImage.propTypes = {
-  title: PropTypes.string,
-  alt: PropTypes.string.isRequired
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    alt: PropTypes.string
+  }),
 }
 
 const BackgroundImage = styled(UnstyledBackgroundImage)`

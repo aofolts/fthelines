@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Title,ActionLink} from 'components/type'
-import Button from 'components/button'
-import imageSrc from './clothespins.jpeg'
 import BackgroundImage from 'components/image-background'
 import {StaticQuery} from 'gatsby'
+import {getPagePath} from 'utilities/router'
 
 const Container = styled.div`
   background: ${props => props.theme.color.primary.lightest};
@@ -30,22 +29,6 @@ const Excerpt = styled.div`
   filter: brightness(.95);
 `
 
-const Media = styled.div`
-  display: block;
-  width: ${props => props.theme.columns(4)};
-  max-width: 100%;
-  height: ${props => props.theme.columns(5)};
-  background: grey;
-
-  @media screen and (min-width: 100rem) {
-    margin-left: calc(${props => props.theme.padding.large} * 2);
-  }
-`
-
-const Background = styled.div`
-  background: #333;
-`
-
 const HeroTitle = styled(Title)`
   width: ${props => props.theme.columns(8)};
   max-width: 100%;
@@ -64,7 +47,7 @@ const Hero = ({
         <Content>
           <HeroTitle>{articleData.title}</HeroTitle>
           <Excerpt>
-            {articleData.excerpt} <ActionLink>Read More</ActionLink>
+            {articleData.excerpt} <ActionLink to={getPagePath(articleData)}>Read More</ActionLink>
           </Excerpt>
         </Content>
       </Container>
@@ -79,7 +62,9 @@ const query = graphql`
     ) {
       edges {
         node {
+          __typename
           id
+          slug
           title
           excerpt
           coverImage {

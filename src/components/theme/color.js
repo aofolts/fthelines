@@ -1,5 +1,8 @@
 const color = {
   brightness: 'light',
+  yellow: {
+    medium: ''
+  },
   red: {
     lightest: '#FAF5F5',
     lighter: '#F5F0F0',
@@ -11,14 +14,8 @@ const color = {
     darkest: '#33110F'
   },
   grey: {
-    lighten: '#CCC8C8'
-  },
-  blue: {
-    lightest: '#F5F7FA',
-    lighter: '#EBEFF5'
-  },
-  green: {
-    medium: '#46BFA7',
+    lightest: '#F5F4ED',
+    darkest: '#333332'
   }
 }
 

@@ -95,7 +95,7 @@ exports.createPages = ({graphql,actions}) => {
 
         pages.forEach(entry => {
           createPage({
-            path: `/stories/${entry.slug}`,
+            path: `/articles/${entry.slug}`,
             component: templates.single.article,
             context: {
               slug: entry.slug

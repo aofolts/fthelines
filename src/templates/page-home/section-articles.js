@@ -5,7 +5,7 @@ import ArticleCard from 'components/card-article'
 const data = {
   articles: [
     {
-      title: 'More Content Coming Soon. Until Then, Fuck the Lines.',
+      title: 'More Content Coming Soon. Until Then, Fuck the Lines!',
       category: 'Product Reviews',
       excerpt: `Fuck the Lines is a no-holds-barred exploration of the invisible lines that define our throughts and actions. It's a growing collection of insights and strategies.`
     },
@@ -15,7 +15,7 @@ const data = {
       excerpt: `Fuck the Lines is a no-holds-barred exploration of the invisible lines that define our throughts and actions. It's a growing collection of insights and strategies.`
     },
     {
-      title: 'More Content Coming Soon. Until Then, Fuck the Lines.',
+      title: 'More Content Coming Soon. Until Then, Fuck the Lines?',
       category: 'Product Reviews',
       excerpt: `Fuck the Lines is a no-holds-barred exploration of the invisible lines that define our throughts and actions. It's a growing collection of insights and strategies.`
     }

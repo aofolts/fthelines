@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import Link from 'components/link'
 import React from 'react'
-import Icon from 'components/icon'
+// import Icon from 'components/icon'
 
 // const ArrowContainer = styled.div`
 //   display: inline-block;
@@ -31,21 +32,16 @@ import Icon from 'components/icon'
 //   }
 // `
 
-// const UnstyledActionLink = ({
-//   className,
-//   children
-// }) => {
-//   return (
-//     <a className={className} href='todo'> 
-//       <div style={{display: 'inline-block'}}>{children}</div>
-//       <ArrowContainer>
-//         <Arrow/>
-//       </ArrowContainer>
-//     </a>
-//   )
-// }
+const UnstyledActionLink = ({
+  children,
+  ...linkProps
+}) => {
+  return (
+    <Link {...linkProps}>{children}</Link>
+  )
+}
 
-export const ActionLink = styled.a`
+export const ActionLink = styled(UnstyledActionLink)`
   color: white;
   font-size: 2rem;
   font-weight: 500;

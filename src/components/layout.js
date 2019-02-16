@@ -93,7 +93,6 @@ class UnstyledLayout extends Component {
 
 const Layout = styled(UnstyledLayout)`
   font-family: ${theme.font.family.primary};
-  background: #F7F6F0;
   min-height: 100vh;
 `
 

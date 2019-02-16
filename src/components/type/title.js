@@ -1,8 +1,11 @@
 import styled from 'styled-components'
 
 const Title = styled.h1`
-  color: white;
-  font-size: 6.5rem;
+  color: ${props => {
+    if (props.theme.colorMode === 'light') return props.theme.color.grey.darkest
+    else return 'white'
+  }};
+  font-size: 6rem;
   font-family: ${props => props.theme.font.family.primary};
   font-weight: 600;
   line-height: ${props => props.theme.lineHeight.small};
