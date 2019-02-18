@@ -27,7 +27,9 @@ export const query = graphql`
       id
       slug
       title
-      excerpt
+      summary {
+        text: summary
+      }
       fullPublishDate: publishDate(formatString: "MMMM d, YYYY")
       content {
         richText: childContentfulRichText {

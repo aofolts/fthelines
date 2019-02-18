@@ -21,7 +21,7 @@ const Header = styled(UnstyledHeader)`
   z-index: ${props => props.theme.zIndex.navigation};
   border-bottom: ${props => props.context.header.isDocked 
     ? null
-    : '2px solid ' + props.theme.color.red.light
+    : '2px solid ' + props.theme.color.grey.lightest
   };
 `
 

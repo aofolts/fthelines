@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {media} from 'components/theme/media'
 
 const Title = styled.h1`
   color: ${props => {
@@ -11,6 +12,8 @@ const Title = styled.h1`
   line-height: ${props => props.theme.lineHeight.small};
   margin-bottom: ${props => props.theme.padding.small};
   font-family: Tiempos Headline Test,sans-serif;
+
+  ${media.phone`font-size: 4rem;`}
 `
 
 export default Title

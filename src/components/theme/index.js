@@ -10,7 +10,7 @@ const theme = {
     }, 
     width: {
       medium: 1000,
-      main: 1300
+      main: 1400
     }
   },
   font: {

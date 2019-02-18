@@ -3,6 +3,7 @@ import styled,{ThemeProvider} from 'styled-components'
 import theme from './theme'
 import Masthead from 'components/masthead'
 import Helmet from 'react-helmet'
+import favicon from 'images/favicon.png'
 
 const AppContext = createContext()
 
@@ -81,6 +82,7 @@ class UnstyledLayout extends Component {
             <div id='layout' className={className}>
               <Helmet>
                 <link rel="stylesheet" href="https://use.typekit.net/gfh8smi.css"/>
+                <link rel='shortcut icon' type='image/png' href={favicon}/>
               </Helmet>
               <Masthead/>
               {children}

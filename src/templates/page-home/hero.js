@@ -47,7 +47,7 @@ const Hero = ({
         <Content>
           <HeroTitle>{articleData.title}</HeroTitle>
           <Excerpt>
-            {articleData.excerpt} <ActionLink to={getPagePath(articleData)}>Read More</ActionLink>
+            {articleData.summary.text} <ActionLink to={getPagePath(articleData)}>Read More</ActionLink>
           </Excerpt>
         </Content>
       </Container>
@@ -66,7 +66,9 @@ const query = graphql`
           id
           slug
           title
-          excerpt
+          summary {
+            text: summary
+          }
           coverImage {
             ...heroImage
           }

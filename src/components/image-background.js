@@ -5,7 +5,8 @@ import Image from 'gatsby-image'
 
 const UnstyledBackgroundImage = ({
   className,
-  data
+  data,
+  test
 }) => {
   const props = {
     className,
