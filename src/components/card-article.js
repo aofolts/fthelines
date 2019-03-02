@@ -2,8 +2,9 @@ import styled from 'styled-components'
 import React from 'react'
 import {Heading,BodyText} from 'components/type'
 import BackgroundImage from 'components/image-background'
+import Link from 'components/link'
 
-const Content = styled.div`
+const Content = styled(Link)`
   display: block;
 `
 
@@ -24,7 +25,7 @@ const UnstyledArticleCard = ({
 }) => {
   return (
     <article className={className}>   
-      <Content>
+      <Content page={entry}>
         <Media>
           <BackgroundImage data={entry.coverImage} test='fuck'/>
         </Media>

@@ -53,6 +53,10 @@ const PublishDate = styled(BodyText)`
   margin-bottom: 0;
 `
 
+const ArticleTitle = styled(Title)`
+  color: ${props => props.theme.color.grey.darkest};
+`
+
 const UnstyledHeader = ({
   className,
   entry
@@ -61,8 +65,8 @@ const UnstyledHeader = ({
     <ThemeProvider theme={{colorMode: 'light'}}>
       <section id='article-header' className={className}>
         <Content>
-          <Title>{entry.title}</Title>
-          <Excerpt><b>Quick Rundown:</b> {entry.summary.summary}</Excerpt>
+          <ArticleTitle>{entry.title}</ArticleTitle>
+          <Excerpt level='1'><b>Quick Rundown:</b> {entry.summary.text}</Excerpt>
           <Meta>
             <AuthorPhoto>
               <BackgroundImage data={entry.author.avatar}/>

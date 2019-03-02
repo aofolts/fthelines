@@ -1,8 +1,12 @@
 import color from './color'
+import nittiTypewriterRegular from 'fonts/NittiTypewriter-Regular.woff'
 
 const theme = {
   color,
   palette: 'default',
+  path: {
+
+  },
   reverse: false,
   container: {
     height: {
@@ -15,7 +19,10 @@ const theme = {
   },
   font: {
     family: {
-      primary: "europa"
+      primary: "typewriter"
+    },
+    size: {
+      base: '1.8rem'
     }
   },
   lighting: 'light',
@@ -53,7 +60,13 @@ const theme = {
   }
 }
 
-
+theme.fonts = {
+  nitti: {
+    typewriter: {
+      regular: nittiTypewriterRegular
+    }
+  }
+}
 
 theme.columns = num => (theme.container.width.main / 120) * num + 'rem'
 

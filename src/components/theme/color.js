@@ -1,26 +1,23 @@
 const color = {
   brightness: 'light',
   yellow: {
-    medium: ''
-  },
-  red: {
     lightest: '#FAF5F5',
     lighter: '#F5F0F0',
     light: '#F5E6E6',
     lighten: '#E37D71',
-    medium: '#E35040',
+    medium: '#E8D513',
     darken: '#665251',
     darker: '#3F1512',
     darkest: '#33110F'
   },
   grey: {
-    lightest: '#F5F4ED',
+    lightest: '#F5F4F0',
     darker: '#40403E',
     darkest: '#333332'
   }
 }
 
-color.primary = color.red
+color.primary = color.yellow
 color.default = color.primary
 
 export default color

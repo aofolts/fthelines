@@ -68,8 +68,12 @@ class UnstyledMasthead extends Component {
 
 const Masthead = styled(UnstyledMasthead)`
   display: block;
-  height: ${props => props.theme.padding.large};
-  background: ${props => props.theme.color.red.lightest};
+  transition: all .2s linear;
+  height: ${props => props.context.header.isDocked
+    ? props.theme.padding.large
+    : props.theme.padding.mediumLarge
+  };
+  background: ${props => props.theme.color.primary.lightest};
 `
 
 export default withAppContext(Masthead)

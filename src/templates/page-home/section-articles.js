@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React from 'react'
 import ArticleCard from 'components/card-article'
-import {StaticQuery} from 'gatsby'
+import {graphql,StaticQuery} from 'gatsby'
 
 const Articles = ({entries}) => entries.map(entry => (
   <ArticleCard key={entry.title} entry={entry}/>

@@ -22,7 +22,7 @@ const BrandName = styled(Link)`
   background: #EBDB11;
   padding: .2em .4em;
   line-height: 1em;
-  font-family: anonymous pro;
+  font-family: nitti,monospace;
 
   &:hover {
     ${lineStyle}
@@ -34,7 +34,7 @@ const UnstyledBrand = ({
 }) => {
   return (
     <div id='nav-main-brand' className={className}>
-      <BrandName to='/'>FUCK THE LINES</BrandName>
+      <BrandName to='/'>F THE LINES</BrandName>
     </div>
   )
 }
@@ -45,7 +45,7 @@ const Brand = styled(UnstyledBrand)`
   display: flex;
   align-items: center;
   font-size: 3.2rem;
-  font-family: anonymous-pro, monospace;
+  font-family: nitti, monospace;
   font-weight: 700;
 `
 

@@ -14,7 +14,7 @@ function getColor(props) {
 
 export const Heading = styled.h2`
   font-size: ${props => Heading.styles.fontSize[props.level]};
-  font-family: ${props => props.theme.font.family.primary};
+  font-family: nitti,monospace;
   font-weight: ${props => Heading.styles.fontWeight[props.level]};
   line-height: ${props => props.theme.lineHeight.small};
   margin-bottom: ${props => Heading.styles.margin.bottom[props.level]};

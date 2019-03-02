@@ -1,6 +1,7 @@
 import styled, {createGlobalStyle} from 'styled-components'
 import React from 'react'
 import {Heading} from 'components/type'
+import BodyText from 'components/type'
 
 const Content = styled.div`
   width: ${props => props.theme.columns(9)};
@@ -9,25 +10,29 @@ const Content = styled.div`
 `
 
 const ContentStyle = createGlobalStyle`
+  #article-content > :first-child {
+    margin-top: 0;
+  }
+
   #article-content p {
-    width: ${props => props.theme.columns(7)};
+    width: ${props => props.theme.columns(6)};
     max-width: 100%;
     margin-right: auto;
     font-size: 2rem;
-    font-family: europa;
-    font-weight: 300;
-    color: ${props => props.theme.color.grey.darker};
+    font-family: ${props => props.theme.font.family.primary};
+    color: ${props => props.theme.color.grey.darkest};
     line-height: 1.4em;
+    -webkit-font-smoothing: antialiased;
   }
 
-  #article-content p b {
+  #article-content p b { 
     font-weight: 400;
   }
 
   #article-content h2,h3 {
     color: ${props => props.theme.color.grey.darkest};
     font-family: Brown;
-    margin-bottom: .75em;
+    margin-bottom: .5em;
     margin-top: 2em;
   }
 

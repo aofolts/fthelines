@@ -22,7 +22,7 @@ const UnstyledHero = ({
     <section id='hero' className={className}>
       <Container>
         <Media>
-          <BackgroundImage data={entry.coverImage} filter='dark'/>
+          <BackgroundImage data={entry.coverImage}/>
         </Media>
       </Container>
     </section>

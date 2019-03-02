@@ -1,9 +1,43 @@
 import React,{createContext,Component} from 'react'
-import styled,{ThemeProvider} from 'styled-components'
+import styled,{ThemeProvider,createGlobalStyle} from 'styled-components'
 import theme from './theme'
 import Masthead from 'components/masthead'
 import Helmet from 'react-helmet'
 import favicon from 'images/favicon.png'
+import nittiMediumWoff from '../fonts/Nitti-Medium.woff'
+import typewriterWoff from '../fonts/NittiTypewriter-Regular.woff'
+import typewriterHighlightedWoff from '../fonts/NittiTypewriter-Cameo.woff'
+import typewriterUnderlinedWoff from '../fonts/NittiTypewriter-Underlined.woff'
+import typewriterCorrectedWoff from '../fonts/NittiTypewriter-Corrected.woff'
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: nitti;
+    src: url(${nittiMediumWoff}) format('woff');
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: typewriter;
+    src: url(${typewriterWoff}) format('woff');
+  }
+
+  @font-face {
+    font-family: highlighted;
+    src: url(${typewriterHighlightedWoff}) format('woff');
+  }
+
+  @font-face {
+    font-family: corrected;
+    src: url(${typewriterCorrectedWoff}) format('woff');
+  }
+
+  @font-face {
+    font-family: underlined;
+    src: url(${typewriterUnderlinedWoff}) format('woff');
+  }
+`
 
 const AppContext = createContext()
 
@@ -81,9 +115,9 @@ class UnstyledLayout extends Component {
           <ThemeProvider theme={theme} className={className}>
             <div id='layout' className={className}>
               <Helmet>
-                <link rel="stylesheet" href="https://use.typekit.net/gfh8smi.css"/>
                 <link rel='shortcut icon' type='image/png' href={favicon}/>
               </Helmet>
+              <GlobalStyle/>
               <Masthead/>
               {children}
             </div>
