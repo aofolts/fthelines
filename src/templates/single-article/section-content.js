@@ -1,7 +1,6 @@
 import styled, {createGlobalStyle} from 'styled-components'
 import React from 'react'
 import {Heading} from 'components/type'
-import BodyText from 'components/type'
 
 const Content = styled.div`
   width: ${props => props.theme.columns(9)};
@@ -22,7 +21,6 @@ const ContentStyle = createGlobalStyle`
     font-family: ${props => props.theme.font.family.primary};
     color: ${props => props.theme.color.grey.darkest};
     line-height: 1.4em;
-    -webkit-font-smoothing: antialiased;
   }
 
   #article-content p b { 
@@ -44,6 +42,7 @@ const ContentStyle = createGlobalStyle`
   #article-content h3 {
     font-size: ${Heading.styles.fontSize[3]};
     font-weight: ${Heading.styles.fontWeight[3]};
+    font-family: nitti, monospace;
   }
 `
 

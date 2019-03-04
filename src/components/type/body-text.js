@@ -15,6 +15,7 @@ const BodyText = styled.p`
   line-height: ${props => props.level === '3' ? '1.2em' : props.theme.lineHeight.normal};
   margin-bottom: 1em;
   color: ${props => props.theme.color.primary.darker};
+  letter-spacing: -.05em;
 
   b {
     font-family: nitti;

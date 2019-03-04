@@ -22,6 +22,7 @@ blockquote {
 
 button {
   appearance: none;
+  display: none;
 }
 
 div,article,ul,li,a,textarea,div,section,button,
@@ -32,6 +33,7 @@ footer,header,input,figure,blockquote {
   box-sizing: border-box;
   line-height: inherit;
   font-weight: inherit;
+  font-family: inherit;
   color: inherit;
 }
 

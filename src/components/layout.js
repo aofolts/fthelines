@@ -3,6 +3,7 @@ import styled,{ThemeProvider,createGlobalStyle} from 'styled-components'
 import theme from './theme'
 import Masthead from 'components/masthead'
 import Helmet from 'react-helmet'
+import Footer from 'components/footer'
 import favicon from 'images/favicon.png'
 import nittiMediumWoff from '../fonts/Nitti-Medium.woff'
 import typewriterWoff from '../fonts/NittiTypewriter-Regular.woff'
@@ -120,6 +121,7 @@ class UnstyledLayout extends Component {
               <GlobalStyle/>
               <Masthead/>
               {children}
+              <Footer/>
             </div>
           </ThemeProvider>
       </AppContext.Provider>

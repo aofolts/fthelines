@@ -12,8 +12,9 @@ const color = {
   },
   grey: {
     lightest: '#F5F4F0',
+    lighter: '#F5F0F0',
     darker: '#40403E',
-    darkest: '#333332'
+    darkest: '#222222'
   }
 }
 
