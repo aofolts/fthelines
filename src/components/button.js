@@ -1,24 +1,33 @@
 import styled from 'styled-components'
 import theme from 'components/theme'
+import BodyText from 'components/type/body-text'
 
 function getBorderColor({type}) {
   const color = theme.color
 
   if (type === 'primary')   return color.primary.medium
-  if (type === 'secondary') return '#F5B3AB'
+  if (type === 'secondary') return color.primary.medium
+}
+
+function getBackgroundColor({type}) {
+  const color = theme.color
+
+  if (type === 'primary')   return color.primary.medium
+  if (type === 'secondary') return 'none'
 }
 
 const Button = styled.a`
   padding: 1em 1.5em;
-  background: ${props => props.theme.color.primary.medium};
+  background: ${props => getBackgroundColor(props)};
   border: 2px solid ${props => getBorderColor(props)};
-  color: ${props => props.type === 'primary' ? 'white' : props.theme.color.primary.medium};
+  color: ${props => props.theme.color.grey.medium};
   display: inline-block;
-  border-radius: 3px;
-  font-size: ${props => props.theme.paragraph.secondary.fontSize};
+  font-size: ${BodyText.font.size[2]};
   font-weight: ${props => props.theme.paragraph.bold.weight};
+  font-family: nitti;
   letter-spacing: .02em;
   cursor: pointer;
+  margin-top: ${props => props.theme.padding.small};
 `
 
 Button.defaultProps = {

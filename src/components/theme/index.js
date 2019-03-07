@@ -38,6 +38,7 @@ const theme = {
   },
   mode: 'light',
   padding: {
+    smallest: '1.5rem',
     extraSmall: '2rem',
     small: '2.5rem',
     mediumSmall: '3.75rem',
