@@ -8,5 +8,3 @@ export {
   Heading
 }
 
-export default Text
-
