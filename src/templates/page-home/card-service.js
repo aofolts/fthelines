@@ -4,7 +4,7 @@ import {
   Heading,
   BodyText,
   ActionLink
-} from 'components/type'
+} from 'components/text'
 import BackgroundImage from 'components/image-background'
 
 const Media = styled.div`

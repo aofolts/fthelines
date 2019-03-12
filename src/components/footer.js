@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Heading from 'components/type/heading'
-import BodyText from 'components/type/body-text'
+import Heading from 'components/text/heading'
+import BodyText from 'components/text/body-text'
 
 const Input = styled.input`
   padding: 1em;

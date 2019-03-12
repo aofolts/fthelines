@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Title} from 'components/type'
-import Button from 'components/button'
-import BodyText from 'components/type/body-text'
+import {Heading} from 'components/text'
+import BodyText from 'components/text/body-text'
 
 const Container = styled.div`
   display: flex;
@@ -29,14 +28,8 @@ const Copy = styled(BodyText)`
   filter: brightness(.95);
 `
 
-const HeroTitle = styled(Title)`
-  font-size: 8.5rem;
-  max-width: 100%;
-  font-family: nitti;
-  letter-spacing: -.05em;
-  word-spacing: -.15em;
-  line-height: 1.1em;
-  color: ${props => props.theme.color.grey.darkest};
+const HeroTitle = styled(Heading)`
+  
 `
 
 const Tripwire = styled.div`
@@ -47,8 +40,14 @@ const Input = styled.input`
   padding: 1em;
   font-size: ${BodyText.font.size[2]};
   border: none;
+  box-sizing: border-box;
   background: white;
   min-width: 2px;
+
+  &:hover, &:focus {
+    box-shadow: inset 0 0 0 2px ${props => props.theme.color.primary.medium};
+    outline: none;
+  }
 `
 
 const Submit = styled.button`
@@ -120,9 +119,9 @@ const UnstyledHero = ({
       <Container>
         <Content>
           <Text>
-            <HeroTitle>Stop chasing the A life.</HeroTitle>
+            <HeroTitle kind='jumbo'>Stop chasing the A life.</HeroTitle>
             <Copy>
-              Hi there, I'm Andrew. F the Lines is a no-bullshit blog where I write about <a>creativity</a>, <a>wellbeing</a>, <a>productivity</a>, and all the lessons I'm learning on my journey away from convention toward the F life. Are you with me?
+              Hi there, I'm Andrew. F the Lines is a no-bullshit blog where I write about <a>creativity</a>, <a>happiness</a>, <a>productivity</a>, and the insights I uncover on my journey away from the beaten path toward the F life. Are you with me?
             </Copy>
             <Tripwire>
               <TripwireTeaser>Get 100% actionable advice. No fluff.</TripwireTeaser>

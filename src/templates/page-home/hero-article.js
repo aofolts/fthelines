@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Title,ActionLink} from 'components/type'
+import {Title,ActionLink} from 'components/text'
 import BackgroundImage from 'components/image-background'
 import {StaticQuery} from 'gatsby'
 import {getPagePath} from 'utilities/router'

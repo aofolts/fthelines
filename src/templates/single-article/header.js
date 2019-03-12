@@ -1,5 +1,5 @@
 import styled,{ThemeProvider} from 'styled-components'
-import {Title,BodyText} from 'components/type'
+import {Heading,BodyText} from 'components/text'
 import React from 'react'
 import BackgroundImage from 'components/image-background'
 
@@ -53,7 +53,7 @@ const PublishDate = styled(BodyText)`
   margin-bottom: 0;
 `
 
-const ArticleTitle = styled(Title)`
+const ArticleTitle = styled(Heading)`
   color: ${props => props.theme.color.grey.darkest};
 `
 
@@ -65,7 +65,7 @@ const UnstyledHeader = ({
     <ThemeProvider theme={{colorMode: 'light'}}>
       <section id='article-header' className={className}>
         <Content>
-          <ArticleTitle>{entry.title}</ArticleTitle>
+          <ArticleTitle kind='title'>{entry.title}</ArticleTitle>
           <Excerpt level='1'><b>Quick Rundown:</b> {entry.summary.text}</Excerpt>
           <Meta>
             <AuthorPhoto>
@@ -73,7 +73,7 @@ const UnstyledHeader = ({
             </AuthorPhoto>
             <MetaInfo>
               <AuthorName level='3'>{entry.author.name}</AuthorName>
-              <PublishDate level='3'>{entry.fullPublishDate}</PublishDate>
+              <PublishDate level='3'>{entry.updatedAtString}</PublishDate>
             </MetaInfo>
           </Meta>
         </Content>

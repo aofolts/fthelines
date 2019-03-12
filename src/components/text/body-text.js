@@ -8,8 +8,12 @@ export const paragraphStyles = {
   }
 }
 
+export function getFontSize({level}) {
+  return paragraphStyles.fontSize[level]
+}
+
 const BodyText = styled.p`
-  font-size: ${props => paragraphStyles.fontSize[props.level]};
+  font-size: ${props => getFontSize(props)};
   font-family: ${props => props.theme.font.family.primary};
   font-weight: 300;
   line-height: ${props => props.level === '3' ? '1.2em' : props.theme.lineHeight.normal};

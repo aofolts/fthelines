@@ -27,10 +27,13 @@ export const query = graphql`
       id
       slug
       title
+      updatedAt
+      updatedAtString: updatedAt(formatString: "MMM D, Y [at] h:ma")
       summary {
         text: summary
       }
       fullPublishDate: publishDate(formatString: "MMMM d, YYYY")
+      publishDate
       content {
         richText: childContentfulRichText {
           html

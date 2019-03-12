@@ -19,10 +19,12 @@ export const devices = {
   }
 }
 
-export const media = {
+const media = {
   phone: (...args) => css`
     @media (max-width: 480px) {
       ${css(...args)}
     }
   `
 }
+
+export default media

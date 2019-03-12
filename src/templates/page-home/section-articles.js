@@ -38,7 +38,10 @@ const query = graphql`
   {
     articles: allContentfulArticle(
       limit: 3,
-      skip: 1
+      sort: {
+        fields: [publishDate],
+        order: DESC
+      }
     ) {
       edges {
         node {

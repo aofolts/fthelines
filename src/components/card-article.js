@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
-import {Heading,BodyText} from 'components/type'
+import {Heading,BodyText} from 'components/text'
 import BackgroundImage from 'components/image-background'
 import Link from 'components/link'
 

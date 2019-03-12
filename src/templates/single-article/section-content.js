@@ -1,6 +1,6 @@
 import styled, {createGlobalStyle} from 'styled-components'
 import React from 'react'
-import {Heading} from 'components/type'
+import {Heading} from 'components/text'
 
 const Content = styled.div`
   width: ${props => props.theme.columns(9)};
@@ -43,6 +43,10 @@ const ContentStyle = createGlobalStyle`
     font-size: ${Heading.styles.fontSize[3]};
     font-weight: ${Heading.styles.fontWeight[3]};
     font-family: nitti, monospace;
+  }
+
+  img {
+    max-width: 100%;
   }
 `
 

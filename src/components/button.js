@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import theme from 'components/theme'
-import BodyText from 'components/type/body-text'
+import BodyText from 'components/text/body-text'
 
 function getBorderColor({type}) {
   const color = theme.color
