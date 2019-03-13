@@ -65,7 +65,7 @@ const UnstyledGoalSection = ({
         <TextWrap>
           <Heading kind='jumbo'>The Goal</Heading>
           <BodyText>
-            A mission without a deadline is just a dream. So, here's the plan: by August 1st, I'm going to have saved up enough money to buy a van and covert it, so I can hit the road. 
+            A mission without a deadline is just a dream. So, here's the plan: by August 1st, I'm going to have to have saved up enough money to buy a van and covert it, so I can hit the road. 
           </BodyText>
         </TextWrap>
         <GoalBarWrap>

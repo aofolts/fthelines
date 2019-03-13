@@ -27,11 +27,23 @@ const ContentStyle = createGlobalStyle`
     font-weight: 400;
   }
 
+  #article-content p a {
+    font-family: underlined;
+  }
+
+  #article-content p u {
+    font-family: corrected;
+    user-select: none;
+    text-decoration: none;
+  }
+
   #article-content h2,h3 {
     color: ${props => props.theme.color.grey.darkest};
     font-family: Brown;
     margin-bottom: .5em;
     margin-top: 2em;
+    width: ${props => props.theme.columns(6)};
+    max-width: 100%;
   }
 
   #article-content h2 {
@@ -46,6 +58,7 @@ const ContentStyle = createGlobalStyle`
   }
 
   img {
+    width: ${props => props.theme.columns(6)};
     max-width: 100%;
   }
 `

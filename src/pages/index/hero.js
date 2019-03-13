@@ -121,7 +121,7 @@ const UnstyledHero = ({
           <Text>
             <HeroTitle kind='jumbo'>Stop chasing the A life.</HeroTitle>
             <Copy>
-              Hi there, I'm Andrew. F the Lines is a no-bullshit blog where I write about <a>creativity</a>, <a>happiness</a>, <a>productivity</a>, and the insights I uncover on my journey away from the beaten path toward the F life. Are you with me?
+              Hi there, I'm Andrew. F the Lines is a no-bullshit blog where I write about <a>creativity</a>, <a>wellbeing</a>, <a>productivity</a>, and the insights I uncover on my journey away from the beaten path toward the F life. Are you with me?
             </Copy>
             <Tripwire>
               <TripwireTeaser>Get 100% actionable advice. No fluff.</TripwireTeaser>

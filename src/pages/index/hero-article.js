@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Title,ActionLink} from 'components/text'
+import {Heading,ActionLink} from 'components/text'
 import BackgroundImage from 'components/image-background'
 import {StaticQuery} from 'gatsby'
 import {getPagePath} from 'utilities/router'
@@ -29,7 +29,7 @@ const Excerpt = styled.div`
   filter: brightness(.95);
 `
 
-const HeroTitle = styled(Title)`
+const HeroTitle = styled(Heading)`
   width: ${props => props.theme.columns(8)};
   max-width: 100%;
 `

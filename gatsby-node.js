@@ -41,7 +41,9 @@ exports.createPages = ({graphql,actions}) => {
           reject(errors)
         }
  
-        const pages = data.pages.edges.map(entry => entry.node)
+        const pages = data.pages.edges
+          .map(entry => entry.node)
+          .filter(entry => entry.slug !== 'home')
 
         const getPageTemplate = entry => {
           // gatsby-source-contentful single reference field bug
@@ -126,5 +128,22 @@ exports.onCreateWebpackConfig = ({
     stats: {
       moduleTrace: false,
     }
+  })
+}
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { deletePage, createPage } = actions
+
+  return new Promise(resolve => {
+    if (page.componentPath === `${__dirname}/src/pages/index/index.js`) {
+      deletePage(page)
+
+      createPage({
+        ...page,
+        path: '/',
+      })
+    }
+
+    resolve()
   })
 }
