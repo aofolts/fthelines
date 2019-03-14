@@ -10,6 +10,7 @@ import typewriterWoff from '../fonts/NittiTypewriter-Regular.woff'
 import typewriterHighlightedWoff from '../fonts/NittiTypewriter-Cameo.woff'
 import typewriterUnderlinedWoff from '../fonts/NittiTypewriter-Underlined.woff'
 import typewriterCorrectedWoff from '../fonts/NittiTypewriter-Corrected.woff'
+import media from 'components/theme/media'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -38,6 +39,25 @@ const GlobalStyle = createGlobalStyle`
     font-family: underlined;
     src: url(${typewriterUnderlinedWoff}) format('woff');
   }
+
+  ${media.phone`
+    :root {
+      font-size: 8px;
+      --paddingLarge: 
+    }
+  `}
+
+  ${media.tablet`
+    :root {
+      font-size: 8px;
+    }
+  `}
+
+  ${media.laptop`
+    :root {
+      font-size: 9px;
+    }
+  `}
 `
 
 const AppContext = createContext()

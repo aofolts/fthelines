@@ -65,13 +65,13 @@ const UnstyledGoalSection = ({
         <TextWrap>
           <Heading kind='jumbo'>The Goal</Heading>
           <BodyText>
-            A mission without a deadline is just a dream. So, here's the plan: by August 1st, I'm going to have to have saved up enough money to buy a van and covert it, so I can hit the road. 
+            A mission without a deadline is just a dream. Here's the plan: by August 1st, I'm going to have a travel van, a podcast, and a list of 10 people across the U.S. who I can interview about living an unconventional life.
           </BodyText>
         </TextWrap>
         <GoalBarWrap>
           <GoalPosts>
             <StartPost level='1'>$0</StartPost>
-            <EndPost level='1'>${data.goal}</EndPost>
+            <EndPost level='1'>${data.goal.toLocaleString('en')}</EndPost>
           </GoalPosts>
           <GoalBar>
             <Progress data={data}/>

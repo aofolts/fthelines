@@ -14,6 +14,8 @@ const Media = styled.div`
 `
 
 const ArticleTitle = styled(Heading)`
+  margin-top: 0;
+
   &:hover {
     text-decoration: underline;
   }

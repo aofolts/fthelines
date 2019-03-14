@@ -1,6 +1,7 @@
 import styled,{css} from 'styled-components'
 import theme from 'components/theme'
 import media from 'components/theme/media'
+import React from 'react'
 
 function getColor(props) {
   const {
@@ -49,9 +50,25 @@ styles.title = css`
   font-size: 6rem;
   letter-spacing: initial;
   word-spacing: initial;
+
+  ${media.phone`font-size: 4rem;`}
 `
 
-export const Heading = styled.h2`
+const UnstyledHeading = ({
+  className,
+  children,
+  level
+}) => {
+  const Tag = level ? `h${level}` : 'h2'
+
+  return (
+    <Tag id='' className={className}>
+      {children}
+    </Tag>
+  )
+}
+
+export const Heading = styled(UnstyledHeading)`
   font-size: ${props => getFontSize(props)};
   font-family: ${props => getFontFamily(props)};
   font-weight: ${props => Heading.styles.fontWeight[props.level]};
@@ -62,6 +79,7 @@ export const Heading = styled.h2`
   color: ${props => getColor(props)};
 
   ${props => styles[props.kind]}
+  ${props => props.kind ? null : `font-size: ${Heading.styles.fontSize[props.level]};`}
 `
 
 Heading.styles = {

@@ -21,8 +21,8 @@ const UnstyledIntoSection = ({
   return (
     <section id='intro' className={className}>
       <Content>
-        <Heading>Stop chasing the A life. Fuck the lines, and start living the life you want.</Heading>
-        <BodyText>Fuck the Lines is a no-holds-barred exploration of the invisible lines that define our throughts and actions. It's a growing collection of insights and strategies to help you break free and live the creative life you want.</BodyText>
+        <Heading>Who wrote the lines that hold you back? What if you crossed them?</Heading>
+        <BodyText>I went to the right college. Took the right job. Earned the right amount of money. It didn't lead to happiness. So what does? I don't have the answer, but I'm setting out on a mission to find it. Here's how I'll do it...</BodyText>
       </Content>
       <VideoContainer>
         <Video/>

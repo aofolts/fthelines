@@ -24,6 +24,21 @@ const media = {
     @media (max-width: 480px) {
       ${css(...args)}
     }
+  `,
+  tablet: (...args) => css`
+    @media (max-width: 480px) {
+      ${css(...args)}
+    }
+  `,
+  laptop: (...args) => css`
+    @media (max-width: 480px) {
+      ${css(...args)}
+    }
+  `,
+  desktop: (...args) => css`
+    @media (max-width: 480px) {
+      ${css(...args)}
+    }
   `
 }
 
