@@ -43,13 +43,11 @@ exports.createPages = ({graphql,actions}) => {
  
         const pages = data.pages.edges
           .map(entry => entry.node)
-          .filter(entry => entry.slug !== 'home')
 
         const getPageTemplate = entry => {
           // gatsby-source-contentful single reference field bug
           const layoutType = entry.layout[0]['__typename']
 
-          if (layoutType === 'ContentfulHomePageLayout') return templates.pages.home
           return templates.pages[entry.slug] || templates.page
         }
 
@@ -131,19 +129,19 @@ exports.onCreateWebpackConfig = ({
   })
 }
 
-exports.onCreatePage = ({ page, actions }) => {
-  const { deletePage, createPage } = actions
+// exports.onCreatePage = ({ page, actions }) => {
+//   const { deletePage, createPage } = actions
 
-  return new Promise(resolve => {
-    if (page.componentPath === `${__dirname}/src/pages/index/index.js`) {
-      deletePage(page)
+//   return new Promise(resolve => {
+//     if (page.componentPath === `${__dirname}/src/templates/index/index.js`) {
+//       deletePage(page)
 
-      createPage({
-        ...page,
-        path: '/',
-      })
-    }
+//       createPage({
+//         ...page,
+//         path: '/',
+//       })
+//     }
 
-    resolve()
-  })
-}
+//     resolve()
+//   })
+// }

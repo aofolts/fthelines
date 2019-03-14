@@ -31,6 +31,12 @@ module.exports = {
     'gatsby-plugin-svg-sprite',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
     'gatsby-transformer-sharp',
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-remark`,
