@@ -2,12 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 import Heading from 'components/text/heading'
 import BodyText from 'components/text/body-text'
+import media from 'components/theme/media'
 
 const Input = styled.input`
   padding: 1em;
   font-size: ${BodyText.font.size[2]};
   border: none;
   background: white;
+
+  ${media.phone`
+    display: block;
+    width: 100%;
+  `}
 `
 
 const Submit = styled.button`
@@ -18,6 +24,12 @@ const Submit = styled.button`
   background: ${props => props.theme.color.primary.medium};
   border: none;
   font-size: ${BodyText.font.size[2]};
+
+  ${media.phone`
+    display: block;
+    width: 100%;
+    margin-top: ${props => props.theme.padding.smallest};
+  `}
 `
 
 const UnstyledForm = ({
@@ -39,6 +51,10 @@ const Form = styled(UnstyledForm)`
   align-items: center;
   justify-content: flex-start;
   margin-top: ${props => props.theme.padding.small};
+
+  ${media.phone`
+    display: block;
+  `}
 `
 
 const formData = {

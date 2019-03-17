@@ -7,6 +7,7 @@ const Content = styled.div`
   text-align: center;
   margin: 0 auto;
   width: ${props => props.theme.columns(6)};
+  max-width: 100%;
 `
 
 const VideoContainer = styled.div`

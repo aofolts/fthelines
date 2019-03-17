@@ -58,6 +58,11 @@ const GlobalStyle = createGlobalStyle`
       font-size: 9px;
     }
   `}
+
+  html {
+    width: 100vw;
+    overflow-x: hidden;
+  }
 `
 
 const AppContext = createContext()

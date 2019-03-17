@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import React from 'react'
 import ArticleCard from 'components/card-article'
 import {graphql,StaticQuery} from 'gatsby'
+import media from 'components/theme/media'
 
 const Articles = ({entries}) => entries.map(entry => (
   <ArticleCard key={entry.title} entry={entry}/>
@@ -14,6 +15,10 @@ const Grid = styled.div`
   margin: 0 auto;
   width: ${props => props.theme.columns(12)};
   max-width: 100%;
+
+  ${media.phone`
+    display: block;
+  `}
 `
 
 const UnstyledArticlesSection = ({

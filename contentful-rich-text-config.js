@@ -1,5 +1,7 @@
-const {BLOCKS,INLINES} = require('@contentful/rich-text-types')
+const {BLOCKS,INLINES,MARKS} = require('@contentful/rich-text-types')
 const {getPageUrl} = require('./src/utilities/router')
+
+const renderNode = 
 
 exports.gatsbyTransformerContentfulRichText = {
   resolve: `@contentful/gatsby-transformer-contentful-richtext`,
@@ -34,6 +36,9 @@ exports.gatsbyTransformerContentfulRichText = {
           return `<a href='${getPageUrl(page)}'>${text}</a>`
         },
       },
+      renderMark: {
+        [MARKS.UNDERLINE]: text => `<u role='presentational'>${text}</u>`
+      }
     }
   }
 }
