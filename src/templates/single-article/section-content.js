@@ -1,6 +1,5 @@
 import styled, {createGlobalStyle} from 'styled-components'
 import React from 'react'
-import {Heading} from 'components/text'
 
 const Content = styled.div`
   width: ${props => props.theme.columns(9)};
@@ -47,13 +46,13 @@ const ContentStyle = createGlobalStyle`
   }
 
   #article-content h2 {
-    font-size: ${Heading.styles.fontSize[2]};
-    font-weight: ${Heading.styles.fontWeight[2]};
+    font-size: 3.8;
+    font-weight: 500;
   }
 
   #article-content h3 {
-    font-size: ${Heading.styles.fontSize[3]};
-    font-weight: ${Heading.styles.fontWeight[3]};
+    font-size: 2.8;
+    font-weight: 500;
     font-family: nitti, monospace;
   }
 

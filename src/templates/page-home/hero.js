@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Heading} from 'components/text'
-import BodyText from 'components/text/body-text'
+import {JumboHeading,BodyText} from 'components/text'
+import GlitchImg from './hero-glitch.gif'
+import Input from 'components/form/input'
+import Button from 'components/button'
 
 const Container = styled.div`
   display: flex;
@@ -12,6 +14,7 @@ const Content = styled.div`
   margin: 0 auto;
   width: ${props => props.theme.columns(12)};
   max-width: 100%;
+  display: flex;
 `
 
 const Text = styled.div`
@@ -22,13 +25,9 @@ const Text = styled.div`
 const Copy = styled(BodyText)`
   max-width: 100%;
   flex: 1;
-  font-size: 2.2rem;
-  font-weight: 300;
-  line-height: 1.4em;
-  filter: brightness(.95);
 `
 
-const HeroTitle = styled(Heading)`
+const HeroTitle = styled(JumboHeading)`
   
 `
 
@@ -36,28 +35,11 @@ const Tripwire = styled.div`
   margin-top: ${props => props.theme.padding.smallest};
 `
 
-const Input = styled.input`
-  padding: 1em;
-  font-size: ${BodyText.font.size[2]};
-  border: none;
-  box-sizing: border-box;
-  background: white;
-  min-width: 2px;
-
-  &:hover, &:focus {
-    box-shadow: inset 0 0 0 2px ${props => props.theme.color.primary.medium};
-    outline: none;
-  }
+const EmailInput = styled(Input)`
 `
 
-const Submit = styled.button`
-  background: ${props => props.theme.color.primary.default};
-  padding: 1em;
-  display: block;
-  margin: 0 auto;
-  background: ${props => props.theme.color.primary.medium};
-  border: none;
-  font-size: ${BodyText.font.size[2]};
+const Submit = styled(Button)`
+  margin-top: 0;
 `
 
 const UnstyledForm = ({
@@ -65,10 +47,10 @@ const UnstyledForm = ({
 }) => {
   return (
     <form id='footer-contact-form' className={className} {...formData}>
-      <Input type="email" name="EMAIL" id="mce-EMAIL" placeholder="email address" required/>
-      <Submit type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">Subscribe</Submit>
+      <EmailInput type="email" name="EMAIL" id="mce-EMAIL" placeholder="email address" required/>
+      <Submit type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button">Subscribe</Submit>
       <div style={{position:'absolute',left: '5000px'}} aria-hidden="true">
-        <input type="text" name="b_448322c097ab71b0ffe8792d9_4b763ebdb2" tabindex="-1" value=""/>
+        <input type="text" name="b_448322c097ab71b0ffe8792d9_4b763ebdb2" tabIndex="-1"/>
       </div>
     </form>
   )
@@ -111,6 +93,13 @@ const TripwireTeaser = styled(BodyText)`
   margin-bottom: 0;
 `
 
+const Glitch = styled.img`
+  position: absolute;
+  left: 50%;
+  bottom: -65%;
+  height: 90rem;
+`
+
 const UnstyledHero = ({
   className
 }) => {
@@ -119,15 +108,16 @@ const UnstyledHero = ({
       <Container>
         <Content>
           <Text>
-            <HeroTitle kind='jumbo'>Stop chasing the A life.</HeroTitle>
+            <HeroTitle>Stop chasing the A Life.</HeroTitle>
             <Copy>
-              Hi there, I'm Andrew. F the Lines is a no-bullshit blog about <a>creativity</a>, <a>happiness</a>, <a>productivity</a>, and all the things I learn on my journey away from the beaten path toward the F life. Are you with me?
+              Hi there, I'm Andrew. F the Lines is a no-bullshit blog about <a href='tk'>creativity</a>, <a href='tk'>productivity</a>, <a href='tk'>happiness</a>, and lessons learned on my journey away from the beaten path toward something new: the F Life. Are you with me?
             </Copy>
             <Tripwire>
               <TripwireTeaser>Get 100% actionable advice. No fluff.</TripwireTeaser>
               <Form/>
             </Tripwire>
           </Text>
+          <Glitch src={GlitchImg}/>
         </Content>
       </Container>
       <MaskContainer>

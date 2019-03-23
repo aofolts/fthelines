@@ -3,17 +3,21 @@ import theme from 'components/theme'
 import BodyText from 'components/text/body-text'
 
 function getBorderColor({type}) {
-  const color = theme.color
+  // const color = theme.color
 
-  if (type === 'primary')   return color.primary.medium
-  if (type === 'secondary') return color.primary.medium
+  // if (type === 'primary')   return color.primary.medium
+  // if (type === 'secondary') return color.primary.medium
+
+  return theme.color.primary.medium
 }
 
 function getBackgroundColor({type}) {
-  const color = theme.color
+  // const color = theme.color
 
-  if (type === 'primary')   return color.primary.medium
-  if (type === 'secondary') return 'none'
+  // if (type === 'primary')   return color.primary.medium
+  // if (type === 'secondary') return 'none'
+
+  return theme.color.primary.medium
 }
 
 const Button = styled.a`

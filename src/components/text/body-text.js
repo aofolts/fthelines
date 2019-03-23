@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import DynamicComponent from 'components/dynamic-component'
+import React from 'react'
 
 export const paragraphStyles = {
   fontSize: {
@@ -9,14 +11,20 @@ export const paragraphStyles = {
 }
 
 export function getFontSize({level}) {
-  return paragraphStyles.fontSize[level]
+  return paragraphStyles.fontSize[level] || paragraphStyles.fontSize[1] 
 }
 
-const BodyText = styled.p`
+export const UnstyledBodyText = props => (
+  <DynamicComponent {...props}>
+    {props.children}
+  </DynamicComponent>
+)
+
+const BodyText = styled(UnstyledBodyText)`
   font-size: ${props => getFontSize(props)};
   font-family: ${props => props.theme.font.family.primary};
   font-weight: 300;
-  line-height: ${props => props.level === '3' ? '1.2em' : props.theme.lineHeight.normal};
+  line-height: 1.4em};
   margin-bottom: 1em;
   color: ${props => props.theme.color.primary.darker};
   letter-spacing: -.025em;
