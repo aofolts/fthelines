@@ -1,5 +1,6 @@
 import styled, {createGlobalStyle} from 'styled-components'
 import React from 'react'
+import theme from 'components/theme'
 
 const Content = styled.div`
   width: ${props => props.theme.columns(9)};
@@ -10,6 +11,14 @@ const Content = styled.div`
 const ContentStyle = createGlobalStyle`
   #article-content > :first-child {
     margin-top: 0;
+  }
+
+  #article-content p,
+  #article-content h2,
+  #article-content h3,
+  {
+    word-spacing: ${theme.wordSpacing.small};
+    letter-spacing: ${theme.letterSpacing.small};
   }
 
   #article-content p {
@@ -23,7 +32,7 @@ const ContentStyle = createGlobalStyle`
   }
 
   #article-content p b { 
-    font-weight: 400;
+   font-family: Nitti,monospace;
   }
 
   #article-content p a {
@@ -36,22 +45,37 @@ const ContentStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  #article-content h2,h3 {
+  #article-content blockquote {
+    font-size: 2.8rem;
+    font-style: italic;
+    padding-left: ${props => props.theme.padding.small};
+    margin-bottom: 1em;
+  }
+
+  #article-content blockquote p {
+    font-size: inherit;
+    margin-bottom: 0;
+  }
+
+  #article-content h2,
+  #article-content h3 {
     color: ${props => props.theme.color.grey.darkest};
-    font-family: Brown;
+    font-family: nitti,monospace;
     margin-bottom: .5em;
     margin-top: 2em;
     width: ${props => props.theme.columns(6)};
     max-width: 100%;
+    word-spacing: ${theme.wordSpacing.small};
+    letter-spacing: ${theme.letterSpacing.small};
   }
 
   #article-content h2 {
-    font-size: 3.8;
+    font-size: 3.8rem;
     font-weight: 500;
   }
 
   #article-content h3 {
-    font-size: 2.8;
+    font-size: 2.8rem;
     font-weight: 500;
     font-family: nitti, monospace;
   }

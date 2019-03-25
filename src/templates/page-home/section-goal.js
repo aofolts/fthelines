@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Heading,BodyText} from 'components/text'
+import {Heading,JumboHeading,BodyText} from 'components/text'
 
 const Wrap = styled.div`
   width: ${props => props.theme.columns(10)};
@@ -57,13 +57,11 @@ const UnstyledGoalSection = ({
     goal: 25000
   }
 
-  console.log(data.raised / data.goal)
-
   return (
     <section className={className}>
       <Wrap>
         <TextWrap>
-          <Heading kind='jumbo'>The Goal</Heading>
+          <JumboHeading kind='jumbo'>The Goal</JumboHeading>
           <BodyText>
             A mission without a deadline is just a dream. Here's the plan: by August 1st, I'm going to have a travel van, a podcast, and a list of 10 people across the U.S. who I can interview about living an unconventional life.
           </BodyText>

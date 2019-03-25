@@ -1,7 +1,8 @@
 import styled,{ThemeProvider} from 'styled-components'
-import {Heading,BodyText} from 'components/text'
+import {BodyText} from 'components/text'
 import React from 'react'
 import BackgroundImage from 'components/image-background'
+import media from 'components/theme/media'
 
 const Content = styled.div`
   width: ${props => props.theme.columns(10)};
@@ -53,8 +54,16 @@ const PublishDate = styled(BodyText)`
   margin-bottom: 0;
 `
 
-const ArticleTitle = styled(Heading)`
+const ArticleTitle = styled.h1`
+  font-size: 6rem;
+  font-family: highlighted,monospace;
+  margin-bottom: .5em;
+  line-height: 1.3em;
   color: ${props => props.theme.color.grey.darkest};
+
+  ${media.phone`
+    font-size: 4rem;
+  `}
 `
 
 const UnstyledHeader = ({
