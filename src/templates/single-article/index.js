@@ -29,7 +29,7 @@ export const query = graphql`
       slug
       title
       updatedAt
-      updatedAtString: updatedAt(formatString: "MMM D, Y [at] h:ma")
+      updatedAtString: updatedAt(formatString: "MMM D, Y [at] h:mma")
       summary {
         text: summary
       }
