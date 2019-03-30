@@ -26,7 +26,7 @@ const theme = {
     }
   },
   letterSpacing: {
-    small: '-.05em'
+    small: '-.025em'
   },
   lighting: 'light',
   lineHeight: {
@@ -72,7 +72,7 @@ const theme = {
     large: '10rem'
   },
   wordSpacing: {
-    small: '-.15em'
+    small: '-.125em'
   }
 }
 

@@ -29,6 +29,8 @@ const ContentStyle = createGlobalStyle`
     font-family: ${props => props.theme.font.family.primary};
     color: ${props => props.theme.color.grey.darkest};
     line-height: 1.4em;
+    word-spacing: ${theme.wordSpacing.small};
+    letter-spacing: ${theme.letterSpacing.small};
   }
 
   #article-content p b { 
