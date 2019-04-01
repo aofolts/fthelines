@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.2.0",
+    "@contentful/rich-text-types": "^13.1.0",
     "balance-text": "^3.2.1",
     "clean-tag": "^3.0.0",
     "gatsby": "^2.1.33",
