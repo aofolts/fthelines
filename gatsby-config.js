@@ -1,5 +1,3 @@
-const {gatsbyTransformerContentfulRichText} = require('./contentful-rich-text-config.js')
-
 let contentfulConfig
 
 try {
@@ -27,7 +25,6 @@ module.exports = {
     siteUrl: `https://www.fthelines.com`
   },
   plugins: [
-    gatsbyTransformerContentfulRichText,
     'gatsby-plugin-svg-sprite',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
@@ -52,7 +49,6 @@ module.exports = {
         anonymize: true,
         respectDNT: true
       },
-    },
-    gatsbyTransformerContentfulRichText
+    }
   ]
 }

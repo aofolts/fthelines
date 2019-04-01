@@ -20,7 +20,7 @@ export const UnstyledBodyText = props => (
   </DynamicComponent>
 )
 
-const BodyText = styled(UnstyledBodyText)`
+const BodyText = styled.p`
   font-size: ${props => getFontSize(props)};
   font-family: ${props => props.theme.font.family.primary};
   font-weight: 300;
@@ -49,7 +49,8 @@ BodyText.font = {
 }
 
 BodyText.defaultProps = {
-  level: 1
+  level: 1,
+  tag: 'p'
 }
 
 export default BodyText

@@ -36,9 +36,7 @@ export const query = graphql`
       fullPublishDate: publishDate(formatString: "MMMM d, YYYY")
       publishDate
       content {
-        richText: childContentfulRichText {
-          html
-        }
+        json
       }
       coverImage {
         ...heroImage

@@ -9,8 +9,7 @@
   "author": "Andrew Folts",
   "license": "ISC",
   "dependencies": {
-    "@contentful/gatsby-transformer-contentful-richtext": "^12.2.1",
-    "@contentful/rich-text-types": "^12.1.0",
+    "@contentful/rich-text-react-renderer": "^13.2.0",
     "balance-text": "^3.2.1",
     "clean-tag": "^3.0.0",
     "gatsby": "^2.1.33",

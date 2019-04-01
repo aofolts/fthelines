@@ -1,6 +1,7 @@
 import styled, {createGlobalStyle} from 'styled-components'
 import React from 'react'
 import theme from 'components/theme'
+import RichText from 'components/rich-text'
 
 const Content = styled.div`
   width: ${props => props.theme.columns(9)};
@@ -88,16 +89,25 @@ const ContentStyle = createGlobalStyle`
   }
 `
 
+const ContentBody = styled.div`
+  width: ${props => props.theme.columns(6)};
+  max-width: 100%;
+  margin-right: auto;
+`
+
 const UnstyledContentSection = ({
   className,
   data
 }) => {
-  const richText = data.entry.content.richText.html
+  const richText = data.entry.content.json
 
   return (
     <section id='article-body' className={className}>
-      <ContentStyle/>
-      <Content id='article-content' dangerouslySetInnerHTML={{__html: richText}}/>
+      <Content id='article-content'>
+        <ContentBody>
+          <RichText json={richText}/>
+        </ContentBody>
+      </Content>
     </section>
   )
 }

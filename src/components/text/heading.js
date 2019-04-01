@@ -9,6 +9,13 @@ function getFontSize({level}) {
   }
 }
 
+// function getMargin({level}) { 
+//   switch (level) {
+//     case 3: return '2.8rem'
+//     default: return '3.6rem'
+//   }
+// }
+
 const UnstyledHeading = ({
   level,
   children,
@@ -27,6 +34,7 @@ export const Heading = styled(UnstyledHeading)`
   letter-spacing: -.05em;
   word-spacing: -.15em;
   color: ${theme.color.grey.darkest};
+  margin-bottom: .5em;
 `
 
 export default Heading

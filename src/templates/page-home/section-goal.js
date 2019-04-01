@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Heading,JumboHeading,BodyText} from 'components/text'
+import {JumboHeading,BodyText} from 'components/text'
 
 const Wrap = styled.div`
   width: ${props => props.theme.columns(10)};
