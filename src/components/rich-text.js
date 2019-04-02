@@ -24,6 +24,7 @@ const renderHeading = (node,children) => {
 
   switch (level) {
     case 'heading-2': return <Heading level={2}>{children}</Heading>
+    case 'heading-3': return <Heading level={3}>{children}</Heading>
     default: return null
   }
 }
