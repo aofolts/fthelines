@@ -11,7 +11,7 @@ const SingleArticle = ({
 }) => {
   return (
     <Layout>
-      <Meta {...data.page}/>
+      <Meta page={data.page} description={data.page.summary.text} image={{url: data.page.coverImage.fluid.src}}/>
       <ArticleHeader entry={data.page} colorMode='light'/>
       <Hero entry={data.page}/>
       <ContentSection data={{entry: data.page}}/>
@@ -40,12 +40,6 @@ export const query = graphql`
       }
       coverImage {
         ...heroImage
-      }
-      meta {
-        title
-        description {
-          description
-        }
       }
       author {
         name

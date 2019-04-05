@@ -105,6 +105,7 @@ const UnstyledContentSection = ({
     <section id='article-body' className={className}>
       <Content id='article-content'>
         <ContentBody>
+          <ContentStyle/>
           <RichText json={richText}/>
         </ContentBody>
       </Content>

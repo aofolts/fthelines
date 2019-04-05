@@ -13,7 +13,7 @@ const HomePage = ({
   return (
     <Layout>
       <div id='main'>
-        <Meta {...data.page}/>
+        <Meta page={data.page}/>
         <Hero/>
         <IntroSection/>
         <GoalSection/>

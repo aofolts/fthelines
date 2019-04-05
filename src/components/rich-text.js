@@ -40,8 +40,7 @@ const Image = styled.img`
 `
 
 const renderAsset = (node) => {
-  const level = node.nodeType
-
+  //const level = node.nodeType
   const entry = node.data.target
 
   const props = {
