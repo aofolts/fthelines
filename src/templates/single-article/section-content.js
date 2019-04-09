@@ -60,8 +60,8 @@ const ContentStyle = createGlobalStyle`
     margin-bottom: 0;
   }
 
-  #article-content h2,
-  #article-content h3 {
+  #article-content > h2,
+  #article-content > h3 {
     color: ${props => props.theme.color.grey.darkest};
     font-family: nitti,monospace;
     margin-bottom: .5em;

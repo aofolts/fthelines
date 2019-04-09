@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import theme from 'components/theme'
 import BodyText from 'components/text/body-text'
+import DynamicComponent from 'components/dynamic-component'
 
 function getBorderColor({type}) {
   // const color = theme.color
@@ -20,7 +21,7 @@ function getBackgroundColor({type}) {
   return theme.color.primary.medium
 }
 
-const Button = styled.a`
+const Button = styled(DynamicComponent)`
   padding: 1em 1.5em;
   background: ${props => getBackgroundColor(props)};
   border: 2px solid ${props => getBorderColor(props)};
@@ -35,7 +36,8 @@ const Button = styled.a`
 `
 
 Button.defaultProps = {
-  type: 'primary'
+  type: 'primary',
+  tag: 'a'
 }
 
 export default Button

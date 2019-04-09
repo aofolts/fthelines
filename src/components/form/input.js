@@ -15,6 +15,7 @@ const UnstyledInput = ({
   className,
   children,
   name,
+  onChange,
   placeholder,
   preset
 }) => {
@@ -22,6 +23,7 @@ const UnstyledInput = ({
 
   const props = {
     name: preset || name,
+    onChange,
     placeholder: getPlaceholder({preset,placeholder}),
     type: preset === 'email' ? 'email' : 'text'
   }

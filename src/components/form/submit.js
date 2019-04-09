@@ -7,7 +7,7 @@ const UnstyledSubmit = ({
   children
 }) => {
   return (
-    <Button className={className}>
+    <Button className={className} type='submit' tag='button'>
       {children}
     </Button>
   )
