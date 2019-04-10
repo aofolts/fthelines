@@ -5,7 +5,7 @@ import React from 'react'
 function getFontSize({level}) { 
   switch (level) {
     case 3: return '2.8rem'
-    default: return '3.6rem'
+    default: return '3.8rem'
   }
 }
 

@@ -31,7 +31,7 @@ const UnstyledArticleCard = ({
         <Media>
           <BackgroundImage data={entry.coverImage} test='fuck'/>
         </Media>
-        <ArticleTitle level='3' as='h3'>{entry.title}</ArticleTitle>
+        <ArticleTitle level={3}>{entry.title}</ArticleTitle>
         <BodyText level='2'>{entry.summary.text}</BodyText>
       </Content>
     </article>

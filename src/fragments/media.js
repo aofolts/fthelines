@@ -49,7 +49,7 @@ export const smallFluidImageFragment = graphql`
 export const mediumFluidImageFragment = graphql`
   fragment mediumFluidImage on ContentfulAsset {
     ...assetMeta
-    fluid(maxWidth: 750) {
+    fluid(maxWidth: 800) {
       ...GatsbyContentfulFluid
     }
   }

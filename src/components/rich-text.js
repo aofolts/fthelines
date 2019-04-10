@@ -23,6 +23,10 @@ const renderEmbeddedEntry = (node) => {
 
 const RichHeading2 = styled(Heading)`
   margin-top: ${props => props.theme.padding.medium};
+
+  &:first-child {
+    margin-top: 0;
+  }
 `
 
 const RichHeading3 = styled(Heading)`
@@ -40,7 +44,6 @@ const renderHeading = (node,children) => {
 }
 
 const renderParagraph = (node,children) => {
-  console.log(node)
   return <BodyText level={2}>{children}</BodyText>
 }
 
@@ -64,20 +67,37 @@ const renderAsset = (node) => {
   return <Image {...props}/>
 }
 
-const UnorderedList = styled.div`
+const UnorderedList = styled.ul`
   font-size: ${props => props.theme.text.size.mediumSmall};
   margin-left: 2em;
   margin-bottom: ${props => props.theme.padding.small};
+
+  & li {
+    list-style-type: disc;
+  }
 `
 
 const renderUnorderedList = (node,children) => {
   return <UnorderedList>{children}</UnorderedList>
 }
 
+const OrderedList = styled.ol`
+  font-size: ${props => props.theme.text.size.mediumSmall};
+  margin-left: 2em;
+  margin-bottom: ${props => props.theme.padding.small};
+
+  & li {
+    list-style-type: decimal;
+  }
+`
+
+const renderOrderedList = (node,children) => {
+  return <OrderedList>{children}</OrderedList>
+}
+
 const ListItem = styled.li`
   margin-bottom: .5em;
-  text-indent: -1.5em;
-  padding-left: .1em;
+  padding: 0;
 
   &:last-child {
     margin-bottom: 0;
@@ -103,6 +123,7 @@ const options = {
     [BLOCKS.PARAGRAPH]: (node,children) => renderParagraph(node,children),
     [BLOCKS.EMBEDDED_ASSET]: (node) => renderAsset(node),
     [BLOCKS.UL_LIST]: (node,children) => renderUnorderedList(node,children),
+    [BLOCKS.OL_LIST]: (node,children) => renderOrderedList(node,children),
     [BLOCKS.LIST_ITEM]: (node,children) => renderListItem(node,children)
   },
 }
