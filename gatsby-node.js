@@ -1,9 +1,13 @@
 const path = require('path')
 
 const templates = {
+  archive: {
+    series: path.resolve('./src/templates/archive-series/index.js')
+  },
   page: path.resolve('./src/templates/page/index.js'),
   pages: {
     home: path.resolve('./src/templates/page-home/index.js'),
+    articles: path.resolve('./src/templates/page-articles/index.js')
   },
   single: {
     article: path.resolve('./src/templates/single-article/index.js')
@@ -45,9 +49,6 @@ exports.createPages = ({graphql,actions}) => {
           .map(entry => entry.node)
 
         const getPageTemplate = entry => {
-          // gatsby-source-contentful single reference field bug
-          const layoutType = entry.layout[0]['__typename']
-
           return templates.pages[entry.slug] || templates.page
         }
 
@@ -97,6 +98,45 @@ exports.createPages = ({graphql,actions}) => {
           createPage({
             path: `/articles/${entry.slug}`,
             component: templates.single.article,
+            context: {
+              slug: entry.slug
+            }
+          })
+        })
+      })
+    )
+  })
+
+  const createArticleSeriesPages = new Promise((resolve,reject) => {
+    resolve(
+      graphql(
+        `
+          {
+            pages: allContentfulArticleSeries {
+              edges {
+                node {
+                  title
+                  slug
+                }
+              }
+            }
+          }
+        `
+      ).then(({
+        errors,
+        data
+      }) => {
+        if (errors) {
+          console.log(errors)
+          reject(errors)
+        }
+
+        const pages = data.pages.edges.map(entry => entry.node)
+
+        pages.forEach(entry => {
+          createPage({
+            path: `/series/${entry.slug}`,
+            component: templates.archive.series,
             context: {
               slug: entry.slug
             }

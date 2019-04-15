@@ -2,15 +2,14 @@ import React,{createContext,Component} from 'react'
 import styled,{ThemeProvider,createGlobalStyle} from 'styled-components'
 import theme from './theme'
 import Masthead from 'components/masthead'
-import Helmet from 'react-helmet'
 import Footer from 'components/footer'
-import favicon from 'images/favicon.png'
 import nittiMediumWoff from '../fonts/Nitti-Medium.woff'
 import typewriterWoff from '../fonts/NittiTypewriter-Regular.woff'
 import typewriterHighlightedWoff from '../fonts/NittiTypewriter-Cameo.woff'
 import typewriterUnderlinedWoff from '../fonts/NittiTypewriter-Underlined.woff'
 import typewriterCorrectedWoff from '../fonts/NittiTypewriter-Corrected.woff'
 import media from 'components/theme/media'
+import Meta from 'components/meta'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -129,7 +128,8 @@ class UnstyledLayout extends Component {
   render() {
     const {
       children,
-      className
+      className,
+      meta
     } = this.props
 
     const context = {
@@ -140,9 +140,7 @@ class UnstyledLayout extends Component {
       <AppContext.Provider value={context}>
           <ThemeProvider theme={theme} className={className}>
             <div id='layout' className={className}>
-              <Helmet>
-                <link rel='shortcut icon' type='image/png' href={favicon}/>
-              </Helmet>
+              <Meta {...meta}/>
               <GlobalStyle/>
               <Masthead/>
               {children}

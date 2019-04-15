@@ -54,7 +54,7 @@ const PublishDate = styled(BodyText)`
   margin-bottom: 0;
 `
 
-const ArticleTitle = styled.h1`
+export const ArticleTitle = styled.h1`
   font-size: 6rem;
   font-family: highlighted,monospace;
   margin-bottom: .5em;

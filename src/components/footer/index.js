@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Heading,BodyText} from 'components/text'
-import Form from './form'
+import Form from 'components/form-subscribe'
+import {StaticQuery,graphql} from 'gatsby'
 
 const Wrap = styled.div`
   width: ${props => props.theme.columns(7)};
@@ -12,14 +12,18 @@ const Wrap = styled.div`
 `
 
 const UnstyledFooter = ({
-  className
+  className,
+  data
 }) => {
+  const settings = {
+    format: 'inline',
+    sizing: 'large'
+  }
+
   return (
     <footer id='footer' className={className}>
       <Wrap>
-        <Heading>Stay Updated</Heading>
-        <BodyText>Get unstuck. Get weekly stories on breaking away from the A life and living the F life.</BodyText>
-        <Form/>
+        <Form settings={settings} entry={data.form}/> 
       </Wrap>
     </footer>
   )
@@ -29,4 +33,21 @@ const Footer = styled(UnstyledFooter)`
   background: ${props => props.theme.color.grey.lighter};
 `
 
-export default Footer
+const query = graphql`
+  {
+    form: contentfulSubscribeForm(formId: {eq: "904072"}) {
+      headline
+      formId
+      teaser {
+        text:teaser      
+      }
+    }
+  }
+`
+
+export default props => (
+  <StaticQuery
+    query={query}
+    render={data => <Footer data={data} {...props}/>}
+  />
+)

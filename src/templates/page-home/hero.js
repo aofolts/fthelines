@@ -4,6 +4,7 @@ import {JumboHeading,BodyText} from 'components/text'
 import GlitchImg from './hero-glitch.gif'
 import Input from 'components/form/input'
 import Button from 'components/button'
+import SubscribeForm from 'components/form-subscribe'
 
 const Container = styled.div`
   display: flex;
@@ -43,16 +44,11 @@ const Submit = styled(Button)`
 `
 
 const UnstyledForm = ({
-  className
+  className,
+  entry
 }) => {
   return (
-    <form id='footer-contact-form' className={className} {...formData}>
-      <EmailInput type="email" name="EMAIL" id="mce-EMAIL" placeholder="email address" required/>
-      <Submit type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button">Subscribe</Submit>
-      <div style={{position:'absolute',left: '5000px'}} aria-hidden="true">
-        <input type="text" name="b_448322c097ab71b0ffe8792d9_4b763ebdb2" tabIndex="-1"/>
-      </div>
-    </form>
+    <SubscribeForm className={className} entry={entry}/>
   )
 }
 
@@ -62,15 +58,8 @@ const Form = styled(UnstyledForm)`
   justify-content: flex-start;
   margin-top: ${props => props.theme.padding.smallest};
   max-width: 100%;
+  width: ${props => props.theme.columns(4)};
 `
-
-const formData = {
-  action: "https://fthelines.us20.list-manage.com/subscribe/post?u=448322c097ab71b0ffe8792d9&amp;id=4b763ebdb2",
-  method: "post",
-  name: "mc-embedded-subscribe-form",
-  target: "_blank",
-  noValidate: true
-}
 
 const MaskContainer = styled.div`
   width: 100%;
@@ -101,7 +90,8 @@ const Glitch = styled.img`
 `
 
 const UnstyledHero = ({
-  className
+  className,
+  data
 }) => {
   return (
     <section id='hero' className={className}>
@@ -110,11 +100,11 @@ const UnstyledHero = ({
           <Text>
             <HeroTitle>Stop chasing the A Life.</HeroTitle>
             <Copy>
-              Hi there, I'm Andrew. F the Lines is a no-bullshit blog about <a href='tk'>creativity</a>, <a href='tk'>productivity</a>, <a href='tk'>happiness</a>, and how to create a <a href='tk'>lifestyle business</a> that delivers on all of the above: the "F Life." Let's make it happen.
+              Hi there, I'm Andrew. F the Lines is a no-bullshit blog about <a href='tk'>creativity</a>, <a href='tk'>productivity</a>, <a href='tk'>happiness</a>, and how to create a <a href='tk'>freedom business</a> that delivers on all of the above: the "F Life." Let's make it happen.
             </Copy>
             <Tripwire>
               <TripwireTeaser>Get 100% actionable advice. No filler.</TripwireTeaser>
-              <Form/>
+              <Form entry={data.form} settings={{headline:false,teaser:false}}/>
             </Tripwire>
           </Text>
           <Glitch src={GlitchImg}/>

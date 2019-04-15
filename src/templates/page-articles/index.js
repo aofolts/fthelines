@@ -1,20 +1,16 @@
 import React from 'react'
 import Layout from 'components/layout'
 import ArticlesSection from './section-articles'
-import IntroSection from './section-intro'
-import GoalSection from './section-goal'
-import Hero from './hero'
+import Meta from 'components/meta'
 import {graphql} from 'gatsby'
 
 const HomePage = ({
   data
 }) => {
   return (
-    <Layout meta={{page: data.page}}>
+    <Layout>
       <div id='main'>
-        <Hero data={data}/>
-        <IntroSection/>
-        <GoalSection/>
+        <Meta page={data.page}/>
         <ArticlesSection/>
       </div>
     </Layout>
@@ -25,7 +21,7 @@ export default HomePage
 
 export const query = graphql`
   {
-    page: contentfulPage(slug: {eq: "home"}) {
+    page: contentfulPage(slug: {eq: "articles"}) {
       id
       title
       slug
@@ -37,13 +33,6 @@ export const query = graphql`
         description {
           description
         }
-      }
-    }
-    form: contentfulSubscribeForm(formId: {eq: "904072"}) {
-      headline
-      formId
-      teaser {
-        text:teaser      
       }
     }
   }

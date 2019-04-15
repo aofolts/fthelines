@@ -4,15 +4,18 @@ import Layout from 'components/layout'
 import Hero from './hero'
 import ArticleHeader from './header'
 import ContentSection from './section-content'
-import Meta from 'components/meta'
 import RelatedArticlesSection from './section-related-articles'
 
 const SingleArticle = ({
   data
 }) => {
+  const meta = {
+    page: data.page,
+    description: data.page.summary.text
+  }
+
   return (
-    <Layout>
-      <Meta page={data.page} description={data.page.summary.text} image={{url: data.page.coverImage.fluid.src}}/>
+    <Layout meta={meta}>
       <ArticleHeader entry={data.page} colorMode='light'/>
       <Hero entry={data.page}/>
       <ContentSection data={{entry: data.page}}/>

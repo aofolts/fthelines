@@ -13,6 +13,12 @@ const SubscribeForm = styled.form`
   align-items: flex-start;
 `
 
+SubscribeForm.defaultProps = {
+  settings: {
+    format: 'inline'
+  }
+}
+
 const Teaser = styled(BodyText)`
   text-align: center;
   margin-bottom: ${props => props.theme.padding.mediumSmall};
@@ -31,7 +37,7 @@ function handleSubmit({
 }) {
   event.preventDefault()
 
-  axios.post(`https://api.convertkit.com/v3/forms/${formId['en-US']}/subscribe`, {
+  axios.post(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
     email,
     api_key: 'MT-C9Q-Ur9ZDZuBgfZK3yg'
   }).then(r => {
@@ -44,32 +50,49 @@ const SubmissionMessage = styled(BodyText)`
   text-align: center;
 `
 
+const FormContent = styled.div`
+  width: 100%;
+  max-width: 100%;
+`
+
 const UnstyledSubscribeForm = ({
   className,
-  entry
+  entry,
+  settings
 }) => {
   const fields = entry.fields
   const [email,setEmail] = useState('')
   const [formState,setFormState] = useState('empty')
 
+  const headlineLevel = settings && settings.sizing === 'large' ? 2 : 3
+  const teaserLevel = settings && settings.sizing === 'large' ? 1 : 2
+
+  const formId = entry.formId || fields.formId['en-US']
+
   function formContent() {
     if (formState === 'empty') {
+      const headline = (settings && settings.headline === false)
+        ? null
+        : <FormHeadline level={headlineLevel}>{entry.headline || fields.headline['en-US']}</FormHeadline>
+
+      const teaser = (settings && settings.teaser === false)
+        ? null
+        : <Teaser level={teaserLevel}>{(entry.teaser && entry.teaser.text) || fields.teaser['en-US']}</Teaser>
+
       return (
-        <div>
-          <FormHeadline level={3}>{fields.headline['en-US']}</FormHeadline>
-          <Teaser>{fields.teaser['en-US']}</Teaser>
-          <SubscribeForm onSubmit={e => handleSubmit({event: e, ...fields,email: email,setFormState})}>
+        <FormContent>
+          <SubscribeForm onSubmit={e => handleSubmit({event: e, ...fields,formId,email: email,setFormState})}>
             <EmailInput preset='email' onChange={e => setEmail(e.target.value)}/>
             <FormSubmit>Subscribe</FormSubmit>
           </SubscribeForm>
-        </div>
+        </FormContent>
       )
     } else if (formState === 'submitted') {
       return (
-        <div>
-          <FormHeadline level={3}>Awesome, thanks for subscribing!</FormHeadline>
-          <SubmissionMessage>In just a bit you'll get an email from me "Andrew at F the Lines"—so watch out for that. Cheers.</SubmissionMessage>
-        </div>
+        <FormContent>
+          <FormHeadline level={headlineLevel}>Awesome, thanks for subscribing!</FormHeadline>
+          <SubmissionMessage level={teaserLevel}>In just a bit you'll get an email from me "Andrew at F the Lines"—so watch out for that. Cheers.</SubmissionMessage>
+        </FormContent>
       )
     } else {
       return 'test'

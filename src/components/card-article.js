@@ -42,7 +42,7 @@ const ArticleCard = styled(UnstyledArticleCard)`
   cursor: pointer;
 
   &:hover {
-    
+    transform: scale(1.01);
   }
 `
 

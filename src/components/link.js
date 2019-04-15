@@ -1,7 +1,39 @@
 import React from 'react'
 import {Link as GatsbyLink} from 'gatsby'
 import PropTypes from 'prop-types'
-import {getPagePath} from 'utilities/router'
+
+export const getPagePathBase = page => {
+  switch (page.type) {
+    case 'article': return '/articles'
+    case 'articleSeries': return '/series'
+    default: return 'broken-link'
+  }
+}
+
+export const getPagePath = page => {
+  let base = ''
+  let slug = page.slug
+
+  if (page['__typename']) {
+    switch (page['__typename']) {
+      case 'ContentfulArticle': base = '/articles'; break;
+      case 'ContentfulArticleSeries': base = '/series'; break;
+      default: base = '';
+    }
+  }
+
+  if (page.type) {base = getPagePathBase(page)}
+
+  if (slug === 'home') slug = ''
+
+  return `${base}/${slug}`
+}
+
+export const getPageUrl = page => {
+  const path = module.exports.getPagePath(page)
+
+  return `https://www.fthelines.com${path}`
+}
 
 const Link = ({
   page,

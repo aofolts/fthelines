@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import {Heading} from 'components/typography'
 import ArticleCard from 'components/card-article'
 import {graphql,StaticQuery} from 'gatsby'
+import media from 'components/theme/media'
 
 const RelatedArticleCard = styled(ArticleCard)`
   
@@ -23,6 +24,10 @@ const ArticlesWrap = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(35rem,1fr));
   grid-gap: ${props => props.theme.padding.medium};
+
+  ${media.phone`
+    display: block;
+  `}
 `
 
 const UnstyledRelatedArticlesSection = ({
