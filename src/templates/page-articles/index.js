@@ -1,16 +1,14 @@
 import React from 'react'
 import Layout from 'components/layout'
 import ArticlesSection from './section-articles'
-import Meta from 'components/meta'
 import {graphql} from 'gatsby'
 
 const HomePage = ({
   data
 }) => {
   return (
-    <Layout>
+    <Layout meta={{page: data.page}}>
       <div id='main'>
-        <Meta page={data.page}/>
         <ArticlesSection/>
       </div>
     </Layout>
