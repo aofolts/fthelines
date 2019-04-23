@@ -45,6 +45,7 @@ const Video = styled(UnstyledVideo)`
   width: 100%;
   max-width: 100%;
   padding-bottom: 56.25%;
+  margin: ${props => props.theme.padding.small} 0;
 `
 
 const RichResourceCard = styled(ResourceCard)`
@@ -163,7 +164,7 @@ const renderEntryHyperlink = (node,children) => {
     return <a href={fields.url['en-US']} target='__blank'>{children}</a>
   }
 
-  if (type === 'articleSeries') {
+  if (['articleSeries','article'].includes(type)) {
     const page = {
       title: fields.title['en-US'],
       slug: fields.slug['en-US'],
@@ -176,6 +177,23 @@ const renderEntryHyperlink = (node,children) => {
 
 const renderHyperlink = (node,children) => {
   return <a href={node.data.uri} target='__blank'>{children}</a>
+}
+
+const renderInlineEntry = (node,children) => {
+  const {fields,sys} = node.data.target
+  const type = sys.contentType.sys.id
+
+  const text = fields.shortName ? fields.shortName['en-US'] : fields.title['en-US']
+
+  if (type === 'articleSeries') {
+    const page = {
+      title: fields.title['en-US'],
+      slug: fields.slug['en-US'],
+      type
+    }
+
+    return <Link page={page}>{text}</Link>
+  }
 }
 
 const options = {
@@ -191,7 +209,8 @@ const options = {
     [BLOCKS.OL_LIST]: (node,children) => renderOrderedList(node,children),
     [BLOCKS.LIST_ITEM]: (node,children) => renderListItem(node,children),
     [INLINES.ENTRY_HYPERLINK]: (node,children) => renderEntryHyperlink(node,children),
-    [INLINES.HYPERLINK]: (node,children) => renderHyperlink(node,children)
+    [INLINES.HYPERLINK]: (node,children) => renderHyperlink(node,children),
+    [INLINES.EMBEDDED_ENTRY]: (node,children) => renderInlineEntry(node,children)
   },
 }
 
