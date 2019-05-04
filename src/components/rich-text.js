@@ -4,7 +4,7 @@ import React from 'react'
 import ResourceCard from 'components/card-resource'
 import {Heading,BodyText} from 'components/typography'
 import styled from 'styled-components'
-import SubscribeForm from 'components/form-subscribe'
+import Tripwire from 'components/tripwire'
 import Link from 'components/link'
 
 function getYouTubeVideoKey(url){
@@ -52,13 +52,37 @@ const RichResourceCard = styled(ResourceCard)`
   margin-top: ${props => props.theme.padding.medium};
 `
 
+const UnstyledEmbeddedTripwire = ({
+  className,
+  data
+}) => {
+  const formData = {
+    formId: data.fields.formId['en-US'],
+    headline: data.fields.headline['en-US'],
+    teaser: data.fields.teaser['en-US'],
+  }
+  return (
+    <div className={className}>
+      <Heading level={3}>{formData.headline}</Heading>
+      <BodyText>{formData.teaser}</BodyText>
+      <Tripwire data={formData}/>
+    </div>
+  )
+}
+
+const EmbeddedTripwire = styled(UnstyledEmbeddedTripwire)`
+  padding: ${props => props.theme.padding.medium};
+  background: ${props => props.theme.color.grey.lightest};
+  text-align: center;
+`
+
 const renderEmbeddedEntry = (node) => {
   const entry = node.data.target
   const type  = entry.sys.contentType.sys.id
 
   switch (type) {
     case 'resource': return <RichResourceCard entry={entry}/>
-    case 'subscribeForm': return <SubscribeForm entry={entry} isEmbedded={true}/>
+    case 'subscribeForm': return <EmbeddedTripwire data={entry}/>
     case 'video': return <Video entry={entry}/>
     default: return null
   }

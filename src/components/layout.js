@@ -2,7 +2,7 @@ import React,{createContext,Component} from 'react'
 import styled,{ThemeProvider,createGlobalStyle} from 'styled-components'
 import theme from './theme'
 import Masthead from 'components/masthead'
-import Footer from 'components/footer'
+import UnstyledFooter from 'components/footer'
 import nittiMediumWoff from '../fonts/Nitti-Medium.woff'
 import typewriterWoff from '../fonts/NittiTypewriter-Regular.woff'
 import typewriterHighlightedWoff from '../fonts/NittiTypewriter-Cameo.woff'
@@ -62,6 +62,14 @@ const GlobalStyle = createGlobalStyle`
     width: 100vw;
     overflow-x: hidden;
   }
+`
+
+const Footer = styled(UnstyledFooter)`
+  align-self: flex-end;
+`
+
+const Main = styled.main`
+  background: black;
 `
 
 const AppContext = createContext()
@@ -143,7 +151,9 @@ class UnstyledLayout extends Component {
               <Meta {...meta}/>
               <GlobalStyle/>
               <Masthead/>
-              {children}
+              <Main>
+                {children}
+              </Main>
               <Footer/>
             </div>
           </ThemeProvider>

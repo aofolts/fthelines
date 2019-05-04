@@ -4,10 +4,11 @@ import Button from 'components/button'
 
 const UnstyledSubmit = ({
   className,
-  children
+  children,
+  onClick
 }) => {
   return (
-    <Button className={className} type='submit' tag='button'>
+    <Button className={className} type='submit' tag='button' onClick={onClick}>
       {children}
     </Button>
   )

@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import {JumboHeading,BodyText} from 'components/text'
+import {JumboHeading,BodyText} from 'components/typography'
 import GlitchImg from './hero-glitch.gif'
-import Input from 'components/form/input'
-import Button from 'components/button'
-import SubscribeForm from 'components/form-subscribe'
+import Tripwire from 'components/tripwire'
 
 const Container = styled.div`
   display: flex;
@@ -32,35 +30,6 @@ const HeroTitle = styled(JumboHeading)`
   
 `
 
-const Tripwire = styled.div`
-  margin-top: ${props => props.theme.padding.smallest};
-`
-
-const EmailInput = styled(Input)`
-`
-
-const Submit = styled(Button)`
-  margin-top: 0;
-`
-
-const UnstyledForm = ({
-  className,
-  entry
-}) => {
-  return (
-    <SubscribeForm className={className} entry={entry}/>
-  )
-}
-
-const Form = styled(UnstyledForm)`
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: ${props => props.theme.padding.smallest};
-  max-width: 100%;
-  width: ${props => props.theme.columns(4)};
-`
-
 const MaskContainer = styled.div`
   width: 100%;
   height: ${props => props.theme.padding.large};
@@ -76,11 +45,7 @@ const Mask = styled.div`
   height: 100%;
 `
 
-const TripwireTeaser = styled(BodyText)`
-  font-size: 1.6rem;
-  color: rgba(0,0,0,.3);
-  margin-bottom: 0;
-`
+
 
 const Glitch = styled.img`
   position: absolute;
@@ -102,10 +67,7 @@ const UnstyledHero = ({
             <Copy>
               Hi there, I'm Andrew. F the Lines is a no-bullshit blog about <a href='tk'>creativity</a>, <a href='tk'>productivity</a>, <a href='tk'>happiness</a>, and how to create a <a href='tk'>freedom business</a> that delivers on all of the above: the "F Life." Let's make it happen.
             </Copy>
-            <Tripwire>
-              <TripwireTeaser>Get 100% actionable advice. No filler.</TripwireTeaser>
-              <Form entry={data.form} settings={{headline:false,teaser:false}}/>
-            </Tripwire>
+            <Tripwire data={data.form}/>
           </Text>
           <Glitch src={GlitchImg}/>
         </Content>

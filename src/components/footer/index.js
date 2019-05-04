@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Form from 'components/form-subscribe'
+import Form from 'components/tripwire'
 import {StaticQuery,graphql} from 'gatsby'
+import {Heading,BodyText} from 'components/typography'
 
 const Wrap = styled.div`
   width: ${props => props.theme.columns(7)};
@@ -15,15 +16,18 @@ const UnstyledFooter = ({
   className,
   data
 }) => {
-  const settings = {
-    format: 'inline',
-    sizing: 'large'
-  }
+  const {
+    headline,
+    teaser,
+    formId
+  } = data.form
 
   return (
     <footer id='footer' className={className}>
       <Wrap>
-        <Form settings={settings} entry={data.form}/> 
+        <Heading level={2}>{headline}</Heading>
+        <BodyText>{teaser.text}</BodyText>
+        <Form data={{formId}}/> 
       </Wrap>
     </footer>
   )

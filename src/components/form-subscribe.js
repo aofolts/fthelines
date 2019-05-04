@@ -19,10 +19,10 @@ SubscribeForm.defaultProps = {
   }
 }
 
-const Teaser = styled(BodyText)`
-  text-align: center;
-  margin-bottom: ${props => props.theme.padding.mediumSmall};
-`
+// const Teaser = styled(BodyText)`
+//   text-align: center;
+//   margin-bottom: ${props => props.theme.padding.mediumSmall};
+// `
 
 const FormHeadline = styled(Heading)`
   margin-top: 0;
@@ -71,13 +71,13 @@ const UnstyledSubscribeForm = ({
 
   function formContent() {
     if (formState === 'empty') {
-      const headline = (settings && settings.headline === false)
-        ? null
-        : <FormHeadline level={headlineLevel}>{entry.headline || fields.headline['en-US']}</FormHeadline>
+      // const headline = (settings && settings.headline === false)
+      //   ? null
+      //   : <FormHeadline level={headlineLevel}>{entry.headline || fields.headline['en-US']}</FormHeadline>
 
-      const teaser = (settings && settings.teaser === false)
-        ? null
-        : <Teaser level={teaserLevel}>{(entry.teaser && entry.teaser.text) || fields.teaser['en-US']}</Teaser>
+      // const teaser = (settings && settings.teaser === false)
+      //   ? null
+      //   : <Teaser level={teaserLevel}>{(entry.teaser && entry.teaser.text) || fields.teaser['en-US']}</Teaser>
 
       return (
         <FormContent>

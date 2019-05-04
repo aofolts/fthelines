@@ -33,6 +33,10 @@ const Button = styled(DynamicComponent)`
   letter-spacing: .02em;
   cursor: pointer;
   margin-top: ${props => props.theme.padding.small};
+
+  &:focus {
+    outline: none;
+  }
 `
 
 Button.defaultProps = {

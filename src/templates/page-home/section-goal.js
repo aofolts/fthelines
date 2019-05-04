@@ -83,6 +83,7 @@ const UnstyledGoalSection = ({
 const GoalSection = styled(UnstyledGoalSection)`
   padding: ${props => props.theme.padding.default};
   margin-top: calc(${props => props.theme.padding.large} * -1);
+  background: white;
 `
 
 export default GoalSection

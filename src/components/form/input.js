@@ -7,6 +7,7 @@ function getPlaceholder({preset,placeholder}) {
 
   switch (preset) {
     case 'email': return 'email address';
+    case 'name': return 'first name';
     default: return null;
   }
 }
@@ -16,6 +17,7 @@ const UnstyledInput = ({
   children,
   name,
   onChange,
+  onFocus,
   placeholder,
   preset
 }) => {
@@ -24,6 +26,7 @@ const UnstyledInput = ({
   const props = {
     name: preset || name,
     onChange,
+    onFocus,
     placeholder: getPlaceholder({preset,placeholder}),
     type: preset === 'email' ? 'email' : 'text'
   }
