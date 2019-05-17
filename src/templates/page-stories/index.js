@@ -19,7 +19,7 @@ export default HomePage
 
 export const query = graphql`
   {
-    page: contentfulPage(slug: {eq: "articles"}) {
+    page: contentfulPage(slug: {eq: "stories"}) {
       id
       title
       slug

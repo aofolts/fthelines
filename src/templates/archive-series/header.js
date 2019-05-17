@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {BodyText} from 'components/typography'
-import {ArticleTitle} from 'templates/single-article/header'
+import {ArticleTitle} from 'templates/single-story/header'
 
 const SeriesTitle = styled(ArticleTitle)`
   text-align: center;
