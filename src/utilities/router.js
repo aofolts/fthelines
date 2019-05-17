@@ -5,7 +5,7 @@ module.exports = {
   
     if (page['__typename']) {
       switch (page['__typename']) {
-        case 'ContentfulArticle': base = '/articles'; break;
+        case 'ContentfulArticle': base = '/stories'; break;
         case 'ContentfulArticleSeries': base = '/series'; break;
         default: base = '';
       }

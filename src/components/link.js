@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 export const getPagePathBase = page => {
   switch (page.type) {
-    case 'article': return '/articles'
+    case 'article': return '/stories'
     case 'articleSeries': return '/series'
     default: return 'broken-link'
   }
@@ -16,7 +16,7 @@ export const getPagePath = page => {
 
   if (page['__typename']) {
     switch (page['__typename']) {
-      case 'ContentfulArticle': base = '/articles'; break;
+      case 'ContentfulArticle': base = '/stories'; break;
       case 'ContentfulArticleSeries': base = '/series'; break;
       default: base = '';
     }
