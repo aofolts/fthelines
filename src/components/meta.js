@@ -25,8 +25,6 @@ const PageMeta = ({
 
   const imgUrl = meta.image.url.indexOf('http') > 0 ? meta.image.url : `https:${meta.image.url}` 
 
-  console.log(imgUrl)
-
   return (
     <Helmet>
       <title>{meta.title}</title>
@@ -38,6 +36,12 @@ const PageMeta = ({
       <meta property="og:description" content={meta.description}/>
       <meta property="og:image" content={imgUrl}/>
       <meta property="og:url" content={getPageUrl(page)}/>
+      <meta name="twitter:card" content="summary_large_image"/>
+      <meta name="twitter:site" content="@fthelines"/>
+      <meta name="twitter:creator" content="@fthelines"/>
+      <meta name="twitter:title" content={meta.title}/>
+      <meta name="twitter:description" content={meta.description}/>
+      <meta name="twitter:image" content={imgUrl}/>
     </Helmet>
   )
 }
