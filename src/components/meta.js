@@ -22,6 +22,11 @@ const PageMeta = ({
       url: image && image.url ? image.url : page.coverImage.fluid.src
     }
   }
+
+  const imgUrl = meta.image.url.indexOf('http') > 0 ? meta.image.url : `https:${meta.image.url}` 
+
+  console.log(imgUrl)
+
   return (
     <Helmet>
       <title>{meta.title}</title>
@@ -31,7 +36,7 @@ const PageMeta = ({
       <link rel='shortcut icon' type='image/png' href={favicon}/>
       <meta property="og:title" content={meta.title}></meta>
       <meta property="og:description" content={meta.description}/>
-      <meta property="og:image" content={meta.image.url}/>
+      <meta property="og:image" content={imgUrl}/>
       <meta property="og:url" content={getPageUrl(page)}/>
     </Helmet>
   )
