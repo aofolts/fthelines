@@ -7,11 +7,11 @@ const templates = {
   page: path.resolve('./src/templates/page/index.js'),
   pages: {
     home: path.resolve('./src/templates/page-home/index.js'),
-    stories: path.resolve('./src/templates/page-stories/index.js'),
+    articles: path.resolve('./src/templates/page-articles/index.js'),
     archetypes: path.resolve('./src/templates/page-archetypes/index.js')
   },
   single: {
-    article: path.resolve('./src/templates/single-story/index.js')
+    article: path.resolve('./src/templates/single-article/index.js')
   }
 }
 
@@ -97,7 +97,7 @@ exports.createPages = ({graphql,actions}) => {
 
         pages.forEach(entry => {
           createPage({
-            path: `/stories/${entry.slug}`,
+            path: `/articles/${entry.slug}`,
             component: templates.single.article,
             context: {
               slug: entry.slug

@@ -9,7 +9,7 @@ const data = {
   menuItems: {
     left: [
       {
-        title: 'Stories'
+        title: 'Articles'
       },
       {
         title: 'Manifesto'

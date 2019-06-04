@@ -181,6 +181,8 @@ const renderListItem = (node,children) => {
 }
 
 const renderEntryHyperlink = (node,children) => {
+  if (!node.data.target.fields) return children
+
   const {fields,sys} = node.data.target
   const type = sys.contentType.sys.id
 
