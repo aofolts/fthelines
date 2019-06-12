@@ -210,7 +210,7 @@ const UnstyledPlayer = ({
       setAudioDuration(audio.duration)
     }
 
-    if (audio.readyState === 0) {
+    if (audio.readyState > 0) {
       audio.addEventListener('loadedmetadata',setTime)
     }
 
