@@ -15,15 +15,21 @@ const PageMeta = ({
   description,
   image
 }) => {
+  const coverImage = page.coverImage ? page.coverImage.fluid.src : null
+
   const meta =  {
     title: getTitle({title,page}),
     description: description || page.meta.description.description,
     image: {
-      url: image && image.url ? image.url : page.coverImage.fluid.src
+      url: image && image.url ? image.url : coverImage
     }
   }
 
-  const imgUrl = meta.image.url.indexOf('http') > 0 ? meta.image.url : `https:${meta.image.url}` 
+  let imgUrl = meta.image.url
+  
+  if (imgUrl) {
+    imgUrl = meta.image.url.indexOf('http') > 0 ? meta.image.url : `https:${meta.image.url}` 
+  }
 
   return (
     <Helmet>

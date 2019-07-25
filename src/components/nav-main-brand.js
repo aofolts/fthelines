@@ -1,6 +1,7 @@
 import React from 'react'
 import styled,{css} from 'styled-components'
 import {Link} from 'gatsby'
+import logo from 'svg/fthelines-logo.svg'
 
 const lineStyle = css`
   &:after {
@@ -29,12 +30,30 @@ const BrandName = styled(Link)`
   }
 `
 
+const UnstyledBrandLogo = ({
+  className
+}) => {
+  return (
+    <Link to='/'>
+      <svg id='header-logo' className={className} style={{height: '60%',width: '30rem'}}>
+        <use xlinkHref={`#${logo.id}`}/>
+      </svg>
+    </Link>
+  )
+}
+
+const BrandLogo = styled(UnstyledBrandLogo)`
+  width: 100%;
+  height: 200px;
+`
+
 const UnstyledBrand = ({
   className
 }) => {
   return (
     <div id='nav-main-brand' className={className}>
-      <BrandName to='/'>F THE LINES</BrandName>
+      {/* <BrandName to='/'>F THE LINES</BrandName> */}
+      <BrandLogo/>
     </div>
   )
 }

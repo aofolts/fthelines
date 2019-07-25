@@ -114,7 +114,7 @@ const UnstyledContentSection = ({
 }
 
 const ContentSection = styled(UnstyledContentSection)`
-  background: ${props => props.theme.color.grey.lightest};
+  background: white;
   padding: ${props => props.theme.padding.default};
 `
 

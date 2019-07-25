@@ -1,7 +1,6 @@
 import styled,{ThemeProvider} from 'styled-components'
 import {BodyText} from 'components/text'
 import React from 'react'
-import BackgroundImage from 'components/image-background'
 import media from 'components/theme/media'
 
 const Content = styled.div`
@@ -75,7 +74,7 @@ const UnstyledHeader = ({
       <section id='article-header' className={className}>
         <Content>
           <ArticleTitle kind='title'>{entry.title}</ArticleTitle>
-          <Excerpt level='1'><b>Quick Rundown:</b> {entry.summary.text}</Excerpt>
+          {/* <Excerpt level='1'><b>Quick Rundown:</b> {entry.summary.text}</Excerpt>
           <Meta>
             <AuthorPhoto>
               <BackgroundImage data={entry.author.avatar}/>
@@ -84,7 +83,7 @@ const UnstyledHeader = ({
               <AuthorName level='3'>{entry.author.name}</AuthorName>
               <PublishDate level='3'>{entry.updatedAtString}</PublishDate>
             </MetaInfo>
-          </Meta>
+          </Meta> */}
         </Content>
       </section>
     </ThemeProvider>
@@ -92,7 +91,7 @@ const UnstyledHeader = ({
 }
 
 const Header = styled(UnstyledHeader)`
-  background: ${props => props.theme.color.grey.lighter};
+  background: ${props => props.theme.color.grey.lightest};
 `
 
 export default Header

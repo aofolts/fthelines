@@ -30,7 +30,7 @@ const UnstyledHero = ({
 }
 
 const Hero = styled(UnstyledHero)`
-  background: ${props => props.theme.color.grey.lighter};
+  background: ${props => props.theme.color.grey.lightest};
 
   &:before {
     content: '';
@@ -39,7 +39,7 @@ const Hero = styled(UnstyledHero)`
     position: absolute;
     bottom: 0;
     left: 0;
-    background: ${props => props.theme.color.grey.lightest};
+    background: white;
   }
 `
 

@@ -11,10 +11,10 @@ const color = {
     darkest: '#33110F'
   },
   grey: {
-    lightest: '#F5F4F0',
-    lighter: '#EEEDEA',
+    lightest: '#f2f1ed',
+    lighter: '#eaeae8',
     darker: '#40403E',
-    darkest: '#222222'
+    darkest: '#161303'
   }
 }
 

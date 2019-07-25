@@ -8,11 +8,13 @@ const templates = {
   pages: {
     home: path.resolve('./src/templates/page-home/index.js'),
     articles: path.resolve('./src/templates/page-articles/index.js'),
-    archetypes: path.resolve('./src/templates/page-archetypes/index.js')
+    archetypes: path.resolve('./src/templates/page-archetypes/index.js'),
+    podcast: path.resolve('./src/templates/page-podcast/index.js')
   },
   single: {
     article: path.resolve('./src/templates/single-article/index.js'),
-    podcast: path.resolve('./src/templates/single-podcast/index.js')
+    podcast: path.resolve('./src/templates/single-podcast/index.js'),
+    hack: path.resolve('./src/templates/single-hack/index.js')
   }
 }
 
@@ -109,6 +111,44 @@ exports.createPages = ({graphql,actions}) => {
     )
   })
 
+  const createHackPages = new Promise((resolve,reject) => {
+    resolve(
+      graphql(
+        `
+          {
+            pages: allContentfulHack {
+              edges {
+                node {
+                  slug
+                }
+              }
+            }
+          }
+        `
+      ).then(({
+        errors,
+        data
+      }) => {
+        if (errors) {
+          console.log(errors)
+          reject(errors)
+        }
+
+        const pages = data.pages.edges.map(entry => entry.node)
+
+        pages.forEach(entry => {
+          createPage({
+            path: `/hacks/${entry.slug}`,
+            component: templates.single.hack,
+            context: {
+              slug: entry.slug
+            }
+          })
+        })
+      })
+    )
+  })
+
   const createPodcastPages = new Promise((resolve,reject) => {
     resolve(
       graphql(
@@ -190,6 +230,7 @@ exports.createPages = ({graphql,actions}) => {
     createPages,
     createArticlePages,
     createArticleSeriesPages,
+    createHackPages,
     createPodcastPages
   ])
 }

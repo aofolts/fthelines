@@ -18,6 +18,7 @@ export const getPagePath = page => {
     switch (page['__typename']) {
       case 'ContentfulArticle': base = '/articles'; break;
       case 'ContentfulArticleSeries': base = '/series'; break;
+      case 'ContentfulPodcastEpisode': base = '/podcast'; break;
       default: base = '';
     }
   }
