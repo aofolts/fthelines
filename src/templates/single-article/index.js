@@ -62,6 +62,9 @@ export const query = graphql`
       coverImage {
         ...heroImage
       }
+      coverAnimation {
+        ...heroImage
+      }
       ...articleContent
       ...articleMeta
       relatedArticles {

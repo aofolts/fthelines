@@ -6,6 +6,7 @@ const templates = {
   },
   page: path.resolve('./src/templates/page/index.js'),
   pages: {
+    coaching: path.resolve('./src/templates/page-coaching/index.js'),
     home: path.resolve('./src/templates/page-home/index.js'),
     articles: path.resolve('./src/templates/page-articles/index.js'),
     archetypes: path.resolve('./src/templates/page-archetypes/index.js'),

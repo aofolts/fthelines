@@ -30,7 +30,7 @@ const theme = {
   },
   lighting: 'light',
   lineHeight: {
-    small: '1.2em',
+    small: '1.1em',
     normal: '1.5em'
   },
   margin: {

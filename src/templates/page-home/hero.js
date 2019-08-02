@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {JumboHeading,BodyText} from 'components/typography'
-import GlitchImg from './hero-glitch.gif'
+import GlitchImg from './andrew-hero.gif'
 import Tripwire from 'components/tripwire'
 
 const Container = styled.div`
@@ -50,8 +50,12 @@ const Mask = styled.div`
 const Glitch = styled.img`
   position: absolute;
   left: 50%;
-  bottom: -65%;
-  height: 90rem;
+  bottom: -46%;
+  height: 71rem;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `
 
 const UnstyledHero = ({
@@ -65,7 +69,7 @@ const UnstyledHero = ({
           <Text>
             <HeroTitle>Stop chasing the A Life.</HeroTitle>
             <Copy>
-              Hi there, I'm Andrew. F the Lines is a no-bullshit blog about <a href='tk'>creativity</a>, <a href='tk'>productivity</a>, <a href='tk'>happiness</a>, and how to create a <a href='tk'>freedom business</a> that delivers on all of the above: the "F Life." Let's make it happen.
+              Hi there, I'm Andrew. F the Lines is your no-bullshit blog about <a href='tk'>creativity</a>, <a href='/articles'>productivity</a>, <a href='/articles'>happiness</a>, and how to create a <a href='/articles'>freedom business</a> that delivers on all of the above: the "F Life." Let's make it happen.
             </Copy>
             <Tripwire data={data.form}/>
           </Text>

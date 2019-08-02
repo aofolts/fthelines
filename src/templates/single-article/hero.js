@@ -18,11 +18,15 @@ const UnstyledHero = ({
   className,
   entry
 }) => {
+  const coverImage = entry.coverAnimation 
+   ? entry.coverAnimation
+   : entry.coverImage
+
   return (
     <section id='hero' className={className}>
       <Container>
         <Media>
-          <BackgroundImage data={entry.coverImage}/>
+          <BackgroundImage data={coverImage}/>
         </Media>
       </Container>
     </section>
