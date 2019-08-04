@@ -13,9 +13,7 @@ const templates = {
     podcast: path.resolve('./src/templates/page-podcast/index.js')
   },
   single: {
-    article: path.resolve('./src/templates/single-article/index.js'),
-    podcast: path.resolve('./src/templates/single-podcast/index.js'),
-    hack: path.resolve('./src/templates/single-hack/index.js')
+    article: path.resolve('./src/templates/single-article/index.js')
   }
 }
 
@@ -112,82 +110,6 @@ exports.createPages = ({graphql,actions}) => {
     )
   })
 
-  const createHackPages = new Promise((resolve,reject) => {
-    resolve(
-      graphql(
-        `
-          {
-            pages: allContentfulHack {
-              edges {
-                node {
-                  slug
-                }
-              }
-            }
-          }
-        `
-      ).then(({
-        errors,
-        data
-      }) => {
-        if (errors) {
-          console.log(errors)
-          reject(errors)
-        }
-
-        const pages = data.pages.edges.map(entry => entry.node)
-
-        pages.forEach(entry => {
-          createPage({
-            path: `/hacks/${entry.slug}`,
-            component: templates.single.hack,
-            context: {
-              slug: entry.slug
-            }
-          })
-        })
-      })
-    )
-  })
-
-  const createPodcastPages = new Promise((resolve,reject) => {
-    resolve(
-      graphql(
-        `
-          {
-            pages: allContentfulPodcastEpisode {
-              edges {
-                node {
-                  slug
-                }
-              }
-            }
-          }
-        `
-      ).then(({
-        errors,
-        data
-      }) => {
-        if (errors) {
-          console.log(errors)
-          reject(errors)
-        }
-
-        const pages = data.pages.edges.map(entry => entry.node)
-
-        pages.forEach(entry => {
-          createPage({
-            path: `/podcast/${entry.slug}`,
-            component: templates.single.podcast,
-            context: {
-              slug: entry.slug
-            }
-          })
-        })
-      })
-    )
-  })
-
   const createArticleSeriesPages = new Promise((resolve,reject) => {
     resolve(
       graphql(
@@ -230,9 +152,7 @@ exports.createPages = ({graphql,actions}) => {
   return Promise.all([
     createPages,
     createArticlePages,
-    createArticleSeriesPages,
-    createHackPages,
-    createPodcastPages
+    createArticleSeriesPages
   ])
 }
 

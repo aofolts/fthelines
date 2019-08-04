@@ -56,6 +56,21 @@ export const articleContentFragment = graphql`
   }
 `
 
+export const podcastEpisodeFragment = graphql`
+  fragment podcastEpisode on ContentfulArticle {
+    podcastEpisode {
+      id
+      number
+      audio {
+        id
+        file {
+          url
+        }
+      }
+    }
+  }
+`
+
 export const query = graphql`
   query articleBySlug($slug: String!) {
     page: contentfulArticle(slug: {eq: $slug}) {
@@ -73,6 +88,7 @@ export const query = graphql`
           ...smallFluidImage
         }
       }
+      ...podcastEpisode
     }
   } 
 `

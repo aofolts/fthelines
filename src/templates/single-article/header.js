@@ -70,6 +70,9 @@ const UnstyledHeader = ({
   className,
   entry
 }) => {
+  // const podcastEpisode = entry.podcastEpisode
+  // const episodeNumber = podcastEpisode ? `Ep${podcastEpisode.number}]` : null
+
   return (
     <ThemeProvider theme={{colorMode: 'light'}}>
       <section id='article-header' className={className}>

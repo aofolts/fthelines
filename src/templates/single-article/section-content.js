@@ -2,6 +2,7 @@ import styled, {createGlobalStyle} from 'styled-components'
 import React from 'react'
 import theme from 'components/theme'
 import RichText from 'components/rich-text'
+import AudioPlayer from './audio-player'
 
 const Content = styled.div`
   width: ${props => props.theme.columns(9)};
@@ -100,11 +101,14 @@ const UnstyledContentSection = ({
   data
 }) => {
   const richText = data.entry.content.json
+  const entry = data.entry
+  const podcastEpisode = entry.podcastEpisode
 
   return (
     <section id='article-body' className={className}>
       <Content id='article-content'>
         <ContentBody>
+          {podcastEpisode ? <AudioPlayer episode={data.entry.podcastEpisode}/> : null}
           <ContentStyle/>
           <RichText json={richText}/>
         </ContentBody>
