@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Heading,BodyText} from 'components/text'
-import Video from './video'
 
 const Content = styled.div`
   text-align: center;
@@ -22,12 +21,9 @@ const UnstyledIntoSection = ({
   return (
     <section id='intro' className={className}>
       <Content>
-        <Heading>Who wrote the lines that hold you back? What if you crossed them?</Heading>
-        <BodyText>I went to the right college. Took the right job. Earned the right amount of money. It didn't lead to happiness. So what does? I don't have the answer, but I'm setting out on a mission to find it. Here's how I'll do it...</BodyText>
+        <Heading>Skip the line. Get 5 years of experience in one conversation.</Heading>
+        <BodyText>Since starting a <a href='https://www.sherpadesign.co/' target='__blank'>web design business</a> back in 2014, I've gone from $20/hr to $1,200 per day. Now, I'm rolling that experience into insight-packed coaching sessions, so you can jump straight to creative lightspeed.</BodyText>
       </Content>
-      <VideoContainer>
-        <Video/>
-      </VideoContainer>
     </section>
   )
 }

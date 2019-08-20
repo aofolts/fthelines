@@ -12,6 +12,10 @@ import media from 'components/theme/media'
 import Meta from 'components/meta'
 
 const GlobalStyle = createGlobalStyle`
+  :root {
+    --padding-large: 10rem;
+  }
+
   @font-face {
     font-family: nitti;
     src: url(${nittiMediumWoff}) format('woff');
@@ -42,19 +46,21 @@ const GlobalStyle = createGlobalStyle`
   ${media.phone`
     :root {
       font-size: 8px;
-      --paddingLarge: 
+      --padding-large: 6rem;
     }
   `}
 
   ${media.tablet`
     :root {
       font-size: 8px;
+      --padding-large: 7.5rem;
     }
   `}
 
   ${media.laptop`
     :root {
       font-size: 9px;
+      --padding-large: 8.5rem;
     }
   `}
 
@@ -146,17 +152,17 @@ class UnstyledLayout extends Component {
 
     return (
       <AppContext.Provider value={context}>
-          <ThemeProvider theme={theme} className={className}>
-            <div id='layout' className={className}>
-              <Meta {...meta}/>
-              <GlobalStyle/>
-              <Masthead/>
-              <Main>
-                {children}
-              </Main>
-              <Footer/>
-            </div>
-          </ThemeProvider>
+        <GlobalStyle/>
+        <ThemeProvider theme={theme} className={className}>
+          <div id='layout' className={className}>
+            <Meta {...meta}/>
+            <Masthead/>
+            <Main>
+              {children}
+            </Main>
+            <Footer/>
+          </div>
+        </ThemeProvider>
       </AppContext.Provider>
     )
   }

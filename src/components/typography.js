@@ -4,6 +4,7 @@ import BodyText from 'components/text/body-text'
 import Heading from 'components/text/heading'
 import JumboHeading from 'components/text/jumbo-heading'
 import MicroText from 'components/text/micro-text'
+import {OrderedList,UnorderedList,ListItem} from 'components/text/list'
 
 export {
   ActionLink,
@@ -11,5 +12,8 @@ export {
   JumboHeading,
   Headline,
   Heading,
-  MicroText
+  ListItem,
+  MicroText,
+  OrderedList,
+  UnorderedList
 }

@@ -28,7 +28,7 @@ const UnstyledArticlesSection = ({
   return (
     <section id='blog' className={className}>
       <Grid>
-        <Articles entries={data.podcastEpisodes.edges.map(e => e.node)}/>
+        <Articles entries={data.articles.edges.map(e => e.node)}/>
       </Grid>
     </section>
   )
@@ -41,8 +41,14 @@ const ArticlesSection = styled(UnstyledArticlesSection)`
 
 const query = graphql`
   {
-    podcastEpisodes: allContentfulPodcastEpisode(
-      limit: 12,
+    articles: allContentfulArticle(
+      filter: {
+        podcastEpisode: {
+          title: {
+            ne: null
+          }
+        }
+      },
       sort: {
         fields: [publishDate],
         order: DESC
@@ -50,13 +56,8 @@ const query = graphql`
     ) {
       edges {
         node {
-          __typename
-          id
-          slug
-          title
-          summary {
-            text: summary
-          }
+          ...articleMeta
+          ...podcastEpisode
           coverImage {
             ...mediumFluidImage
           }

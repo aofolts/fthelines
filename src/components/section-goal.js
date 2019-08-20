@@ -45,34 +45,36 @@ const GoalBar = styled.div`
 
 const Progress = styled.div`
   background: ${props => props.theme.color.primary.medium};
-  width: ${props => Math.round((props.data.raised / props.data.goal) * 100)}%;
+  width: ${props => Math.round((props.data.spotsTaken / props.data.totalSpots) * 100)}%;
   height: 100%;
 `
+
+export const goalData = {
+  spotsTaken: 2,
+  totalSpots: 10
+}
+
+goalData.spotsLeft = goalData.totalSpots - goalData.spotsTaken
 
 const UnstyledGoalSection = ({
   className
 }) => {
-  const data = {
-    raised: 940,
-    goal: 25000
-  }
-
   return (
     <section className={className}>
       <Wrap>
         <TextWrap>
-          <JumboHeading kind='jumbo'>The Goal</JumboHeading>
+          <JumboHeading kind='jumbo'>Get Unstuck</JumboHeading>
           <BodyText>
-            A mission without a deadline is just a dream. Here's the plan: by August 1st, I'm going to have a travel van, a podcast, and a list of 10 people across the U.S. who I can interview about living an unconventional life.
+            Through December 1st, I'm coaching ten creative rebels who want to find their focus and grow a freedom business. If that's you, let's chat! If we're a great fit, we'll do four Clarity Calls (1-2hrs each), and you can book #1 <a href='https://calendly.com/fthelines/60min' target='__blank'>right here</a>. They're all free. No strings attached. (:
           </BodyText>
         </TextWrap>
         <GoalBarWrap>
           <GoalPosts>
-            <StartPost level='1'>$0</StartPost>
-            <EndPost level='1'>${data.goal.toLocaleString('en')}</EndPost>
+            <StartPost level='1'>{goalData.spotsTaken} spots gone</StartPost>
+            <EndPost level='1'>{goalData.spotsLeft} spots left</EndPost>
           </GoalPosts>
           <GoalBar>
-            <Progress data={data}/>
+            <Progress data={goalData}/>
           </GoalBar>
         </GoalBarWrap>
       </Wrap>
@@ -82,7 +84,6 @@ const UnstyledGoalSection = ({
 
 const GoalSection = styled(UnstyledGoalSection)`
   padding: ${props => props.theme.padding.default};
-  margin-top: calc(${props => props.theme.padding.large} * -1);
   background: white;
 `
 

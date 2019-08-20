@@ -26,20 +26,30 @@ const media = {
     }
   `,
   tablet: (...args) => css`
-    @media (max-width: 480px) {
+    @media (min-width: 481px) and (max-width: 767px) {
       ${css(...args)}
     }
   `,
   laptop: (...args) => css`
-    @media (max-width: 480px) {
+    @media (min-width:768px) and (max-width: 1280px) {
       ${css(...args)}
     }
   `,
   desktop: (...args) => css`
-    @media (max-width: 480px) {
+    @media (min-width: 1281px) {
       ${css(...args)}
     }
-  `
+  `,
+  aboveTablet: (...args) => css`
+    @media (min-width: 768px) {
+      ${css(...args)}
+    }
+  `,
+  maxTablet: (...args) => css`
+    @media (max-width: 767px) {
+      ${css(...args)}
+    }
+  `,
 }
 
 export default media

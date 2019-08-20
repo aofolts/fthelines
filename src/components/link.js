@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link as GatsbyLink} from 'gatsby'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 export const getPagePathBase = page => {
   switch (page.type) {
@@ -96,3 +97,7 @@ Link.propTypes = {
 }
 
 export default Link
+
+export const BodyLink = styled(Link)`
+  font-family: underlined;
+`

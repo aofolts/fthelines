@@ -3,6 +3,32 @@ import styled from 'styled-components'
 import {JumboHeading,BodyText} from 'components/typography'
 import GlitchImg from './andrew-hero.gif'
 import Tripwire from 'components/tripwire'
+import Link from 'components/link'
+
+const UnstyledHero = ({
+  className,
+  data
+}) => {
+  return (
+    <section id='hero' className={className}>
+      <Container>
+        <Content>
+          <Text>
+            <HeroTitle>Stop chasing the A Life.</HeroTitle>
+            <Copy>
+              Hi there, I'm Andrew. F the Lines is a no-bullshit blog and <Link to='/coaching'>coaching service</Link> for <Link to='/articles/f-the-lines-manifesto'>creative rebels</Link> who want to ditch the 9-5 world and <Link to='articles'>build a business</Link> that delivers maximum freedom: the "F Life." Let's make it happen.
+            </Copy>
+            <Tripwire data={data.form}/>
+          </Text>
+          <Glitch src={GlitchImg}/>
+        </Content>
+      </Container>
+      <MaskContainer>
+        <Mask/>
+      </MaskContainer>
+    </section>
+  )
+} 
 
 const Container = styled.div`
   display: flex;
@@ -13,7 +39,6 @@ const Content = styled.div`
   margin: 0 auto;
   width: ${props => props.theme.columns(12)};
   max-width: 100%;
-  display: flex;
 `
 
 const Text = styled.div`
@@ -49,39 +74,14 @@ const Mask = styled.div`
 
 const Glitch = styled.img`
   position: absolute;
-  left: 50%;
-  bottom: -46%;
-  height: 71rem;
+  left: 53%;
+  bottom: -52%;
+  height: 73rem;
 
   @media (max-width: 1200px) {
     display: none;
   }
 `
-
-const UnstyledHero = ({
-  className,
-  data
-}) => {
-  return (
-    <section id='hero' className={className}>
-      <Container>
-        <Content>
-          <Text>
-            <HeroTitle>Stop chasing the A Life.</HeroTitle>
-            <Copy>
-              Hi there, I'm Andrew. F the Lines is a no-bullshit blog about <a href='tk'>creativity</a>, <a href='/articles'>focus</a>, <a href='/articles'>happiness</a>, and how to launch a <a href='/articles'>freedom business</a> that delivers on all of the above: the "F Life." Let's make it happen.
-            </Copy>
-            <Tripwire data={data.form}/>
-          </Text>
-          <Glitch src={GlitchImg}/>
-        </Content>
-      </Container>
-      <MaskContainer>
-        <Mask/>
-      </MaskContainer>
-    </section>
-  )
-} 
 
 const Hero = styled(UnstyledHero)`
   padding: ${props => props.theme.padding.default};

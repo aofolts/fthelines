@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
-import {Heading,BodyText} from 'components/text'
+import {Heading,BodyText,MicroText} from 'components/text'
 import BackgroundImage from 'components/image-background'
 import Link from 'components/link'
 
@@ -21,6 +21,10 @@ const ArticleTitle = styled(Heading)`
   }
 `
 
+const Summary = styled(BodyText)`
+  margin-bottom: 0;
+`
+
 const UnstyledArticleCard = ({
   className,
   entry
@@ -29,10 +33,11 @@ const UnstyledArticleCard = ({
     <article className={className}>   
       <Content page={entry}>
         <Media>
-          <BackgroundImage data={entry.coverImage} test='fuck'/>
+          <BackgroundImage data={entry.coverImage}/>
+          {/* <Category level={3}>{entry.categories[0].title}</Category> */}
         </Media>
         <ArticleTitle level={3}>{entry.title}</ArticleTitle>
-        <BodyText level='2'>{entry.summary.text}</BodyText>
+        <Summary level='2'>{entry.summary.text}</Summary>
       </Content>
     </article>
   )
@@ -45,5 +50,14 @@ const ArticleCard = styled(UnstyledArticleCard)`
     transform: scale(1.01);
   }
 `
+
+// const Category = styled(BodyText)`
+//   position: absolute;
+//   left: ${props => props.theme.padding.extraSmall};
+//   background: ${props => props.theme.color.primary.medium};
+//   line-height: 100%;
+//   padding: .25em .5em;
+//   bottom: -1.75em;
+// `
 
 export default ArticleCard

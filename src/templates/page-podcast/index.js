@@ -1,6 +1,8 @@
 import React from 'react'
 import Layout from 'components/layout'
 import {graphql} from 'gatsby'
+import ArticlesSection from './section-articles'
+import IntroSection from './section-intro'
 
 const HomePage = ({
   data
@@ -8,7 +10,8 @@ const HomePage = ({
   return (
     <Layout meta={{page: data.page}}>
       <div id='main'>
-        {/* <ArticlesSection/> */}
+        <IntroSection/>
+        <ArticlesSection/>
       </div>
     </Layout>
   )

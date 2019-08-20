@@ -2,9 +2,11 @@ import React from 'react'
 import Layout from 'components/layout'
 import ArticlesSection from './section-articles'
 import IntroSection from './section-intro'
-import GoalSection from './section-goal'
+import UnstyledGoalSection from 'components/section-goal'
+import PackagesSection from './section-packages'
 import Hero from './hero'
 import {graphql} from 'gatsby'
+import styled from 'styled-components'
 
 const HomePage = ({
   data
@@ -14,12 +16,17 @@ const HomePage = ({
       <div id='main'>
         <Hero data={data}/>
         <IntroSection/>
+        <PackagesSection/>
         <GoalSection/>
         <ArticlesSection/>
       </div>
     </Layout>
   )
 }
+
+const GoalSection = styled(UnstyledGoalSection)`
+  background: ${props => props.theme.color.grey.lighter};
+`
 
 export default HomePage
 

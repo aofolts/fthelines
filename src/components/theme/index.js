@@ -47,7 +47,7 @@ const theme = {
     mediumSmall: '3.75rem',
     medium: '5rem',
     mediumLarge: '7.5rem',
-    large: '10rem'
+    large: 'var(--padding-large)'
   },
   paragraph: {
     weight: 300,

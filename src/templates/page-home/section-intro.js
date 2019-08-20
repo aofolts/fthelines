@@ -23,7 +23,7 @@ const UnstyledIntoSection = ({
     <section id='intro' className={className}>
       <Content>
         <Heading>Who wrote the lines that hold you back? What if you crossed them?</Heading>
-        <BodyText>I went to the right college. Took the right job. Earned the right amount of money. It didn't lead to happiness. So what does? I don't have the answer, but I'm setting out on a mission to find it. Here's how I'll do it...</BodyText>
+        <BodyText>You went to the right school. Took the right job. Worked the right hours. But you're not <i>really</i> free, are you? You feel stuck, I get it. I've been there. But here's the good news: that's about to change. Let me tell you why...</BodyText>
       </Content>
       <VideoContainer>
         <Video/>
@@ -34,6 +34,7 @@ const UnstyledIntoSection = ({
 
 const Section = styled(UnstyledIntoSection)`
   padding: ${props => props.theme.padding.default};
+  padding-bottom: 0;
   background: white;
 `
 

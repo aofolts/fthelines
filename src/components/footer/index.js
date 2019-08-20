@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Form from 'components/tripwire'
 import {StaticQuery,graphql} from 'gatsby'
-import {Heading,BodyText} from 'components/typography'
+import {JumboHeading,BodyText} from 'components/typography'
 
 const Wrap = styled.div`
   width: ${props => props.theme.columns(7)};
@@ -25,7 +25,7 @@ const UnstyledFooter = ({
   return (
     <footer id='footer' className={className}>
       <Wrap>
-        <Heading level={2}>{headline}</Heading>
+        <JumboHeading>Break free.</JumboHeading>
         <BodyText>{teaser.text}</BodyText>
         <Form data={{formId}}/> 
       </Wrap>

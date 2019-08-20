@@ -4,20 +4,20 @@ import ArticleCard from 'components/card-article'
 import {graphql,StaticQuery} from 'gatsby'
 import media from 'components/theme/media'
 
-const Articles = ({entries}) => entries.map(entry => (
-  <ArticleCard key={entry.title} entry={entry}/>
-))
+const Articles = ({entries}) => entries.map(entry => {
+  return <ArticleCard key={entry.title} entry={entry}/>
+})
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(35rem,1fr));
-  grid-gap: ${props => props.theme.padding.medium};
+  grid-gap: ${props => props.theme.padding.mediumLarge} ${props => props.theme.padding.medium};
   margin: 0 auto;
   width: ${props => props.theme.columns(12)};
   max-width: 100%;
 
   ${media.phone`
-    display: block;
+    grid-gap: ${props => props.theme.padding.medium};
   `}
 `
 
@@ -50,13 +50,7 @@ const query = graphql`
     ) {
       edges {
         node {
-          __typename
-          id
-          slug
-          title
-          summary {
-            text: summary
-          }
+          ...articleMeta
           coverImage {
             ...mediumFluidImage
           }

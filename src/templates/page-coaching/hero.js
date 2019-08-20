@@ -2,7 +2,39 @@ import React from 'react'
 import styled from 'styled-components'
 import {JumboHeading,BodyText} from 'components/typography'
 import GlitchImg from './andrew-hero.gif'
-import Tripwire from 'components/tripwire'
+import Button from 'components/button'
+import Link from 'components/link'
+
+const UnstyledHero = ({
+  className,
+  data
+}) => {
+  return (
+    <section id='hero' className={className}>
+      <Container>
+        <Content>
+          <Text>
+            <HeroTitle>Coaching For Creatives.</HeroTitle>
+            <Copy>
+              Quitting a 9–5 job to freelance full-time is an awesome goal, but it's not easy. If you're a <Link to='/'>creative rebel</Link> who wants straightforward advice on how to get focused and <Link to='/freedom-business-roadmap'>grow your business</Link>, let's talk.
+            </Copy>
+            <Button link='https://calendly.com/fthelines/60min'>Book a *Free* Clarity Call</Button>
+          </Text>
+          <Glitch src={GlitchImg}/>
+        </Content>
+      </Container>
+      <MaskContainer>
+        <Mask/>
+      </MaskContainer>
+    </section>
+  )
+} 
+
+const Hero = styled(UnstyledHero)`
+  padding: ${props => props.theme.padding.default};
+  padding-bottom: calc(${props => props.theme.padding.large} * 2);
+  background: ${props => props.theme.color.grey.lightest};
+`
 
 const Container = styled.div`
   display: flex;
@@ -49,44 +81,13 @@ const Mask = styled.div`
 
 const Glitch = styled.img`
   position: absolute;
-  left: 50%;
-  bottom: -46%;
-  height: 71rem;
+  left: 53%;
+  bottom: -52%;
+  height: 73rem;
 
   @media (max-width: 1200px) {
     display: none;
   }
-`
-
-const UnstyledHero = ({
-  className,
-  data
-}) => {
-  return (
-    <section id='hero' className={className}>
-      <Container>
-        <Content>
-          <Text>
-            <HeroTitle>Coaching For Creatives.</HeroTitle>
-            <Copy>
-              Hi there, I'm Andrew. F the Lines is your no-bullshit blog about <a href='tk'>creativity</a>, <a href='/articles'>productivity</a>, <a href='/articles'>happiness</a>, and how to create a <a href='/articles'>freedom business</a> that delivers on all of the above: the "F Life." Let's make it happen.
-            </Copy>
-            <Tripwire data={data.form}/>
-          </Text>
-          <Glitch src={GlitchImg}/>
-        </Content>
-      </Container>
-      <MaskContainer>
-        <Mask/>
-      </MaskContainer>
-    </section>
-  )
-} 
-
-const Hero = styled(UnstyledHero)`
-  padding: ${props => props.theme.padding.default};
-  padding-bottom: calc(${props => props.theme.padding.large} * 2);
-  background: ${props => props.theme.color.grey.lightest};
 `
 
 export default Hero
