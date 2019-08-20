@@ -5,26 +5,26 @@ import Hero from './hero'
 import ArticleHeader from './header'
 import ContentSection from './section-content'
 import RelatedArticlesSection from './section-related-articles'
-import {createClient} from 'contentful-management'
+// import {createClient} from 'contentful-management'
 
-let contentfulConfig
+// let contentfulConfig
 
-try {
-  // Load the Contentful config from the .contentful.json
-  contentfulConfig = require('./../../../.contentful')
-} catch (_) {}
+// try {
+//   // Load the Contentful config from the .contentful.json
+//   contentfulConfig = require('./../../../.contentful')
+// } catch (_) {}
 
-// Overwrite the Contentful config with environment variables if they exist
-contentfulConfig = {
-  spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
-  accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN || contentfulConfig.managementToken
-}
+// // Overwrite the Contentful config with environment variables if they exist
+// contentfulConfig = {
+//   spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
+//   accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN || contentfulConfig.managementToken
+// }
 
-const { spaceId, accessToken } = contentfulConfig
+// const { spaceId, accessToken } = contentfulConfig
 
-const client = createClient({
-  accessToken
-})
+// const client = createClient({
+//   accessToken
+// })
 
 const SingleArticle = ({
   data
@@ -34,18 +34,18 @@ const SingleArticle = ({
     description: data.page.summary.text
   }
 
-  // Increment the article view count
-  client.getSpace(spaceId)
-    .then(space => space.getEntry(data.page.contentfulId))
-    .then(latestEntry => {
-      if (!latestEntry.fields.viewCount) {
-        latestEntry.fields.viewCount = {'en-US': 0}
-      }
+  // // Increment the article view count
+  // client.getSpace(spaceId)
+  //   .then(space => space.getEntry(data.page.contentfulId))
+  //   .then(latestEntry => {
+  //     if (!latestEntry.fields.viewCount) {
+  //       latestEntry.fields.viewCount = {'en-US': 0}
+  //     }
 
-      latestEntry.fields.viewCount['en-US'] += 1
+  //     latestEntry.fields.viewCount['en-US'] += 1
 
-      return latestEntry.update()
-    })
+  //     return latestEntry.update()
+  //   })
 
   return (
     <Layout meta={meta}>

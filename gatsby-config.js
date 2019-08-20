@@ -19,9 +19,13 @@ if (!spaceId || !accessToken) {
   )
 }
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
-    title: 'Fuck the Lines',
+    title: 'F the Lines',
     siteUrl: `https://www.fthelines.com`
   },
   plugins: [
