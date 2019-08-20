@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import MenuItem from 'components/menu-main-item'
-import { withAppContext } from './layout'
+import { withAppContext } from '../layout'
 import NavButton from 'components/nav-main-button'
 
 const data = {

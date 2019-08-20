@@ -1,8 +1,10 @@
 import color from './color'
 import nittiTypewriterRegular from 'fonts/NittiTypewriter-Regular.woff'
+import media from './media'
 
 const theme = {
   color,
+  media,
   palette: 'default',
   path: {
 

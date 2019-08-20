@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'gatsby'
 import logo from 'svg/fthelines-logo.svg'
+import media from 'components/theme/media'
 
 // const lineStyle = css`
 //   &:after {
@@ -34,17 +35,39 @@ const UnstyledBrandLogo = ({
   className
 }) => {
   return (
-    <Link to='/'>
-      <svg id='header-logo' className={className} style={{height: '60%',width: '30rem'}}>
-        <use xlinkHref={`#${logo.id}`}/>
-      </svg>
+    <Link to='/' className={className}>
+      <BrandLogoIcon/>
     </Link>
   )
 }
 
 const BrandLogo = styled(UnstyledBrandLogo)`
   width: 100%;
-  height: 200px;
+  height: 100%;
+  display: block;
+
+  ${props => props.theme.media.phone`
+
+  `}
+`
+
+const UnstyledBrandLogoIcon = ({
+  className
+}) => {
+  return (
+    <svg id='header-logo' className={className}>
+      <use xlinkHref={`#${logo.id}`}/>
+    </svg>
+  )
+}
+
+const BrandLogoIcon = styled(UnstyledBrandLogoIcon)`
+  height: 100%;
+  width: 28rem;
+
+  ${props => props.theme.media.belowDesktop`
+    width: 20rem;
+  `}
 `
 
 const UnstyledBrand = ({
@@ -60,7 +83,7 @@ const UnstyledBrand = ({
 
 const Brand = styled(UnstyledBrand)`
   display: block;
-  height: 100%;
+  height: 70%;
   display: flex;
   align-items: center;
   font-size: 3.2rem;

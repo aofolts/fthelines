@@ -45,6 +45,16 @@ const media = {
       ${css(...args)}
     }
   `,
+  belowLaptop: (...args) => css`
+    @media (max-width: 769px) {
+      ${css(...args)}
+    }
+  `,
+  belowDesktop: (...args) => css`
+    @media (max-width: 1280px) {
+      ${css(...args)}
+    }
+  `,
   maxTablet: (...args) => css`
     @media (max-width: 767px) {
       ${css(...args)}

@@ -1,5 +1,5 @@
 import styled,{css} from 'styled-components'
-import { withAppContext } from './layout'
+import { withAppContext } from '../layout'
 import Button from 'components/button'
 
 const navButtonUndockedStyle = css`
