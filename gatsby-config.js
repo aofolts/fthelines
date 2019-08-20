@@ -19,10 +19,6 @@ if (!spaceId || !accessToken) {
   )
 }
 
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 module.exports = {
   siteMetadata: {
     title: 'F the Lines',
