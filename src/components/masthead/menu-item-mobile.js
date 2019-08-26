@@ -38,7 +38,7 @@ const DesktopMenuItem = styled(UnstyledDesktopMenuItem)`
   font-size: ${props => props.theme.padding.mediumSmall};
 
   ${props => props.theme.media.phone`
-    font-size: ${props => props.theme.padding.small};
+    font-size: ${props => props.theme.padding.mediumSmall};
   `}
 
   & + & {

@@ -2,11 +2,12 @@ import {BLOCKS,INLINES} from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import React from 'react'
 import ResourceCard from 'components/card-resource'
-import {Heading,BodyText} from 'components/typography'
+import {Heading,BodyText,MicroText} from 'components/typography'
 import styled from 'styled-components'
 import Tripwire from 'components/tripwire'
 import Link from 'components/link'
 import Video from 'components/video'
+import {HyperlinkSnippet} from 'components/rich-text/snippet'
 
 const EmbeddedVideo = styled(Video)`
   margin: ${props => props.theme.padding.small} 0;
@@ -38,6 +39,8 @@ const EmbeddedTripwire = styled(UnstyledEmbeddedTripwire)`
   padding: ${props => props.theme.padding.medium};
   background: ${props => props.theme.color.grey.lightest};
   text-align: center;
+  border: 2px dashed ${props => props.theme.color.grey.lighten};
+  margin: ${props => props.theme.padding.small} 0;
 `
 
 const renderEmbeddedEntry = (node) => {
@@ -75,7 +78,7 @@ const renderHeading = (node,children) => {
 }
 
 const renderParagraph = (node,children) => {
-  return <BodyText level={2}>{children}</BodyText>
+  return <BodyText level={1}>{children}</BodyText>
 }
 
 const Image = styled.img`
@@ -150,7 +153,7 @@ const renderEntryHyperlink = (node,children) => {
   const {fields,sys} = node.data.target
   const type = sys.contentType.sys.id
 
-  if (type === 'subscribeForm') {
+  if (['subscribeForm','summary'].includes(type)) {
     return <a href={fields.url['en-US']} target='__blank'>{children}</a>
   }
 
@@ -162,6 +165,10 @@ const renderEntryHyperlink = (node,children) => {
     }
 
     return <Link page={page}>{children}</Link>
+  }
+
+  if (type === 'snippet') {
+    return <HyperlinkSnippet entry={node.data.target}>{children}</HyperlinkSnippet>
   }
 }
 
@@ -175,7 +182,7 @@ const renderInlineEntry = (node,children) => {
 
   const text = fields.shortName ? fields.shortName['en-US'] : fields.title['en-US']
 
-  if (type === 'articleSeries') {
+  if (type === 'articleSeries' || 'article') {
     const page = {
       title: fields.title['en-US'],
       slug: fields.slug['en-US'],

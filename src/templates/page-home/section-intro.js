@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Heading,BodyText} from 'components/text'
-import Video from './video'
+import Video from 'components/video'
 
 const Content = styled.div`
   text-align: center;
@@ -26,7 +26,7 @@ const UnstyledIntoSection = ({
         <BodyText>You went to the right school. Took the right job. Worked the right hours. But you're not <i>really</i> free, are you? You feel stuck, I get it. I've been there. But here's the good news: that's about to change. Let me tell you why...</BodyText>
       </Content>
       <VideoContainer>
-        <Video/>
+        <Video entry={{url: 'https://youtu.be/aDuX5eJCZro',title:'F the Lines Intro Video'}}/>
       </VideoContainer>
     </section>
   )

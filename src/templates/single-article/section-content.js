@@ -23,18 +23,6 @@ const ContentStyle = createGlobalStyle`
     letter-spacing: ${theme.letterSpacing.small};
   }
 
-  #article-content p {
-    width: ${props => props.theme.columns(6)};
-    max-width: 100%;
-    margin-right: auto;
-    font-size: 2rem;
-    font-family: ${props => props.theme.font.family.primary};
-    color: ${props => props.theme.color.grey.darkest};
-    line-height: 1.4em;
-    word-spacing: ${theme.wordSpacing.small};
-    letter-spacing: ${theme.letterSpacing.small};
-  }
-
   #article-content p b { 
    font-family: Nitti,monospace;
   }
