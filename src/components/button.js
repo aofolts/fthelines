@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import theme from 'components/theme'
-import BodyText from 'components/text/body-text'
+import BodyText,{getBodyTextSize} from 'components/text/body-text'
 import DynamicComponent from 'components/dynamic-component'
 
 function getBorderColor({type}) {
@@ -27,7 +27,7 @@ const Button = styled(DynamicComponent)`
   border: 2px solid ${props => getBorderColor(props)};
   color: ${props => props.theme.color.grey.medium};
   display: inline-block;
-  font-size: ${BodyText.font.size[2]};
+  font-size: ${props => getBodyTextSize({level: props.level + 1 || 2})};
   font-weight: ${props => props.theme.paragraph.bold.weight};
   font-family: nitti;
   letter-spacing: .02em;

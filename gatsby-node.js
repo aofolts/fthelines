@@ -11,7 +11,8 @@ const templates = {
     articles: path.resolve('./src/templates/page-articles/index.js'),
     archetypes: path.resolve('./src/templates/page-archetypes/index.js'),
     podcast: path.resolve('./src/templates/page-podcast/index.js'),
-    about: path.resolve('./src/templates/page-about/index.js')
+    about: path.resolve('./src/templates/page-about/index.js'),
+    tools: path.resolve('./src/templates/page-tools/index.js')
   },
   single: {
     article: path.resolve('./src/templates/single-article/index.js')

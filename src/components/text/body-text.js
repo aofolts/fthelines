@@ -4,14 +4,19 @@ import React from 'react'
 
 export const paragraphStyles = {
   fontSize: {
-    1: '2.2rem',
-    2: '1.8rem',
-    3: '1.6rem'
+    primary: '2.2rem',
+    secondary: '1.8rem',
+    tertiary: '1.6rem'
   }
 }
 
-export function getFontSize({level}) {
-  return paragraphStyles.fontSize[level] || paragraphStyles.fontSize[1] 
+const {
+  fontSize 
+} = paragraphStyles
+
+export function getBodyTextSize({level}) {
+  const sizeKeys = Object.keys(paragraphStyles.fontSize)
+  return fontSize[sizeKeys[level - 1]] || fontSize.primary
 }
 
 export const UnstyledBodyText = props => (
@@ -21,7 +26,7 @@ export const UnstyledBodyText = props => (
 )
 
 const BodyText = styled.p`
-  font-size: ${props => getFontSize(props)};
+  font-size: ${props => getBodyTextSize(props)};
   font-family: ${props => props.theme.font.family.primary};
   font-weight: 300;
   line-height: 1.4em};
