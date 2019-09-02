@@ -25,7 +25,7 @@ const HomePage = ({
 }
 
 const GoalSection = styled(UnstyledGoalSection)`
-  background: ${props => props.theme.color.grey.lighter};
+  background: ${props => props.theme.color.grey.lightest};
 `
 
 export default HomePage

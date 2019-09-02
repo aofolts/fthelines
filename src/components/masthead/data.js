@@ -12,9 +12,17 @@ const data = {
       {
         title: 'Podcast',
         slug: '/podcast'
+      },
+      {
+        title: 'Meetup',
+        url: 'https://www.meetup.com/roc-creatives-freelancers/'
       }
     ],
     right: [
+      {
+        title: 'Tools',
+        slug: '/tools'
+      },
       {
         title: 'About',
         slug: '/about'
@@ -24,7 +32,8 @@ const data = {
         slug: '/articles/f-the-lines-manifesto'
       },
       {
-        title: 'Contact'
+        title: 'Subscribe',
+        slug: '/articles/freedom-business-roadmap'
       }
     ]
   }

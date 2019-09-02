@@ -6,11 +6,10 @@ import Link from 'components/link'
 const UnstyledTitle = ({
   className,
   children,
-  entry,
-  url
+  entry
 }) => {
   return (
-    <Link className={className} to={entry.slug}>
+    <Link className={className} to={entry.slug} url={entry.url}>
       {children}
     </Link>
   )

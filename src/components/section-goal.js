@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {JumboHeading,BodyText} from 'components/text'
+import Link from 'components/link'
 
 const Wrap = styled.div`
   width: ${props => props.theme.columns(10)};
@@ -50,8 +51,8 @@ const Progress = styled.div`
 `
 
 export const goalData = {
-  spotsTaken: 2,
-  totalSpots: 10
+  spotsTaken: 4,
+  totalSpots: 15
 }
 
 goalData.spotsLeft = goalData.totalSpots - goalData.spotsTaken
@@ -65,13 +66,13 @@ const UnstyledGoalSection = ({
         <TextWrap>
           <JumboHeading kind='jumbo'>Get Unstuck</JumboHeading>
           <BodyText>
-            Through December 1st, I'm coaching ten creative rebels who want to find their focus and grow a freedom business. If that's you, let's chat! If we're a great fit, we'll do four Clarity Calls (1-2hrs each), and you can book #1 <a href='https://calendly.com/fthelines/60min' target='__blank'>right here</a>. They're all free. No strings attached. (:
+            Going full-time freelance is a huge task and it can be overwhelming. That's why I've created a straightforward plan called the Freedom Business Roadmap. It's a 15-week email crash course that gives you advice and challenges on a regular basis. <Link to='/articles/freedom-business-roadmap'>Get started here</Link>.
           </BodyText>
         </TextWrap>
         <GoalBarWrap>
           <GoalPosts>
-            <StartPost level='1'>{goalData.spotsTaken} spots gone</StartPost>
-            <EndPost level='1'>{goalData.spotsLeft} spots left</EndPost>
+            <StartPost level='1'>{goalData.spotsTaken} articles written</StartPost>
+            <EndPost level='1'>{goalData.spotsLeft} articles left</EndPost>
           </GoalPosts>
           <GoalBar>
             <Progress data={goalData}/>
