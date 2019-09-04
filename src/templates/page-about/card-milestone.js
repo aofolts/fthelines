@@ -8,7 +8,7 @@ import {
   UnorderedList
 } from 'components/typography'
 import media from 'components/theme/media'
-import {BodyLink} from 'components/link'
+import {InlineLink} from 'components/link'
 import {graphql} from 'gatsby'
 
 const UnstyledMilestoneCard = ({
@@ -35,7 +35,7 @@ const UnstyledMilestoneCard = ({
         <ResourcesHeading level={3}>Resources</ResourcesHeading>
         <ResourceList>
           {entry.articles.map(entry =>{
-            return <ListItem key={entry.id}><BodyLink page={entry}>{entry.shortName || entry.title}</BodyLink></ListItem>
+            return <ListItem key={entry.id}><InlineLink page={entry}>{entry.shortName || entry.title}</InlineLink></ListItem>
           })}
         </ResourceList>
         <Lesson level={2}>

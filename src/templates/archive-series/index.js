@@ -7,10 +7,6 @@ import Header from './header'
 const Archive = ({
   data
 }) => {
-  const articles = data.articles.edges.map((edge,i) => {
-    return edge.node
-  })
-
   const {
     page,
     homePage
@@ -29,7 +25,7 @@ const Archive = ({
     <Layout meta={meta}>
       <div id='main'>
         <Header entry={page}/>
-        <ArticlesSection data={{articles}}/>
+        <ArticlesSection data={{articles: page.articles}}/>
       </div>
     </Layout>
   )
@@ -46,32 +42,16 @@ export const query = graphql`
       description {
         description
       }
+      articles {
+        ...articleMeta
+        coverImage {
+          ...mediumFluidImage
+        }
+      }
     }
     homePage: contentfulPage(slug: {eq: "home"}) {
       coverImage {
         ...heroImage
-      }
-    }
-    articles: allContentfulArticle(
-      filter: {
-        series: {
-          elemMatch: {
-            slug: {eq: $slug}
-          }
-        }
-      },
-      sort: {
-        fields: [publishDate],
-        order: ASC
-      }
-    ) {
-      edges {
-        node {
-          ...articleMeta
-          coverImage {
-            ...mediumFluidImage
-          }
-        }
       }
     }
   } 

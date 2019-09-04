@@ -183,8 +183,6 @@ const UnstyledPlayer = ({
   useEffect(() => {
     audio = document.getElementById('audio-player')
 
-    console.log(audio.duration)
-
     const setTime = e => {
       setTimeRemaining(audio.duration)
       setAudioDuration(audio.duration)

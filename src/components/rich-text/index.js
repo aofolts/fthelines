@@ -8,6 +8,7 @@ import Tripwire from 'components/tripwire'
 import Link from 'components/link'
 import Video from 'components/video'
 import {HyperlinkSnippet} from 'components/rich-text/snippet'
+import {EmbeddedArticleSeries} from './article-series'
 
 const EmbeddedVideo = styled(Video)`
   margin: ${props => props.theme.padding.small} 0;
@@ -48,6 +49,7 @@ const renderEmbeddedEntry = (node) => {
   const type  = entry.sys.contentType.sys.id
 
   switch (type) {
+    case 'articleSeries': return <EmbeddedArticleSeries entry={entry}/>
     case 'resource': return <RichResourceCard entry={entry}/>
     case 'subscribeForm': return <EmbeddedTripwire data={entry}/>
     case 'video': return <Video entry={entry}/>

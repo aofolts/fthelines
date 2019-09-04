@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link as GatsbyLink} from 'gatsby'
+import { Link as GatsbyLink } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
@@ -24,7 +24,7 @@ export const getPagePath = page => {
     }
   }
 
-  if (page.type) {base = getPagePathBase(page)}
+  if (page.type) { base = getPagePathBase(page) }
 
   if (slug === 'home') slug = ''
 
@@ -46,7 +46,7 @@ const Link = ({
 }) => {
   if (to) {
     return (
-      <GatsbyLink 
+      <GatsbyLink
         className={className}
         to={to}
       >
@@ -58,7 +58,7 @@ const Link = ({
     const path = getPagePath(page)
 
     return (
-      <GatsbyLink 
+      <GatsbyLink
         className={className}
         to={path}
       >
@@ -69,7 +69,7 @@ const Link = ({
   if (url) {
     if (url[0] === '/') {
       return (
-        <GatsbyLink 
+        <GatsbyLink
           className={className}
           to={url}
         >
@@ -79,7 +79,7 @@ const Link = ({
     }
     else {
       return (
-        <a 
+        <a
           className={className}
           href={url}
           target='__black'
@@ -89,7 +89,7 @@ const Link = ({
       )
     }
   }
-  return <div {...{className}}>{children}</div>
+  return <div {...{ className }}>{children}</div>
 }
 
 Link.propTypes = {
@@ -98,6 +98,10 @@ Link.propTypes = {
 
 export default Link
 
-export const BodyLink = styled(Link)`
+export const InlineLink = styled(Link)`
   font-family: underlined;
+
+  &:hover {
+    color: ${props => props.theme.color.primary.medium};
+  }
 `
