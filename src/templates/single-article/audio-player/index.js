@@ -15,7 +15,7 @@ const UnstyledAudioPlayer = ({
   const [timeRemaining,setTimeRemaining] = useState(0)
   const [duration,setDuration] = useState(0)
   const [isInitialized,setIsInitialized] = useState(false)
-  const [isScrubbing,setIsScrubbing] = useState(false)
+  // const [isScrubbing,setIsScrubbing] = useState(false)
   const [audio,setAudio] = useState(null)
 
   let playheadInterval = null

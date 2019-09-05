@@ -42,8 +42,11 @@ const Link = ({
   to,
   url,
   className,
-  children
+  children,
+  fallbackTag
 }) => {
+  const FallbackTag = fallbackTag ? fallbackTag : 'div'
+
   if (to) {
     return (
       <GatsbyLink
@@ -89,7 +92,8 @@ const Link = ({
       )
     }
   }
-  return <div {...{ className }}>{children}</div>
+
+  return <FallbackTag {...{ className }}>{children}</FallbackTag>
 }
 
 Link.propTypes = {
@@ -98,7 +102,18 @@ Link.propTypes = {
 
 export default Link
 
-export const InlineLink = styled(Link)`
+const UnstyledInlineLink = ({
+  className,
+  children
+}) => {
+  return (
+    <Link fallbackTag='span'>
+      {children}
+    </Link>
+  )
+}
+
+export const InlineLink = styled(UnstyledInlineLink)`
   font-family: underlined;
 
   &:hover {

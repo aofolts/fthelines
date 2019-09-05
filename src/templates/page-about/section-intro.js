@@ -17,11 +17,11 @@ const Copy = styled(BodyText)`
   margin-top: ${props => props.theme.padding.small};
 `
 
-const yearsXp = (() => {
-  const date = new Date()
+// const yearsXp = (() => {
+//   const date = new Date()
 
-  return date.getFullYear() - 2014
-})()
+//   return date.getFullYear() - 2014
+// })()
 
 const UnstyledIntoSection = ({
   className

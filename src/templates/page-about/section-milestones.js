@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
 import {graphql,StaticQuery} from 'gatsby'
-import media from 'components/theme/media'
 import MilestoneCard from './card-milestone'
 
 const UnstyledMilestonesSection = ({

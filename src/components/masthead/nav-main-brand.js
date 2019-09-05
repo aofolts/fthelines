@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'gatsby'
 import logo from 'svg/fthelines-logo.svg'
-import media from 'components/theme/media'
 
 // const lineStyle = css`
 //   &:after {

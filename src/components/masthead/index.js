@@ -1,4 +1,4 @@
-import React,{useContext,useState} from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components'
 import Header from './header'
 import Nav from './nav-main'
@@ -9,10 +9,6 @@ import DesktopMenuItem from './menu-item-desktop'
 import DesktopMenu from './menu-desktop'
 import {MobileMenuContainer} from './menu-mobile'
 import Toggle from './toggle'
-
-const MenuItem = styled.li`
-  display: inline-block;
-`
 
 const leftMenuItems = data.menuItems.left.map(entry => {
   return (

@@ -9,11 +9,11 @@ const Content = styled.div`
   max-width: 100%;
 `
 
-const VideoContainer = styled.div`
-  width: ${props => props.theme.columns(8)};
-  max-width: 100%;
-  margin: ${props => props.theme.padding.mediumLarge} auto 0;
-`
+// const VideoContainer = styled.div`
+//   width: ${props => props.theme.columns(8)};
+//   max-width: 100%;
+//   margin: ${props => props.theme.padding.mediumLarge} auto 0;
+// `
 
 const UnstyledIntoSection = ({
   className

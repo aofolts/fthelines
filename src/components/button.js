@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import theme from 'components/theme'
-import BodyText,{getBodyTextSize} from 'components/text/body-text'
+import {getBodyTextSize} from 'components/text/body-text'
 import DynamicComponent from 'components/dynamic-component'
 
 function getBorderColor({type}) {

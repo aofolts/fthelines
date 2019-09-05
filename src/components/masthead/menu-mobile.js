@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled, {keyframes,css} from 'styled-components'
 import media from 'components/theme/media'
 import data from './data'
@@ -37,7 +37,7 @@ const UnstyledTVStatic = ({
   className
 }) => {
   return (
-    <img src={tvStatic} className={className}/>
+    <img src={tvStatic} className={className} alt='tv static animation'/>
   )
 }
 

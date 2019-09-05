@@ -33,7 +33,7 @@ const UnstyledOrderedList = ({
   )
 }
 
-export const OrderedList = styled(UnstyledUnorderedList)`
+export const OrderedList = styled(UnstyledOrderedList)`
   font-size: ${props => props.theme.text.size.mediumSmall};
   margin-left: 1em;
   margin-bottom: ${props => props.theme.padding.small};

@@ -2,7 +2,7 @@ import {BLOCKS,INLINES} from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import React from 'react'
 import ResourceCard from 'components/card-resource'
-import {Heading,BodyText,MicroText} from 'components/typography'
+import {Heading,BodyText} from 'components/typography'
 import styled from 'styled-components'
 import Tripwire from 'components/tripwire'
 import Link from 'components/link'
@@ -10,9 +10,9 @@ import Video from 'components/video'
 import {HyperlinkSnippet} from 'components/rich-text/snippet'
 import {EmbeddedArticleSeries} from './article-series'
 
-const EmbeddedVideo = styled(Video)`
-  margin: ${props => props.theme.padding.small} 0;
-`
+// const EmbeddedVideo = styled(Video)`
+//   margin: ${props => props.theme.padding.small} 0;
+// `
 
 const RichResourceCard = styled(ResourceCard)`
   margin-top: ${props => props.theme.padding.medium};

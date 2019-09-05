@@ -6,7 +6,7 @@ import {
   Heading,
   BodyText
 } from 'components/typography'
-import {BodyLink} from 'components/link'
+import {InlineLink} from 'components/link'
 import RichText from 'components/rich-text'
 
 const UnstyledToolCard = ({
@@ -33,7 +33,7 @@ const UnstyledToolCard = ({
           {entry.teaser.text}
         </Teaser>
         <ReadMore onClick={() => setIsExpanded(!isExpanded)} level={2}>
-          <BodyLink>{isExpanded ? 'Show Less' : 'Show More'}</BodyLink>
+          <InlineLink>{isExpanded ? 'Show Less' : 'Show More'}</InlineLink>
         </ReadMore>
       </Info>
     </article>

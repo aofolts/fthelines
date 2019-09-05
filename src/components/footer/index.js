@@ -17,7 +17,6 @@ const UnstyledFooter = ({
   data
 }) => {
   const {
-    headline,
     teaser,
     formId
   } = data.form
