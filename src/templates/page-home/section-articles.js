@@ -47,6 +47,9 @@ const query = graphql`
         fields: [publishDate],
         order: DESC
       }
+      filter: {
+        publishDate: {ne: null}
+      }
     ) {
       edges {
         node {

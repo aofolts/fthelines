@@ -42,6 +42,14 @@ module.exports = {
       options: contentfulConfig
     },
     {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: spaceId,
+        accessToken: accessToken,
+        host: `preview.contentful.com`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-49711355-3",

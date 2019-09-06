@@ -8,10 +8,13 @@ const UnstyledEmbeddedArticleSeries = ({
   entry
 }) => {
   const items = entry.fields.articles['en-US'].map(entry => {
-    const LinkComponent = entry.fields ? InlineLink : 'span'
+    const LinkComponent = entry.fields && entry.sys.revision ? InlineLink : 'span'
+    const key = entry.fields.id ? entry.fields.id['en-US'] : entry.fields.slug['en-US']
+
+    entry.test = 'series'
 
     return (
-      <ListItem>
+      <ListItem key={key}>
         <LinkComponent page={entry}>
           {entry.fields ? entry.fields.shortName['en-US'] : 'TK'}
         </LinkComponent>

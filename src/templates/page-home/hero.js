@@ -76,7 +76,9 @@ const Glitch = styled.img`
   position: absolute;
   left: 53%;
   bottom: -52%;
-  height: 73rem;
+  height: 74rem;
+  flex-shrink: 0;
+  width: auto;
 
   @media (max-width: 1200px) {
     display: none;

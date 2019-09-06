@@ -12,8 +12,12 @@ export const getPagePathBase = page => {
 }
 
 export const getPagePath = page => {
+  if (!page) return null
+  if (!page.publishDate || !page.fields) return null
+  if (!page.fields.publishDate) return null
+
   let base = ''
-  let slug = page.slug
+  let slug = page.slug || page.fields.slug['en-US']
 
   if (page['__typename']) {
     switch (page['__typename']) {
@@ -46,6 +50,7 @@ const Link = ({
   fallbackTag
 }) => {
   const FallbackTag = fallbackTag ? fallbackTag : 'div'
+  const path = getPagePath(page)
 
   if (to) {
     return (
@@ -57,9 +62,7 @@ const Link = ({
       </GatsbyLink>
     )
   }
-  if (page) {
-    const path = getPagePath(page)
-
+  if (page && path) {
     return (
       <GatsbyLink
         className={className}
@@ -103,11 +106,11 @@ Link.propTypes = {
 export default Link
 
 const UnstyledInlineLink = ({
-  className,
-  children
+  children,
+  ...props
 }) => {
   return (
-    <Link fallbackTag='span'>
+    <Link fallbackTag='span' {...props}>
       {children}
     </Link>
   )
@@ -115,6 +118,7 @@ const UnstyledInlineLink = ({
 
 export const InlineLink = styled(UnstyledInlineLink)`
   font-family: underlined;
+  cursor: pointer;
 
   &:hover {
     color: ${props => props.theme.color.primary.medium};

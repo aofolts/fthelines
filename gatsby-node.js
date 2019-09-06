@@ -83,6 +83,7 @@ exports.createPages = ({graphql,actions}) => {
               edges {
                 node {
                   slug
+                  publishDate
                 }
               }
             }
@@ -97,7 +98,9 @@ exports.createPages = ({graphql,actions}) => {
           reject(errors)
         }
 
-        const pages = data.pages.edges.map(entry => entry.node)
+        const pages = data.pages.edges
+          .map(entry => entry.node)
+          .filter(entry => entry.publishDate)
 
         pages.forEach(entry => {
           createPage({

@@ -42,16 +42,12 @@ const ArticlesSection = styled(UnstyledArticlesSection)`
 const query = graphql`
   {
     articles: allContentfulArticle(
-      filter: {
-        podcastEpisode: {
-          title: {
-            ne: null
-          }
-        }
-      },
       sort: {
-        fields: [publishDate],
+        fields: podcastEpisode___number
         order: DESC
+      }
+      filter: {
+        podcastEpisode: {number: {ne: null}}
       }
     ) {
       edges {

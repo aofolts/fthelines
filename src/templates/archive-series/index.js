@@ -21,11 +21,13 @@ const Archive = ({
     page
   }
 
+  const articles = page.articles.filter(entry => entry.publishDate)
+
   return (
     <Layout meta={meta}>
       <div id='main'>
         <Header entry={page}/>
-        <ArticlesSection data={{articles: page.articles}}/>
+        <ArticlesSection data={{articles}}/>
       </div>
     </Layout>
   )

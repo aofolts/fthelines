@@ -66,6 +66,9 @@ const query = graphql`
       sort: {
         fields: [publishDate],
         order: DESC
+      },
+      filter: {
+        publishDate: {ne: null}
       }
     ) {
       edges {
