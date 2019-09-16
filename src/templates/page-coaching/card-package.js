@@ -9,9 +9,9 @@ const UnstyledServiceCard = ({
 }) => {
   return (
     <div className={className}>
-      <Heading level={3}>{entry.name}: {entry.sessions} week{entry.sessions > 1 ? 's' : null}</Heading>
+      <Heading level={3}>{entry.headline}</Heading>
       <Description level={2} dangerouslySetInnerHTML={{__html: entry.description}}/>
-      <Button>Book {entry.name} (${entry.price})</Button>
+      <Button url={entry.link}>Book {entry.name} (${entry.price})</Button>
     </div>
   )
 }

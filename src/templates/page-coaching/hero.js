@@ -16,7 +16,7 @@ const UnstyledHero = ({
           <Text>
             <HeroTitle>Coaching For Creatives.</HeroTitle>
             <Copy>
-              Quitting a 9–5 job to freelance full-time is an awesome goal, but it's not easy. If you're a <Link to='/'>creative rebel</Link> who wants straightforward advice on how to get focused and grow <Link to='/freedom-business-roadmap'>your own business</Link>, let's talk.
+              Does it feel like you're moving an inch in a million directions? I'm here to help you untangle your priorities and get focused on ONE PATH, so you can grow a <Link to='/freedom-business-roadmap'>business</Link> that delivers max freedom.
             </Copy>
             <Button link='https://calendly.com/fthelines/60min'>Book a *Free* Discovery Call</Button>
           </Text>

@@ -17,7 +17,6 @@ const UnstyledFooter = ({
   data
 }) => {
   const {
-    teaser,
     formId
   } = data.form
 
@@ -25,7 +24,7 @@ const UnstyledFooter = ({
     <footer id='footer' className={className}>
       <Wrap>
         <JumboHeading>Break free.</JumboHeading>
-        <BodyText>{teaser.text}</BodyText>
+        <BodyText>Get weekly insights sent straight to your inbox. No bullshit, just 100% actionable advice.</BodyText>
         <Form data={{formId}}/> 
       </Wrap>
     </footer>

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import theme from 'components/theme'
 import {getBodyTextSize} from 'components/text/body-text'
-import DynamicComponent from 'components/dynamic-component'
+import Link from 'components/link'
 
 function getBorderColor({type}) {
   // const color = theme.color
@@ -21,7 +21,7 @@ function getBackgroundColor({type}) {
   return theme.color.primary.medium
 }
 
-const Button = styled(DynamicComponent)`
+const Button = styled(Link)`
   padding: 1em 1.5em;
   background: ${props => getBackgroundColor(props)};
   border: 2px solid ${props => getBorderColor(props)};

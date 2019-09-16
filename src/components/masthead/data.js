@@ -28,8 +28,8 @@ const data = {
         slug: '/about'
       },
       {
-        title: 'Manifesto',
-        slug: '/articles/f-the-lines-manifesto'
+        title: 'Contact',
+        url: 'mailto:andrew<at>fthelines.com'
       },
       {
         title: 'Subscribe',

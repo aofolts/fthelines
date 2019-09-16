@@ -11,10 +11,12 @@ export const getPagePathBase = page => {
   }
 }
 
-export const getPagePath = page => {
+export const getPagePath = ({
+  page
+}) => {
   if (!page) return null
-  if (!page.publishDate || !page.fields) return null
-  if (!page.fields.publishDate) return null
+  if (!(page.publishDate || page.fields)) return null
+  if (page.fields && !page.fields.publishDate) return null
 
   let base = ''
   let slug = page.slug || page.fields.slug['en-US']
@@ -50,7 +52,7 @@ const Link = ({
   fallbackTag
 }) => {
   const FallbackTag = fallbackTag ? fallbackTag : 'div'
-  const path = getPagePath(page)
+  const path = getPagePath({page})
 
   if (to) {
     return (
@@ -84,11 +86,13 @@ const Link = ({
       )
     }
     else {
+      const target = url.indexOf('mailto') > -1 ? null : '__blank'
+
       return (
         <a
           className={className}
           href={url}
-          target='__black'
+          target={target}
         >
           {children}
         </a>

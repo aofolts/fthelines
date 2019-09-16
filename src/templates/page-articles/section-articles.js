@@ -53,13 +53,7 @@ const query = graphql`
     ) {
       edges {
         node {
-          __typename
-          id
-          slug
-          title
-          summary {
-            text: summary
-          }
+          ...articleMeta
           coverImage {
             ...mediumFluidImage
           }

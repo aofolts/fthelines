@@ -20,9 +20,6 @@ export default HomePage
 export const query = graphql`
   {
     page: contentfulPage(slug: {eq: "articles"}) {
-      id
-      title
-      slug
       coverImage {
         ...heroImage
       }

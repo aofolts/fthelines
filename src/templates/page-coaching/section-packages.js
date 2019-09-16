@@ -26,7 +26,7 @@ const Cards = ({
 }) => {
   return entries.map(entry => {
     return (
-      <ServiceCard entry={entry}/>
+      <ServiceCard entry={entry} key={entry.name}/>
     )
   })
 }

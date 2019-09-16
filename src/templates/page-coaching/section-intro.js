@@ -21,8 +21,8 @@ const UnstyledIntoSection = ({
   return (
     <section id='intro' className={className}>
       <Content>
-        <Heading>Skip the line. Get 5 years of experience in one conversation.</Heading>
-        <BodyText>Since starting a <a href='https://www.sherpadesign.co/' target='__blank'>web design business</a> back in 2014, I've gone from $20/hr to $1,200 per day. Now, I'm rolling that experience into insight-packed coaching sessions, so you can jump straight to creative lightspeed.</BodyText>
+        <Heading>One Focus = Huge Results</Heading>
+        <BodyText>Since starting a <a href='https://www.sherpadesign.co/' target='__blank'>web design business</a> back in 2014, I've gone from $20/hr to $1,200 per day. The secret? I stopped trying to get "inspired" and clearly defined my ONE PURPOSE. If you're ready to do the same, let's chat.</BodyText>
       </Content>
     </section>
   )

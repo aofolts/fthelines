@@ -1,25 +1,34 @@
 const coaching = {
+  discoverCall: {
+    link: `https://app.acuityscheduling.com/schedule.php?owner=18163350&appointmentType=11111215`
+  },
   packages: {
     clarity: {
-      name: 'Clarity',
-      description: `We'll connect for an hour-long Zoom call to solve one specific problem you're stuck on and develop a written plan of action. FYI...your <a href='https://calendly.com/fthelines/free-clarity-call'>first Clarity Call</a> is free!`,
-      link: 'https://calendly.com/fthelines/clarity-call',
+      name: 'Purpose',
+      headline: `Find Your Purpose`,
+      description: `Untangle your creative passions and find the ONE PURPOSE that will align everything else in your life. FYI...you can book a <a href='https://app.acuityscheduling.com/schedule.php?owner=18163350&appointmentType=11111215'>Discovery Call</a> for free!`,
+      link: 'https://app.acuityscheduling.com/schedule.php?owner=18163350&appointmentType=11111789',
       sessions: 1,
+      time: '1 hour',
       price: 150
     },
     process: {
-      name: 'Process',
-      description: `Includes one Clarity Call, plus a second session where we design a personalized productivity system that helps you stay organized and motivated.`,
-      link: 'https://calendly.com/fthelines/process-package',
-      sessions: 2,
-      price: 350
+      name: 'Focus',
+      headline: `Get Focused`,
+      description: `Cut through the distractions, tame your rebel brain, and get focused on the ONE GOAL that will help you level up: today, this week, or this month.`,
+      link: 'https://app.acuityscheduling.com/schedule.php?owner=18163350&appointmentType=11111789',
+      sessions: 1,
+      time: '1 hour',
+      price: 150
     },
     execution: {
-      name: 'Execution',
-      description: `Everything from Clarity and Process, as well as a planning session in week three and a progress workshop in week four (ideal for bigger goals and projects).`,
-      link: 'https://calendly.com/fthelines/execution-package',
-      sessions: 4,
-      price: 650
+      name: 'Structure',
+      description: `Identify roadblocks and implement simple systems that help you stay productive, even when you're feeling stressed, tired, or completely unmotivated.`,
+      headline: `Stay Organized`,
+      link: 'https://app.acuityscheduling.com/schedule.php?owner=18163350&appointmentType=11111789',
+      sessions: 1,
+      time: '1 hour',
+      price: 150
     }
   }
 }
