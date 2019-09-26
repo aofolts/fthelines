@@ -21,7 +21,7 @@ const UnstyledToolCard = ({
         <ThumbnailContainer>
           <Thumbnail data={entry.thumbnail}/>
         </ThumbnailContainer>
-        <ActionButton>Try {entry.title}</ActionButton>
+        <ActionButton url={entry.url}>{entry.buttonLabel}</ActionButton>
       </ActionContainer>
       <Info>
         <Heading level={3}>{entry.title}</Heading>

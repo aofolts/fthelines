@@ -7,8 +7,8 @@ import styled from 'styled-components'
 import Tripwire from 'components/tripwire'
 import Link from 'components/link'
 import Video from 'components/video'
-import {HyperlinkSnippet} from 'components/rich-text/snippet'
 import {EmbeddedArticleSeries} from './article-series'
+import {renderHyperlink,renderEntryHyperlink} from './hyperlink'
 
 // const EmbeddedVideo = styled(Video)`
 //   margin: ${props => props.theme.padding.small} 0;
@@ -147,35 +147,6 @@ const ListItem = styled.li`
 
 const renderListItem = (node,children) => {
   return <ListItem>{children}</ListItem>
-}
-
-const renderEntryHyperlink = (node,children) => {
-  if (!node.data.target.fields) return children
-
-  const {fields,sys} = node.data.target
-  const type = sys.contentType.sys.id
-
-  if (['subscribeForm','summary'].includes(type)) {
-    return <a href={fields.url['en-US']} target='__blank'>{children}</a>
-  }
-
-  if (['articleSeries','article'].includes(type)) {
-    const page = {
-      title: fields.title['en-US'],
-      slug: fields.slug['en-US'],
-      type
-    }
-
-    return <Link page={page}>{children}</Link>
-  }
-
-  if (type === 'snippet') {
-    return <HyperlinkSnippet entry={node.data.target}>{children}</HyperlinkSnippet>
-  }
-}
-
-const renderHyperlink = (node,children) => {
-  return <a href={node.data.uri} target='__blank'>{children}</a>
 }
 
 const renderInlineEntry = (node,children) => {

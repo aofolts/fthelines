@@ -36,7 +36,7 @@ export const toolInfoFragment = graphql`
     title
     headline
     buttonLabel
-    link
+    url
     teaser {
       text: teaser
     }

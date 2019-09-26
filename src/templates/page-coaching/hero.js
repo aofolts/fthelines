@@ -4,6 +4,7 @@ import {JumboHeading,BodyText} from 'components/typography'
 import GlitchImg from './andrew-hero.gif'
 import Button from 'components/button'
 import Link from 'components/link'
+import coaching from 'data/coaching'
 
 const UnstyledHero = ({
   className,
@@ -16,9 +17,9 @@ const UnstyledHero = ({
           <Text>
             <HeroTitle>Coaching For Creatives.</HeroTitle>
             <Copy>
-              Does it feel like you're moving an inch in a million directions? I'm here to help you untangle your priorities and get focused on ONE PATH, so you can grow a <Link to='/freedom-business-roadmap'>business</Link> that delivers max freedom.
+              Does it feel like you're moving an inch in a million directions? I'm here to help you untangle your priorities and get focused on ONE PATH, so you can grow a <Link to='/articles/freedom-business-roadmap'>business</Link> that delivers max freedom.
             </Copy>
-            <Button link='https://calendly.com/fthelines/60min'>Book a *Free* Discovery Call</Button>
+            <Button url={coaching.discoveryCall.url}>Book a *Free* Discovery Call</Button>
           </Text>
           <Glitch src={GlitchImg}/>
         </Content>

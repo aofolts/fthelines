@@ -2,35 +2,35 @@ import React from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import {getEntryType} from 'utilities/data'
 
-export const getPagePathBase = page => {
-  switch (page.type) {
-    case 'article': return '/articles'
-    case 'articleSeries': return '/series'
-    default: return 'broken-link'
-  }
-}
+// export const getPagePathBase = page => {
+//   switch (page.type) {
+//     case 'article': return '/articles'
+//     case 'articleSeries': return '/series'
+//     default: return 'broken-link'
+//   }
+// }
 
-export const getPagePath = ({
-  page
-}) => {
-  if (!page) return null
-  if (!(page.publishDate || page.fields)) return null
-  if (page.fields && !page.fields.publishDate) return null
+
+
+export const getEntryPath = entry => {
+  if (!entry) return false
+  if (!entry.isPublished) return false
 
   let base = ''
-  let slug = page.slug || page.fields.slug['en-US']
+  let slug = entry.slug
+  const entryType = entry.type
 
-  if (page['__typename']) {
-    switch (page['__typename']) {
-      case 'ContentfulArticle': base = '/articles'; break;
-      case 'ContentfulArticleSeries': base = '/series'; break;
-      case 'ContentfulPodcastEpisode': base = '/podcast'; break;
-      default: base = '';
+  if (entryType) {
+    switch (entryType) {
+      case 'article': base = '/articles'; break;
+      case 'articleSeries': base = '/series'; break;
+      case 'podcastEpisode': base = '/podcast'; break;
+      case 'page': base = ''; break;
+      default: return false;
     }
   }
-
-  if (page.type) { base = getPagePathBase(page) }
 
   if (slug === 'home') slug = ''
 
@@ -44,63 +44,57 @@ export const getPageUrl = page => {
 }
 
 const Link = ({
-  page,
+  entry,
   to,
   url,
+  href,
   className,
   children,
   fallbackTag
 }) => {
-  const FallbackTag = fallbackTag ? fallbackTag : 'div'
-  const path = getPagePath({page})
+  let LinkTag = fallbackTag ? fallbackTag : 'div'
+  const entryType = getEntryType(entry)
+  const linkProps = {
+    className
+  }
+
+  if (entry) {
+    const entryPath = getEntryPath(entry)
+    
+    // Is published and has path
+    if (entryPath) {
+      linkProps.to = entryPath
+      
+      return <GatsbyLink {...linkProps}>{children}</GatsbyLink>
+    }
+
+    if (entryType === 'subscribeForm') {
+      linkProps.href = entry.url
+      linkProps.target = '__blank'
+    }
+
+    return <a {...linkProps}>{children}</a>
+  }
 
   if (to) {
-    return (
-      <GatsbyLink
-        className={className}
-        to={to}
-      >
-        {children}
-      </GatsbyLink>
-    )
+    linkProps.to = to
+
+    return <GatsbyLink {...linkProps}>{children}</GatsbyLink>
   }
-  if (page && path) {
-    return (
-      <GatsbyLink
-        className={className}
-        to={path}
-      >
-        {children}
-      </GatsbyLink>
-    )
-  }
+  
   if (url) {
     if (url[0] === '/') {
-      return (
-        <GatsbyLink
-          className={className}
-          to={url}
-        >
-          {children}
-        </GatsbyLink>
-      )
+      linkProps.to = url
     }
     else {
-      const target = url.indexOf('mailto') > -1 ? null : '__blank'
-
-      return (
-        <a
-          className={className}
-          href={url}
-          target={target}
-        >
-          {children}
-        </a>
-      )
+      linkProps.target = url.indexOf('mailto') > -1 ? null : '__blank'
+      linkProps.href = url
     }
+
+    return <a {...linkProps}>{children}</a>
   }
 
-  return <FallbackTag {...{ className }}>{children}</FallbackTag>
+  return <LinkTag {...linkProps}>{children}</LinkTag>
 }
 
 Link.propTypes = {

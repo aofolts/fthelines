@@ -4,7 +4,17 @@ import {Heading,BodyText} from 'components/text'
 import BackgroundImage from 'components/image-background'
 import Link from 'components/link'
 
-const Content = styled(Link)`
+const UnstyledContent = ({
+  className,
+  entry,
+  children
+}) => {
+  return (
+    <Link className={className} entry={entry}>{children}</Link>
+  )
+}
+
+const Content = styled(UnstyledContent)`
   display: block;
 `
 
@@ -31,7 +41,7 @@ const UnstyledArticleCard = ({
 }) => {
   return (
     <article className={className}>   
-      <Content page={entry}>
+      <Content entry={entry}>
         <Media>
           <BackgroundImage data={entry.coverImage}/>
           {/* <Category level={3}>{entry.categories[0].title}</Category> */}

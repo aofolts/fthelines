@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import theme from 'components/theme'
 import {getBodyTextSize} from 'components/text/body-text'
@@ -21,7 +22,24 @@ function getBackgroundColor({type}) {
   return theme.color.primary.medium
 }
 
-const Button = styled(Link)`
+const UnstyledButton = ({
+  children,
+  className,
+  url,
+  entry
+}) => {
+  const buttonProps = {
+    url,
+    entry,
+    className
+  }
+
+  return (
+    <Link {...buttonProps}>{children}</Link>
+  )
+}
+
+const Button = styled(UnstyledButton)`
   padding: 1em 1.5em;
   background: ${props => getBackgroundColor(props)};
   border: 2px solid ${props => getBorderColor(props)};

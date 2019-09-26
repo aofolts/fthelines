@@ -1,0 +1,13 @@
+{
+	"import utilities/data": {
+		"scope": "javascript,typescript",
+		"prefix": "iud",
+		"body": "import {normalizeEntry} from 'utilities/data'"
+	},
+
+	"import components/articles-grid": {
+		"scope": "javascript,typescript",
+		"prefix": "iag",
+		"body": "import ArticlesGrid from 'components/articles-grid'"
+	},
+}

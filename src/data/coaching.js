@@ -1,6 +1,6 @@
 const coaching = {
-  discoverCall: {
-    link: `https://app.acuityscheduling.com/schedule.php?owner=18163350&appointmentType=11111215`
+  discoveryCall: {
+    url: `https://app.acuityscheduling.com/schedule.php?owner=18163350&appointmentType=11111215`
   },
   packages: {
     clarity: {
