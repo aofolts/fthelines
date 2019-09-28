@@ -30,7 +30,14 @@ const query = graphql`
         order: DESC
       },
       filter: {
-        publishDate: {ne: null}
+        publishDate: {ne: null},
+        categories: {
+          elemMatch: {
+            title: {
+              ne: "NSFW"
+            }
+          }
+        }
       }
     ) {
       edges {

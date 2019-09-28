@@ -30,7 +30,10 @@ const query = graphql`
         order: DESC
       },
       filter: {
-        publishDate: {ne: null}
+        publishDate: {ne: null},
+        title: {
+          ne: "How Shoplifting Made Me Rich: 3 Lessons You Can Legally Steal"
+        }
       }
     ) {
       edges {

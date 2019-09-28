@@ -56,10 +56,13 @@ const Teaser = styled(BodyText)`
 const ThumbnailContainer = styled.div`
   width: ${props => props.theme.padding.large};
   height: ${props => props.theme.padding.large};
+
+  ${props => props.theme.media.phone`
+    display: none;
+  `}
 `
 
 const Thumbnail = styled(BackgroundImage)`
-  
 `
 
 const ActionContainer = styled.div`
@@ -70,10 +73,18 @@ const ActionContainer = styled.div`
   flex-direction: column;
   justify-contents: center;
   flex-shrink: 0;
+
+  ${props => props.theme.media.phone`
+    display: block;
+    margin-right: 0;
+    width: 100%;
+  `}
 `
 
 const ActionButton = styled(Button)`
-
+  margin-bottom: 0;
+  width: 100%;
+  text-align: center;
 `
 
 const Content = styled.div`
@@ -92,6 +103,13 @@ const ToolCard = styled(UnstyledToolCard)`
   & + & {
     border-top-width: 0;
   }
+
+  ${props => props.theme.media.phone`
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  `}
 `
 
 const Info = styled.div`
