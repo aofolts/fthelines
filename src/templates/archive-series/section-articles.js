@@ -2,10 +2,18 @@ import styled from 'styled-components'
 import React from 'react'
 import ArticleCard from 'components/card-article'
 import media from 'components/theme/media'
+import ArticlesGrid from 'components/articles-grid'
 
-const Articles = ({entries}) => entries.map(entry => (
-  <ArticleCard key={entry.title} entry={entry}/>
-))
+const UnstyledArticlesSection = ({
+  className,
+  data
+}) => {
+  return (
+    <section id='blog' className={className}>
+      <ArticlesGrid entries={data.articles}/>
+    </section>
+  )
+}
 
 const Grid = styled.div`
   display: grid;
@@ -19,19 +27,6 @@ const Grid = styled.div`
     display: block;
   `}
 `
-
-const UnstyledArticlesSection = ({
-  className,
-  data
-}) => {
-  return (
-    <section id='blog' className={className}>
-      <Grid>
-        <Articles entries={data.articles}/>
-      </Grid>
-    </section>
-  )
-}
 
 const ArticlesSection = styled(UnstyledArticlesSection)`
   padding: ${props => props.theme.padding.default};
