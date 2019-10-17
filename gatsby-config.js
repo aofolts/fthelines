@@ -9,7 +9,7 @@ try {
 contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || contentfulConfig.accessToken,
-  environment: contentfulConfig.environment || 'master'
+  environment: contentfulConfig ? contentfulConfig.environment || 'master'
 }
 
 const { 
