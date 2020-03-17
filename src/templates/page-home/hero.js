@@ -16,7 +16,7 @@ const UnstyledHero = ({
           <Text>
             <HeroTitle>Stop chasing the A Life.</HeroTitle>
             <Copy>
-              Hi there, I'm Andrew. F the Lines is a no-bullshit blog and <Link to='/coaching'>coaching service</Link> for <Link to='/articles/f-the-lines-manifesto'>creative entrepreneurs</Link> who want to get focused and <Link to='articles/freedom-business-roadmap'>build a business</Link> that delivers maximum freedom: the "F Life." Let's make it happen.
+              Hi there, I'm Andrew. F the Lines is a no-bullshit blog for <Link to='/articles/f-the-lines-manifesto'>creative rebels</Link> who want to find their purpose, get focused, and run a <Link to='articles/freedom-business-roadmap'>profitable business</Link> doing what they love: the "F Life." Let's make it happen.
             </Copy>
             <Tripwire data={data.form}/>
           </Text>

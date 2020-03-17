@@ -1,10 +1,11 @@
 import React from 'react'
 import Layout from 'components/layout'
-import ArticlesSection from './section-articles'
 import IntroSection from './section-intro'
-import GoalSection from 'components/section-goal'
+import RawGoalSection from 'components/section-goal'
+import RawComicsSection from 'templates/page-comics/section-comics'
 import Hero from './hero'
 import {graphql} from 'gatsby'
+import styled from 'styled-components'
 
 const HomePage = ({
   data
@@ -15,13 +16,24 @@ const HomePage = ({
         <Hero data={data}/>
         <IntroSection/>
         <GoalSection/>
-        <ArticlesSection/>
+        <ComicsSection comics={data.comics.nodes}/>
       </div>
     </Layout>
   )
 }
 
 export default HomePage
+
+const GoalSection = styled(RawGoalSection)`
+  background: ${props => props.theme.color.grey.lightest};
+  margin-top: calc(-1 * ${props => props.theme.padding.large});
+  padding-top: calc(2 * ${props => props.theme.padding.large});
+`
+
+const ComicsSection = styled(RawComicsSection)`
+  padding: ${props => props.theme.padding.default};
+  margin-top: calc(-1 * ${props => props.theme.padding.large});
+`
 
 export const query = graphql`
   {
@@ -44,6 +56,25 @@ export const query = graphql`
       formId
       teaser {
         text:teaser      
+      }
+    }
+    comics: allFile(
+      filter: {
+        extension: {
+          eq: "jpg"
+        },
+        name: {
+          glob: "*-16x9"
+        }
+      },
+      sort: {
+        fields: [relativePath],
+        order: DESC
+      },
+      limit: 3
+    ) {
+      nodes {
+        ...Comic
       }
     }
   }

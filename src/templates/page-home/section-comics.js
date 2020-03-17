@@ -14,7 +14,6 @@ const VideoContainer = styled.div`
   width: ${props => props.theme.columns(8)};
   max-width: 100%;
   margin: ${props => props.theme.padding.mediumLarge} auto 0;
-  z-index: 99;
 `
 
 const UnstyledIntoSection = ({
@@ -37,7 +36,6 @@ const Section = styled(UnstyledIntoSection)`
   padding: ${props => props.theme.padding.default};
   padding-bottom: 0;
   background: white;
-  z: 2;
 `
 
 export default Section

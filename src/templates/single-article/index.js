@@ -100,7 +100,8 @@ export const VideoFragment = graphql`
 export const articleContentFragment = graphql`
   fragment articleContent on ContentfulArticle {
     content {
-      json
+      content
+      json: content
     }
   }
 `

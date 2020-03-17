@@ -51,8 +51,8 @@ const Progress = styled.div`
 `
 
 export const goalData = {
-  spotsTaken: 4,
-  totalSpots: 15
+  spotsTaken: 113,
+  totalSpots: 365
 }
 
 goalData.spotsLeft = goalData.totalSpots - goalData.spotsTaken
@@ -64,15 +64,16 @@ const UnstyledGoalSection = ({
     <section className={className}>
       <Wrap>
         <TextWrap>
-          <JumboHeading kind='jumbo'>Get Unstuck</JumboHeading>
+          <JumboHeading kind='jumbo'>365 Comics</JumboHeading>
           <BodyText>
-            Going full-time freelance is a huge task and it can be overwhelming. That's why I've created a straightforward plan called the Freedom Business Roadmap. It's a 15-week email crash course that gives you advice and challenges on a regular basis. <Link to='/articles/freedom-business-roadmap'>Get started here</Link>.
+            Running your own business full-time can be overwhelming. That's why I created a straightforward plan called the Freedom Business Roadmap. It's a 15-week email crash course designed to take you from "A to Free" by building creative consistency.
+           <Link to='/articles/freedom-business-roadmap'>Get started here</Link>.
           </BodyText>
         </TextWrap>
         <GoalBarWrap>
           <GoalPosts>
-            <StartPost level='1'>{goalData.spotsTaken} articles written</StartPost>
-            <EndPost level='1'>{goalData.spotsLeft} articles left</EndPost>
+            <StartPost level='1'>{goalData.spotsTaken} comics drawn</StartPost>
+            <EndPost level='1'>{goalData.spotsLeft} comics left</EndPost>
           </GoalPosts>
           <GoalBar>
             <Progress data={goalData}/>

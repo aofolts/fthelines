@@ -75,7 +75,7 @@ const Footer = styled(UnstyledFooter)`
 `
 
 const Main = styled.main`
-  background: black;
+  background: ${props => props.theme.color.grey.lightest};
 `
 
 const AppContext = createContext()

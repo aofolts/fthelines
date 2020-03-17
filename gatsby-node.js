@@ -9,6 +9,7 @@ const templates = {
     coaching: path.resolve('./src/templates/page-coaching/index.js'),
     home: path.resolve('./src/templates/page-home/index.js'),
     articles: path.resolve('./src/templates/page-articles/index.js'),
+    comics: path.resolve('./src/templates/page-comics/index.js'),
     archetypes: path.resolve('./src/templates/page-archetypes/index.js'),
     podcast: path.resolve('./src/templates/page-podcast/index.js'),
     about: path.resolve('./src/templates/page-about/index.js'),
@@ -154,10 +155,65 @@ exports.createPages = ({graphql,actions}) => {
     )
   })
 
+  const createComicsPages = new Promise((resolve,reject) => {
+    resolve(
+      graphql(
+        `
+          {
+            comics: allFile(
+              filter: {
+                extension: {
+                  eq: "jpg"
+                },
+                name: {
+                  glob: "*-16x9"
+                }
+              },
+              sort: {
+                fields: [relativePath],
+                order: DESC
+              }
+            ) {
+              nodes {
+                absolutePath
+              }
+            }
+          }
+        `
+      ).then(({
+        errors,
+        data
+      }) => {
+        if (errors) {
+          console.log(errors)
+          reject(errors)
+        }
+
+        const pages = data.comics.nodes
+        const postsPerPage = 27
+        const numPages = Math.ceil(pages.length / postsPerPage)
+
+        Array.from({length: numPages}).forEach((_, i) => {
+          createPage({
+            path: i === 0 ? `/comics` : `/comics/${i + 1}`,
+            component: path.resolve("./src/templates/paginate-comics/index.js"),
+            context: {
+              limit: postsPerPage,
+              skip: i * postsPerPage,
+              numPages,
+              currentPage: i + 1,
+            },
+          })
+        })
+      })
+    )
+  })
+
   return Promise.all([
     createPages,
     createArticlePages,
-    createArticleSeriesPages
+    createArticleSeriesPages,
+    createComicsPages
   ])
 }
 
@@ -177,20 +233,3 @@ exports.onCreateWebpackConfig = ({
     }
   })
 }
-
-// exports.onCreatePage = ({ page, actions }) => {
-//   const { deletePage, createPage } = actions
-
-//   return new Promise(resolve => {
-//     if (page.componentPath === `${__dirname}/src/templates/index/index.js`) {
-//       deletePage(page)
-
-//       createPage({
-//         ...page,
-//         path: '/',
-//       })
-//     }
-
-//     resolve()
-//   })
-// }

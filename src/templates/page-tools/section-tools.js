@@ -47,7 +47,8 @@ export const toolInfoFragment = graphql`
       slug
     }
     content {
-      json
+      content
+      json: content
     }
   }
 `

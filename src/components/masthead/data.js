@@ -10,13 +10,13 @@ const data = {
         slug: '/articles'
       },
       {
+        title: 'Comics',
+        slug: '/comics'
+      },
+      {
         title: 'Podcast',
         slug: '/podcast'
       },
-      {
-        title: 'Meetup',
-        url: 'https://www.meetup.com/roc-creatives-freelancers/'
-      }
     ],
     right: [
       {
@@ -29,7 +29,7 @@ const data = {
       },
       {
         title: 'Contact',
-        url: 'mailto:andrew<at>fthelines.com'
+        url: 'mailto:andrew <at> fthelines.com'
       },
       {
         title: 'Subscribe',

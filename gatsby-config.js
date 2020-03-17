@@ -9,7 +9,7 @@ try {
 contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || contentfulConfig.accessToken,
-  environment: contentfulConfig ? 'development' : 'master'
+  environment: 'master'
 }
 
 const { 
@@ -59,6 +59,14 @@ module.exports = {
         anonymize: true,
         respectDNT: true
       },
-    }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `comics`,
+        path: `${__dirname}/src/daily-log/`,
+        ignore: [`^.*\.(?!jpg$)[^.]+$`],
+      },
+    },
   ]
 }
