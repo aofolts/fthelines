@@ -187,10 +187,7 @@ const options = {
 const RichText = ({
   json
 }) => {
-  console.log(json)
-  return 'stop and log'
-
-  return documentToReactComponents(json,options)
+  return documentToReactComponents(JSON.parse(json),options)
 }
 
 export default RichText

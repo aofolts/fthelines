@@ -30,7 +30,7 @@ const Wrap = styled.div`
 `
 
 const ComicsSection = styled(UnstyledComicsSection)`
-  padding: ${props => props.theme.padding.medium} ${props => props.theme.padding.small};
+  padding: ${props => props.theme.padding.large} ${props => props.theme.padding.small};
   display: flex;
   justify-content: center;
 `

@@ -68,5 +68,14 @@ module.exports = {
         ignore: [`^.*\.(?!jpg$)[^.]+$`],
       },
     },
+    {
+      resolve: `gatsby-source-notion-contents`,
+      options: {
+        token: '70e72aec41ea7bae13629223a1aa93d05697250c182ceeed5621365bd2d6c1f4b418f10f0bfb097e94c19cb1e18bdc1386b1aa1cfa38dacc7697dc2fde92090872a4197f6d8d2a30e1084df61fdf',
+        ids: ['2a82a3ebe5f34c5cbdfb29daf87c1fbe','7cea40c52c50474c99f002be6c9e4623'],
+        prefix: '/',
+        removeStyle: false,
+      },
+    },
   ]
 }

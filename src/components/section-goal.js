@@ -51,7 +51,7 @@ const Progress = styled.div`
 `
 
 export const goalData = {
-  spotsTaken: 113,
+  spotsTaken: 118,
   totalSpots: 365
 }
 
@@ -66,8 +66,8 @@ const UnstyledGoalSection = ({
         <TextWrap>
           <JumboHeading kind='jumbo'>365 Comics</JumboHeading>
           <BodyText>
-            Running your own business full-time can be overwhelming. That's why I created a straightforward plan called the Freedom Business Roadmap. It's a 15-week email crash course designed to take you from "A to Free" by building creative consistency.
-           <Link to='/articles/freedom-business-roadmap'>Get started here</Link>.
+            The secret to creativity is not inspiration. Been there, failed at that. What does work is consistency. This year, I'm challenging myself to draw a new comic every day for 365 days. It's flipped my world upside down (in the best way possible) and you can do it, too!
+             <Link to='/comics'>Browse the series</Link>
           </BodyText>
         </TextWrap>
         <GoalBarWrap>

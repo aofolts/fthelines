@@ -24,7 +24,7 @@ const UnstyledIntoSection = ({
     <section id='intro' className={className}>
       <Content>
         <Heading>Who wrote the lines that hold you back? What if you redrew them?</Heading>
-        <BodyText>The starving artist. What an awful idea. Society tells us that it's impossible to make doing what we love. The thing is, you CAN follow your passions. But you need one secret ingredient: consistency. Here's why...</BodyText>
+        <BodyText>The starving artist. What an awful idea. Society tells us that it's impossible to make a living doing what we love. The thing is, you CAN follow your passions. But you need one secret ingredient: consistency. Here's why...</BodyText>
       </Content>
       <VideoContainer>
         <Video entry={{url: 'https://youtu.be/ft192BoCFVk',title:'F the Lines Intro Video'}}/>

@@ -1,7 +1,10 @@
 import React from 'react'
 import Layout from 'components/layout'
 import {graphql} from 'gatsby'
-import ComicsSection from './section-comics'
+import RawComicsSection from './section-comics'
+import RawGoalSection from 'components/section-goal'
+import styled from 'styled-components'
+import RawNagivation from './navigation'
 
 const Page = ({
   data
@@ -11,11 +14,25 @@ const Page = ({
   return (
     <Layout meta={{page: data.page}}>
       <div id='main'>
-      <ComicsSection comics={comics}/>
+        <GoalSection/>
+        <ComicsSection comics={comics}/>
+        <Navigation/>
       </div>
     </Layout>
   )
 }
+
+const Navigation = styled(RawNagivation)`
+  padding-top: 0;
+`
+
+const GoalSection = styled(RawGoalSection)`
+  background: ${props => props.theme.color.grey.lightest};
+`
+
+const ComicsSection = styled(RawComicsSection)`
+padding-top: 0;
+`
 
 export default Page
 

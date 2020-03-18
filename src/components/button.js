@@ -24,18 +24,10 @@ function getBackgroundColor({type}) {
 
 const UnstyledButton = ({
   children,
-  className,
-  url,
-  entry
+  ...props
 }) => {
-  const buttonProps = {
-    url,
-    entry,
-    className
-  }
-
   return (
-    <Link {...buttonProps}>{children}</Link>
+    <Link {...props}>{children}</Link>
   )
 }
 

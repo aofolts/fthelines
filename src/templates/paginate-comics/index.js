@@ -1,20 +1,32 @@
 import React from 'react'
 import Layout from 'components/layout'
 import {graphql} from 'gatsby'
-import ComicsSection from './section-comics'
+import RawComicsSection from 'templates/page-comics/section-comics'
+import styled from 'styled-components'
+import RawNavigation from './navigation'
 
 const Page = ({
-  data
+  data,
+  ...props
 }) => {
   const comics = data.pageComics.nodes
   return (
     <Layout meta={{page: data.page}}>
       <div id='main'>
-      <ComicsSection comics={comics}/>
+        <ComicsSection comics={comics}/>
+        <Navigation {...props.pageContext}/>
       </div>
     </Layout>
   )
 }
+
+const ComicsSection = styled(RawComicsSection)`
+  
+`
+
+const Navigation = styled(RawNavigation)`
+  padding-top: 0;
+`
 
 export default Page
 
