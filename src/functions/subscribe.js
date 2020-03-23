@@ -3,10 +3,7 @@ var axios = require('axios')
 
 export function handler(event, context, callback) {
   const api_key = process.env.CONTENTFUL_API_KEY
-  console.log('***************%%%%%%')
-  console.log(api_key)
-  console.log('***************%%%%%%')
-
+  
   const { 
     first_name,
     email
