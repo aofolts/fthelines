@@ -37,9 +37,8 @@ function handleSubmit({
 }) {
   event.preventDefault()
 
-  axios.post(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
-    email,
-    api_key: 'MT-C9Q-Ur9ZDZuBgfZK3yg'
+  axios.post(`/.netlify/functions/subscribe`, {
+    email
   }).then(r => {
     setFormState('submitted')
   })
@@ -60,6 +59,7 @@ const UnstyledSubscribeForm = ({
   entry,
   settings
 }) => {
+  console.log(process.env)
   const fields = entry.fields
   const [email,setEmail] = useState('')
   const [formState,setFormState] = useState('empty')

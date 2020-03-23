@@ -27,7 +27,7 @@ const UnstyledSubscribeButton = ({
   }
 
   return (
-    <Submit id='hero-button' className={className} onClick={e => handleSubmitClick(e)}>
+    <Submit id='hero-button' className={className} onClick={e => handleSubmitClick(e)} type="submit">
       {buttonLabel()}
     </Submit>
   )
@@ -39,7 +39,6 @@ const SubscribeButton = styled(UnstyledSubscribeButton)`
     if (['invalid','inactive'].includes(formStatus)) return 'not-allowed'
     return 'pointer'
   }};
-  display: ${({formStatus}) => formStatus === 'submitted' ? 'none' : 'block'};
 `
 
 export default SubscribeButton

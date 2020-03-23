@@ -50,12 +50,14 @@ const Link = ({
   href,
   className,
   children,
-  fallbackTag
+  fallbackTag,
+  ...props
 }) => {
-  let LinkTag = fallbackTag ? fallbackTag : 'div'
+  let LinkTag = fallbackTag ? fallbackTag : 'button'
   const entryType = getEntryType(entry)
   const linkProps = {
-    className
+    className,
+    ...props
   }
 
   if (entry) {

@@ -32,6 +32,7 @@ const UnstyledButton = ({
 }
 
 const Button = styled(UnstyledButton)`
+  all: unset;
   padding: 1em 1.5em;
   background: ${props => getBackgroundColor(props)};
   border: 2px solid ${props => getBorderColor(props)};
@@ -51,7 +52,7 @@ const Button = styled(UnstyledButton)`
 
 Button.defaultProps = {
   type: 'primary',
-  tag: 'a'
+  tag: 'button'
 }
 
 export default Button

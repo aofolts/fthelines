@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import styled from 'styled-components'
 import {MicroText,BodyText} from 'components/typography'
 import axios from 'axios'
@@ -20,11 +20,11 @@ function handleSubmit({
 
   setFormStatus('submitting')
 
-  axios.post(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
+  axios.post(`/.netlify/functions/subscribe`, {
     email,
-    first_name: name,
-    api_key: 'MT-C9Q-Ur9ZDZuBgfZK3yg'
+    first_name: name 
   }).then(r => {
+    console.log(r)
     setFormStatus('submitted')
   })
 }

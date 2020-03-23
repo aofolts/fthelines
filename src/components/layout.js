@@ -16,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
     --padding-large: 10rem;
   }
 
+  * {
+    -webkit-backface-visibility: hidden;
+  }
+
   @font-face {
     font-family: nitti;
     src: url(${nittiMediumWoff}) format('woff');

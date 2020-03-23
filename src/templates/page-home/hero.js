@@ -4,6 +4,7 @@ import {JumboHeading,BodyText} from 'components/typography'
 import GlitchImg from './andrew-hero.gif'
 import Tripwire from 'components/tripwire'
 import Link from 'components/link'
+import axios from 'axios'
 
 const UnstyledHero = ({
   className,
@@ -18,7 +19,9 @@ const UnstyledHero = ({
             <Copy>
               Hi there, I'm Andrew. F the Lines is a no-bullshit blog for <Link to='/articles/f-the-lines-manifesto'>creative rebels</Link> who want to find their purpose, get focused, and stay <Link to='articles/freedom-business-roadmap'>wildly functional</Link> in a distracted world: the "F Life." Let's make it happen.
             </Copy>
-            <Tripwire data={data.form}/>
+            <div>
+              <Tripwire data={data.form}/>
+            </div>
           </Text>
           <Glitch src={GlitchImg}/>
         </Content>

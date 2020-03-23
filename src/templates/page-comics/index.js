@@ -14,8 +14,8 @@ const Page = ({
   return (
     <Layout meta={{page: data.page}}>
       <div id='main'>
-        <GoalSection/>
-        <ComicsSection comics={comics}/>
+        <GoalSection browseLink={false}/>
+        <ComicsSection comics={comics} browseLink={false}/>
         <Navigation/>
       </div>
     </Layout>
@@ -31,7 +31,7 @@ const GoalSection = styled(RawGoalSection)`
 `
 
 const ComicsSection = styled(RawComicsSection)`
-padding-top: 0;
+  padding-top: 0;
 `
 
 export default Page

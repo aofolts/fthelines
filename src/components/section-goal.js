@@ -58,16 +58,17 @@ export const goalData = {
 goalData.spotsLeft = goalData.totalSpots - goalData.spotsTaken
 
 const UnstyledGoalSection = ({
-  className
+  className,
+  browseLink = true
 }) => {
+  console.log(browseLink)
   return (
     <section className={className}>
       <Wrap>
         <TextWrap>
           <JumboHeading kind='jumbo'>365 Comics</JumboHeading>
           <BodyText>
-            The secret to creativity is not inspiration. Been there, failed at that. What does work is consistency. This year, I'm challenging myself to draw a new comic every day for 365 days. It's flipped my world upside down (in the best way possible) and you can do it, too!
-             <Link to='/comics'>Browse the series</Link>
+            The secret to creativity is not inspiration. Been there, failed at that. What does work is consistency. This year, I'm challenging myself to draw a new comic every day for 365 days. It's flipped my world upside down. What challenge could you start today? <BrowseLink display={browseLink}/>
           </BodyText>
         </TextWrap>
         <GoalBarWrap>
@@ -82,6 +83,14 @@ const UnstyledGoalSection = ({
       </Wrap>
     </section>
   )
+}
+
+const BrowseLink = ({
+  display
+}) => {
+  if (!display) return false
+
+  return <Link to='/comics'>Browse the Series</Link>
 }
 
 const GoalSection = styled(UnstyledGoalSection)`
