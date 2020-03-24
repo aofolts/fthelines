@@ -18,6 +18,8 @@ function handleSubmit({
 }) {
   event.preventDefault()
 
+  console.log(process.env.GATSBY_CONVERTKIT_API_KEY)
+
   setFormStatus('submitting')
 
   axios.post(`/.netlify/functions/subscribe`, {
