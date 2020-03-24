@@ -13,3 +13,5 @@ public
 # Contentful config or import/export files
 .contentful*
 .env.*
+# Local Netlify folder
+.netlify

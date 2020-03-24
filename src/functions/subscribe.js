@@ -1,6 +1,5 @@
-require('dotenv').config()
 var axios = require('axios')
-const api_key = process.env.CONTENTFUL_API_KEY
+const api_key = process.env.CONVERTKIT_API_KEY
 
 export function handler(event, context, callback) {
   
